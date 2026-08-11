@@ -1,0 +1,274 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .scanning-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2563eb, transparent);
+            box-shadow: 0 0 15px #2563eb;
+            animation: scan 2.5s ease-in-out infinite;
+        }
+        @keyframes scan {
+            0% { top: 0%; opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "outline": "#737686",
+                "on-error": "#ffffff",
+                "tertiary-container": "#996100",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#dce9ff",
+                "surface-bright": "#f8f9ff",
+                "on-surface": "#0b1c30",
+                "background": "#f8f9ff",
+                "outline-variant": "#c3c6d7",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-secondary-fixed-variant": "#005236",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#00174b",
+                "on-tertiary-fixed-variant": "#653e00",
+                "on-secondary-container": "#00714d",
+                "on-primary-container": "#eeefff",
+                "inverse-surface": "#213145",
+                "primary-fixed": "#dbe1ff",
+                "on-secondary": "#ffffff",
+                "primary-container": "#2563eb",
+                "on-tertiary-fixed": "#2a1700",
+                "on-tertiary": "#ffffff",
+                "surface-container-highest": "#d3e4fe",
+                "inverse-on-surface": "#eaf1ff",
+                "primary": "#004ac6",
+                "on-secondary-fixed": "#002113",
+                "on-tertiary-container": "#ffeedd",
+                "on-surface-variant": "#434655",
+                "surface-tint": "#0053db",
+                "error-container": "#ffdad6",
+                "surface": "#f8f9ff",
+                "surface-container-low": "#eff4ff",
+                "on-background": "#0b1c30",
+                "surface-variant": "#d3e4fe",
+                "on-primary": "#ffffff",
+                "secondary-container": "#6cf8bb",
+                "error": "#ba1a1a",
+                "secondary": "#006c49",
+                "tertiary-fixed-dim": "#ffb95f",
+                "surface-dim": "#cbdbf5",
+                "primary-fixed-dim": "#b4c5ff",
+                "surface-container": "#e5eeff",
+                "tertiary-fixed": "#ffddb8",
+                "tertiary": "#784b00",
+                "secondary-fixed-dim": "#4edea3",
+                "secondary-fixed": "#6ffbbe",
+                "inverse-primary": "#b4c5ff"
+              },
+              "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.8rem",
+                "xl": "1.2rem",
+                "full": "9999px"
+              },
+              "spacing": {
+                "xl": "64px",
+                "sm": "12px",
+                "base": "8px",
+                "xs": "4px",
+                "lg": "40px",
+                "gutter": "24px",
+                "container-max": "1200px",
+                "md": "24px"
+              },
+              "fontFamily": {
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Manrope"],
+                "headline-md": ["Manrope"],
+                "button": ["Inter"],
+                "label-caps": ["JetBrains Mono"],
+                "headline-lg": ["Manrope"],
+                "body-sm": ["Inter"]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center">
+<!-- Toast Notification -->
+<div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-on-surface text-surface px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-sm font-semibold">성공적으로 등록되었습니다!</span>
+</div>
+<!-- Top AppBar -->
+<header class="w-full top-0 sticky z-40 bg-surface flex items-center justify-between px-md py-base max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors active:scale-95" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">새 암기장 등록</h1>
+</div>
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UYIHIwhMBg99AYWaUNuw00bCY3ZlCuWkHNFs1H_q0Ox-anvZYNf_hKq4tSQ_36ZoO3VsdwfCw3eKe0O8WWaxn_VkXarbJA9Dn4-uGr0DC0JUjIt8mIfi1kfso9nRA24x1CJupCMJwbDSRIRBEJMZWAjng_7QUifKyg7AGemUbhHeqgDmsx_FP2DwHh15oU7-XBeWXDnL5Or9aiDWhpUyC1U-HI-wCQkINSva_ez_ws-wp3OoqWkgczjY00UjHXSRiy5PzLbLj44r">
+</div>
+</header>
+<main class="w-full max-w-2xl px-md py-lg flex flex-col gap-md mb-32">
+<!-- Photo Preview Area -->
+<section class="relative group">
+<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-surface-container border border-outline-variant shadow-sm relative">
+<!-- Mock Captured Image -->
+<img class="w-full h-full object-cover" data-alt="A high-resolution, top-down photograph of a handwritten study notebook on a clean white desk. The notebook contains neatly written Japanese kanji and grammar notes in blue and black ink, illuminated by soft, natural morning light coming from a nearby window. The overall aesthetic is professional, minimalist, and focused, aligning with a modern academic corporate style with subtle mint and blue color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUuK3Q5ab59RiN65Cun2_cuTAh4H0xsha-hoZ1KY4smjUvZaAWjZhqEdI8OdLUTJrXHfJjgPAhcLD3rSNf2vdvn_zHT0wUhrQXxVUYlKEc41e9vYINk8eD275g4PlXhB-j835FVZbMqj8SoRI9mbogDtCD5FY7u159jN4rHme2rBLu1nHYHqraWk_EEXyU-v_JmGl9uFqAchLQueYMkRSbIvaiyKa3U3gWcqVCOgL0V68YOBg6Hy8E3PZ-WJd_uIw21b1zOYqLGMTd">
+<!-- Scanning Animation Overlay -->
+<div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+<div class="scanning-line absolute w-full z-10"></div>
+<!-- AI Processing Badge -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse">
+<span class="material-symbols-outlined text-primary-container animate-spin" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-button text-primary font-semibold text-body-sm" style="opacity: 1;">핵심 키워드를 추출하는 중입니다...</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Configuration Section -->
+<section class="flex flex-col gap-sm">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase ml-1">분야 선택</label>
+<div class="relative">
+<select class="w-full appearance-none bg-surface border border-outline-variant rounded-lg px-md py-base font-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all cursor-pointer" id="category-select">
+<option value="it">IT / 프로그래밍</option>
+<option selected="" value="japanese">일본어 (Japanese)</option>
+<option value="english">영어 (English)</option>
+<option value="exam">자격증 시험</option>
+<option value="custom">기타 (직접 입력)</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</section>
+<!-- Analysis Progress Hint -->
+<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md flex items-start gap-sm">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
+<div class="flex flex-col">
+<p class="font-body-sm text-on-surface font-semibold">텍스트 감지 완료</p>
+<p class="font-body-sm text-on-surface-variant">노트의 12개 키워드가 식별되었습니다. 카테고리를 분류하고 있습니다.</p>
+<div class="w-full h-2 bg-surface-container-highest rounded-full mt-base overflow-hidden">
+<div class="h-full bg-secondary-container w-[75%] rounded-full transition-all duration-700"></div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="grid grid-cols-2 gap-sm pt-base">
+<button class="flex items-center justify-center gap-xs border border-primary text-primary font-button rounded-lg py-4 hover:bg-surface-container-low active:scale-95 transition-all">
+<span class="material-symbols-outlined">restart_alt</span>
+                다시 찍기
+            </button>
+<button class="flex items-center justify-center gap-xs bg-primary-container text-on-primary-container font-button rounded-lg py-4 shadow-sm hover:opacity-90 active:scale-95 transition-all" id="confirm-analysis-btn">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done_all</span>
+                분석 결과 확인
+            </button>
+</div>
+</main>
+<!-- Bottom Nav (Shared Component) -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container-highest">
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='calendar.html'">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-label-caps mt-1">Calendar</span>
+</button>
+<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" onclick="window.location.href='flashcards.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-label-caps text-label-caps mt-1">Flashcards</span>
+</button>
+<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='settings.html'">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps mt-1">Settings</span>
+</button>
+</nav>
+<script>
+        // Micro-interactions for buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                // Ignore if it's a navigation button to avoid ripple interrupting
+                if(this.getAttribute('onclick')) return;
+                
+                const ripple = document.createElement('span');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // Simulating AI progress text change
+        const progressMessages = [
+            "Gemini AI가 내용을 분석 중입니다...",
+            "필기 텍스트를 디지털로 변환하고 있습니다...",
+            "핵심 키워드를 추출하는 중입니다...",
+            "추출된 내용을 암기 카드로 생성 중입니다..."
+        ];
+        let msgIndex = 0;
+        const statusText = document.querySelector('.animate-pulse span:last-child');
+        
+        setInterval(() => {
+            msgIndex = (msgIndex + 1) % progressMessages.length;
+            statusText.style.opacity = 0;
+            setTimeout(() => {
+                statusText.textContent = progressMessages[msgIndex];
+                statusText.style.opacity = 1;
+            }, 300);
+        }, 3000);
+
+        // Analysis Registration Logic
+        document.getElementById('confirm-analysis-btn').addEventListener('click', function() {
+            // 1. Save mock data to localStorage
+            const selectedCategory = document.getElementById('category-select').value;
+            const newFlashcardSet = {
+                id: Date.now(),
+                category: selectedCategory,
+                title: "새로운 암기장",
+                keywords: ["문법", "단어", "예문", "한자"],
+                cardCount: 12,
+                createdAt: new Date().toISOString()
+            };
+            
+            let storedSets = JSON.parse(localStorage.getItem('flashcardSets')) || [];
+            storedSets.push(newFlashcardSet);
+            localStorage.setItem('flashcardSets', JSON.stringify(storedSets));
+
+            // 2. Show Success Toast
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0');
+            
+            // 3. Redirect after a short delay
+            setTimeout(() => {
+                window.location.href = 'flashcards.html';
+            }, 1500);
+        });
+    </script>
+
+
+</body></html>
