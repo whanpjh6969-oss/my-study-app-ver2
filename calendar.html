@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Academic Mentor - 학습 스케줄</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004ac6",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#eeefff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#996100",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#737686",
+                    "surface-container-low": "#eff4ff",
+                    "tertiary": "#784b00",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .calendar-grid {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 10px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(226, 232, 240, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface min-h-screen font-body-md selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface">
+<div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base active:scale-95 transition-transform cursor-pointer">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed-dim" data-icon="menu">menu</span>
+</div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">학습 스케줄</h1>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container active:scale-95 transition-transform cursor-pointer">
+<img alt="User Profile" data-alt="A professional close-up portrait of a young student with a warm, encouraging smile, set against a soft-focus academic library background. The lighting is bright and natural, reflecting a clean, modern aesthetic with a primary focus on clarity and professionalism, echoing the Academic Mentor brand's quiet confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuArV5oTWNmhYCzOas1xSqz2487W2xkZ6edCMeG8DxQpOCKXDcjQms73WZDjZqDjG-5DqvNAsWtK12ZjuPW0AX701nhBVTHqrBHUp11Sx75olvIAWsa6F6KvK5jPGKBDth0D2_6_X32eSDxu9Ju-CW19PDD8DdYIpq6OnMY1uuE8GsAkSI-N6os1vOJz7LkcPjeR266kqf6YlSXcCcnQYxEHeRsMYRLXhyNE551v2SB-8sVgG3SUH8hPdyeZwAogNgI8TF43xg-m6Svm">
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-4 md:px-gutter pb-32 pt-4">
+<!-- Bento Grid Layout for Calendar Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md items-start">
+<!-- Calendar Section (Large Bento Piece) -->
+<section class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm transition-all hover:shadow-md">
+<div class="flex items-center justify-between mb-6">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">2023년 10월</h2>
+<p class="text-on-surface-variant font-body-sm">이번 달 총 14개의 학습 일정이 있습니다.</p>
+</div>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg hover:bg-surface-container-low transition-colors text-primary border border-outline-variant active:scale-95">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg hover:bg-surface-container-low transition-colors text-primary border border-outline-variant active:scale-95">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="calendar-grid text-center font-label-caps text-on-surface-variant mb-4 border-b border-outline-variant pb-2">
+<div class="">일</div><div class="">월</div><div class="">화</div><div class="">수</div><div class="">목</div><div class="">금</div><div class="">토</div>
+</div>
+<div class="calendar-grid gap-y-4" id="calendar-days">
+<!-- Example Empty Space -->
+<div class="h-16"></div>
+<div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+<span class="text-on-surface-variant">1</span>
+</div>
+<!-- Active Day -->
+<div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+<div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+<span class="text-on-surface">2</span>
+<div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+</div>
+<div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+<div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+<span class="text-on-surface">3</span>
+</div>
+<!-- Selected Day -->
+<div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+<div class="absolute inset-0 m-1 bg-primary rounded-xl"></div>
+<span class="text-on-primary relative z-10 font-bold">4</span>
+<div class="w-1 h-1 bg-on-primary rounded-full mt-1 relative z-10"></div>
+</div>
+<!-- Calendar continues... -->
+<script>
+                        const daysContainer = document.getElementById('calendar-days');
+                        const startOffset = 1; // Starting on Monday for example purposes
+                        for (let i = 5; i <= 31; i++) {
+                            const hasTask = i % 3 === 0;
+                            const dayDiv = document.createElement('div');
+                            dayDiv.className = "h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all";
+                            dayDiv.innerHTML = `
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">${i}</span>
+                                ${hasTask ? '<div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>' : ''}
+                            `;
+                            daysContainer.appendChild(dayDiv);
+                        }
+                    </script><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">5</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">6</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">7</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">8</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">9</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">10</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">11</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">12</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">13</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">14</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">15</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">16</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">17</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">18</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">19</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">20</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">21</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">22</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">23</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">24</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">25</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">26</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">27</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">28</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">29</span>
+                                
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">30</span>
+                                <div class="w-1 h-1 bg-secondary rounded-full mt-1"></div>
+                            </div><div class="h-16 flex flex-col items-center justify-center relative group cursor-pointer active:scale-95 transition-all">
+                                <div class="absolute inset-0 m-1 bg-primary rounded-xl opacity-0 group-hover:opacity-10 transition-opacity"></div>
+                                <span class="text-on-surface">31</span>
+                                
+                            </div>
+</div>
+</section>
+<!-- Side Info Section (Right Column) -->
+<aside class="lg:col-span-4 flex flex-col gap-md">
+<!-- Daily Statistics Card -->
+<div class="bg-surface-variant/30 rounded-xl p-md border border-outline-variant flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-primary flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+                        학습 요약
+                    </h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50">
+<span class="text-on-surface-variant font-body-sm">완료한 과제</span>
+<span class="font-bold text-on-surface">12/15</span>
+</div>
+<div class="flex justify-between items-center p-3 bg-surface-container-lowest rounded-lg border border-outline-variant/50">
+<span class="text-on-surface-variant font-body-sm">집중 시간</span>
+<span class="font-bold text-on-surface">4h 20m</span>
+</div>
+</div>
+</div>
+<!-- Daily Note Section -->
+<div class="bg-surface-container-lowest rounded-xl p-md border border-outline-variant shadow-sm flex flex-col h-full min-h-[400px]">
+<div class="flex items-center justify-between mb-4 border-b border-outline-variant pb-base">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="event_note">event_note</span>
+                            Daily Note
+                        </h3>
+<span class="text-primary font-label-caps">OCT 04</span>
+</div>
+<div class="flex-grow overflow-y-auto custom-scrollbar space-y-4 pr-1">
+<!-- Note Item -->
+<div class="p-3 bg-surface-container-low rounded-lg border-l-4 border-secondary transition-all hover:translate-x-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-on-surface font-body-md">경제학 원론 복습</span>
+<span class="text-xs text-on-surface-variant font-label-caps">09:00 AM</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">미시경제 파트 수요와 공급 곡선 그래프 연습하기.</p>
+</div>
+<!-- Note Item -->
+<div class="p-3 bg-surface-container-low rounded-lg border-l-4 border-primary transition-all hover:translate-x-1">
+<div class="flex justify-between items-start mb-1">
+<span class="font-bold text-on-surface font-body-md">영어 단어 50개 암기</span>
+<span class="text-xs text-on-surface-variant font-label-caps">02:30 PM</span>
+</div>
+<p class="text-on-surface-variant font-body-sm">TOEFL 빈출 단어 위주로 Flashcard 2회독 완료하기.</p>
+</div>
+<!-- Empty Note State placeholder -->
+<div class="border-2 border-dashed border-outline-variant rounded-lg p-6 flex flex-col items-center justify-center text-center opacity-60">
+<span class="material-symbols-outlined text-outline mb-2" data-icon="add_notes">add_notes</span>
+<p class="text-on-surface-variant font-body-sm">새로운 메모를 작성하세요.</p>
+</div>
+</div>
+<div class="mt-4 pt-4 border-t border-outline-variant">
+<div class="flex gap-2">
+<input class="flex-grow bg-surface-container-low border border-outline-variant rounded-lg px-4 py-2 font-body-sm focus:outline-none focus:border-primary transition-colors font-[JetBrains Mono]" placeholder="메모를 입력하세요..." type="text">
+<button class="bg-primary text-on-primary p-2 rounded-lg active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="send">send</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-6 w-14 h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center z-40 active:scale-90 transition-all hover:shadow-xl group">
+<span class="material-symbols-outlined text-3xl transition-transform group-hover:rotate-90" data-icon="add">add</span>
+</button>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container-highest flex justify-around items-center px-4 pb-4 pt-2">
+<!-- Dashboard Item -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+</a>
+<!-- Calendar Item (Active) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="calendar.html">
+<span class="material-symbols-outlined" data-icon="calendar_month" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<span class="font-label-caps text-label-caps mt-1">Calendar</span>
+</a>
+<!-- Flashcards Item -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="flashcards.html">
+<span class="material-symbols-outlined" data-icon="style">style</span>
+<span class="font-label-caps text-label-caps mt-1">Flashcards</span>
+</a>
+<!-- Settings Item -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="members.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-caps text-label-caps mt-1">Settings</span>
+</a>
+</nav>
+<!-- Micro-interaction Script -->
+<script>
+        document.querySelectorAll('.calendar-grid div').forEach(day => {
+            day.addEventListener('click', function() {
+                // Simplified selection logic
+                if (this.classList.contains('h-16')) {
+                    document.querySelectorAll('.calendar-grid div .bg-primary').forEach(el => {
+                        if (!el.parentElement.classList.contains('group')) return;
+                        el.classList.add('opacity-0');
+                        el.parentElement.querySelector('span').classList.remove('text-on-primary', 'font-bold');
+                        el.parentElement.querySelector('span').classList.add('text-on-surface');
+                    });
+                    
+                    const bg = this.querySelector('div:first-child');
+                    if (bg) {
+                        bg.classList.remove('opacity-0');
+                        bg.classList.add('opacity-100');
+                    }
+                    const span = this.querySelector('span');
+                    if (span) {
+                        span.classList.remove('text-on-surface');
+                        span.classList.add('text-on-primary', 'font-bold');
+                    }
+                }
+            });
+        });
+    </script>
+
+
+</body></html>

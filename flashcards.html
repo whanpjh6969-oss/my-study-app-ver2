@@ -1,0 +1,301 @@
+<!DOCTYPE html><html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004ac6",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#eeefff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#996100",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#737686",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-filter {
+            background-color: #004ac6;
+            color: #ffffff;
+        }
+        .card-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface border-none shadow-none">
+<div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<button class="p-2 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">스마트 암기장</h1>
+</div>
+<div class="flex items-center gap-sm">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant active:scale-95 transition-transform">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a student for a profile avatar. The background is a soft, solid light blue, maintaining the academic mentor aesthetic. The lighting is even and high-key, suitable for a modern corporate application design. The overall feel is trustworthy, focused, and scholarly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsp39tLFy_Y-BwVftvFxA02mWZBsgA9yCqGGSpTEvBSoe8oF7M8T33y51wlo8BjlWgfTyFTiFkfg-1sofIrnm9zUOdNleHtFRI_45i_ivh7giILof1rmjNScccqbjI4G4taE1_CwXRpeTV8C_TkPvzXNcb0AXsPN4yVc7rJPfQMiUIbRRYs8rzLUhcwMJtx3PQT566eCRIDy_uI6lHFFkavG8cmQDvjDqfXra1CPskxZB4vTO98vn1wo1USG2JLfaHhWJSjq9OMFqD">
+</div>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-4 sm:px-gutter mt-base">
+<!-- Search Section -->
+<section class="mb-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-label-caps text-label-caps transition-all" placeholder="암기 카드 검색 또는 AI 사진 분석..." type="text">
+</div>
+</section>
+<!-- Category Filters -->
+<nav class="flex gap-2 overflow-x-auto pb-4 no-scrollbar">
+<button class="px-5 py-2 rounded-full whitespace-nowrap active-filter font-button text-button transition-all">전체</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">기술자격증(공부분야)</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">일본어</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">전공</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">공무원</button>
+</nav>
+<!-- Flashcard List: Asymmetric Bento-like Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Flashcard Item 1 -->
+<div class="group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean, minimalist desk with an open laptop showing lines of code. Beside it is a neat notebook and a focused light. The lighting is soft morning sunlight coming through a window, creating a serene and professional study environment. The overall aesthetic is Modern Corporate with a hint of warmth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI">
+<div class="absolute top-3 left-3">
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">IT자격증</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">정보처리기사 실기 핵심</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            2024.05.20
+                        </span>
+<span class="text-primary font-button text-button">82장</span>
+</div>
+</div>
+</div>
+<!-- Flashcard Item 2 -->
+<div class="group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A high-angle view of a stack of academic books with a classic fountain pen resting on top. The background is a clean white marble surface. The lighting is bright and airy, emphasizing clarity and focus. The palette consists of soft blues and crisp whites, perfect for an educational application." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa">
+<div class="absolute top-3 left-3">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-label-caps">영어</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">TOEIC 필수 고난도 어휘</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            2024.05.18
+                        </span>
+<span class="text-primary font-button text-button">150장</span>
+</div>
+</div>
+</div>
+<!-- Flashcard Item 3 -->
+<div class="group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Scientific laboratory glassware filled with colored liquids, arranged neatly on a clean white laboratory bench. The atmosphere is clinical and professional, with a cool blue color tint. The lighting is diffused and professional, suggesting a deep academic or research environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS">
+<div class="absolute top-3 left-3">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded-full font-label-caps">전공</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">유기화학 반응 메커니즘</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            2024.05.15
+                        </span>
+<span class="text-primary font-button text-button">45장</span>
+</div>
+</div>
+</div>
+<!-- Flashcard Item 4 -->
+<div class="group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A close-up shot of a modern computer circuit board with glowing light trails representing data flow. The style is futuristic yet corporate, using deep blues and cybernetic greens. The lighting is focused and technical, representing high-level IT and certification study topics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp">
+<div class="absolute top-3 left-3">
+<span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">IT자격증</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">AWS Solution Architect</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            2024.05.10
+                        </span>
+<span class="text-primary font-button text-button">120장</span>
+</div>
+</div>
+</div>
+<!-- Flashcard Item 5 -->
+<div class="group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300">
+<div class="relative h-48 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="An open notebook filled with hand-drawn diagrams and complex mathematical formulas. Beside it lies a high-quality mechanical pencil. The setting is a bright library with blurred bookshelves in the distance. The lighting is natural and promotes a sense of intellectual growth and study." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02">
+<div class="absolute top-3 left-3">
+<span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded-full font-label-caps">전공</span>
+</div>
+</div>
+<div class="p-4">
+<h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">미시경제학 그래프 정리</h3>
+<div class="flex items-center justify-between mt-4">
+<span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                            2024.05.08
+                        </span>
+<span class="text-primary font-button text-button">38장</span>
+</div>
+</div>
+</div>
+<!-- Flashcard Item 6 (Empty/Add New) -->
+<button class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95"><span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span><span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span><span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span></button><button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
+<span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
+</button>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container-highest flex justify-around items-center px-4 pb-4 pt-2 shadow-none border-none">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="calendar.html">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-label-caps mt-1">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="flashcards.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-label-caps text-label-caps mt-1">Flashcards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="members.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps mt-1">Settings</span>
+</a>
+</nav>
+<!-- Floating Action Button for Adding Flashcards (Contextually appropriate for this screen) -->
+<div class="fixed right-6 bottom-24 z-40">
+<a href="ai-register.html" class="block"><button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button></a>
+</div>
+<script>
+        // Simple filter button interaction
+        const filterButtons = document.querySelectorAll('nav button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('active-filter');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                btn.classList.add('active-filter');
+                btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+            });
+        });
+    </script>
+
+
+
+
+
+
+</body></html>
