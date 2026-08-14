@@ -121,8 +121,10 @@
 </head>
 <body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center">
 <!-- Toast Notification -->
-<div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-on-surface text-surface px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2" id="toast"><span class="material-symbols-outlined text-secondary-container">check_circle</span>
-<span class="font-body-sm font-semibold">암기장이 성공적으로 저장되었습니다!</span></div>
+<div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-on-surface text-surface px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2" id="toast">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+<span class="font-body-sm font-semibold">성공적으로 등록되었습니다!</span>
+</div>
 <!-- Top AppBar -->
 <header class="w-full top-0 sticky z-40 bg-surface flex items-center justify-between px-md py-base max-w-container-max mx-auto">
 <div class="flex items-center gap-sm">
@@ -143,13 +145,9 @@
 <img class="w-full h-full object-cover" data-alt="A high-resolution, top-down photograph of a handwritten study notebook on a clean white desk. The notebook contains neatly written Japanese kanji and grammar notes in blue and black ink, illuminated by soft, natural morning light coming from a nearby window. The overall aesthetic is professional, minimalist, and focused, aligning with a modern academic corporate style with subtle mint and blue color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUuK3Q5ab59RiN65Cun2_cuTAh4H0xsha-hoZ1KY4smjUvZaAWjZhqEdI8OdLUTJrXHfJjgPAhcLD3rSNf2vdvn_zHT0wUhrQXxVUYlKEc41e9vYINk8eD275g4PlXhB-j835FVZbMqj8SoRI9mbogDtCD5FY7u159jN4rHme2rBLu1nHYHqraWk_EEXyU-v_JmGl9uFqAchLQueYMkRSbIvaiyKa3U3gWcqVCOgL0V68YOBg6Hy8E3PZ-WJd_uIw21b1zOYqLGMTd"/>
 <!-- Scanning Animation Overlay -->
 <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
-<div class="scanning-line absolute w-full z-10"></div>
 <!-- AI Processing Badge -->
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse">
-<span class="material-symbols-outlined text-primary-container animate-spin" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-button text-primary font-semibold text-body-sm" style="opacity: 1;">추출된 내용을 암기 카드로 생성 중입니다...</span>
-</div>
+<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-button text-on-surface font-semibold text-body-sm">분석이 완료되었습니다!</span></div>
 </div>
 </div>
 </section>
@@ -172,21 +170,21 @@
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
 <div class="flex flex-col">
 <p class="font-body-sm text-on-surface font-semibold">텍스트 감지 완료</p>
-<p class="font-body-sm text-on-surface-variant">노트의 12개 키워드가 식별되었습니다. 카테고리를 분류하고 있습니다.</p>
+<p class="font-body-sm text-on-surface-variant">모든 텍스트 분석 및 카테고리 분류가 완료되었습니다.</p>
 <div class="w-full h-2 bg-surface-container-highest rounded-full mt-base overflow-hidden">
-<div class="h-full bg-secondary-container w-[75%] rounded-full transition-all duration-700"></div>
+<div class="h-full bg-secondary-container w-full rounded-full transition-all duration-700"></div>
 </div>
 </div>
-</div>
+</div><section class="flex flex-col gap-md bg-surface border border-outline-variant rounded-xl p-md shadow-sm"><div class="flex items-center gap-sm border-b border-outline-variant pb-base"><span class="material-symbols-outlined text-primary">analytics</span><h2 class="font-headline-md text-body-lg font-bold">AI 분석 리포트</h2></div><div class="flex flex-col gap-sm"><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">요약</p><p class="font-body-md text-on-surface">일본어 기초 문법과 한자 읽기 연습이 포함된 학습 노트입니다. 주로 'N3' 수준의 어휘가 감지되었습니다.</p></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">주요 키워드</p><div class="flex flex-wrap gap-xs mt-1"><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#동사활용</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#한자읽기</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#조사사용</span></div></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">학습 팁</p><ul class="list-disc list-inside font-body-sm text-on-surface-variant mt-1"><li>오답률이 높은 '사역형' 문법을 집중 복습하세요.</li><li>추출된 12개의 단어를 플래시카드로 변환했습니다.</li></ul></div></div></section>
 <!-- Action Buttons -->
 <div class="grid grid-cols-2 gap-sm pt-base">
 <button class="flex items-center justify-center gap-xs border border-primary text-primary font-button rounded-lg py-4 hover:bg-surface-container-low active:scale-95 transition-all">
 <span class="material-symbols-outlined">restart_alt</span>
                 다시 찍기
             </button>
-<button class="flex items-center justify-center gap-xs bg-primary-container text-on-primary-container font-button rounded-lg py-4 shadow-sm hover:opacity-90 active:scale-95 transition-all" id="confirm-analysis-btn">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">save</span>
-                분석 결과 저장 및 확인
+<button class="flex items-center justify-center gap-xs bg-primary-container text-on-primary-container font-button rounded-lg py-4 shadow-sm hover:opacity-90 active:scale-95 transition-all" id="confirm-analysis-btn" onclick="window.location.href='index.html'">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done_all</span>
+                분석 결과 확인
             </button>
 </div>
 </main>

@@ -1,13 +1,11 @@
-<!DOCTYPE html>
-
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Academic Mentor - Dashboard ver2</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -135,7 +133,7 @@
 </div>
 <div class="flex items-center gap-sm">
 <div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
-<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX"/>
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX">
 </div>
 </div>
 </div>
@@ -170,10 +168,10 @@
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface">AI 사진 분석</h3>
 <p class="text-on-surface-variant font-body-md max-w-md mx-auto">학습 자료를 촬영하여 업로드하면 AI가 자동으로 학습 계획과 태스크를 생성해 드립니다.</p>
-<a class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" href="ai-register.html">
+<button class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" onclick="document.getElementById('ai-camera-input').click()">
 <span class="material-symbols-outlined">camera</span>
         첫 사진 촬영하기
-    </a>
+    </button>
 </div>
 </div>
 <!-- Section 2: Achievement Status (Right Column / Side Span) -->
@@ -373,4 +371,6 @@
         // Initial render
         renderTasks();
     </script>
+
+
 </body></html>
