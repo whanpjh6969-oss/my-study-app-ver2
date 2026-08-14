@@ -1,119 +1,116 @@
-<!DOCTYPE html><html class="light" lang="ko"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Academic Mentor - Dashboard</title>
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "primary": "#004ac6",
-                        "surface": "#f8f9ff",
-                        "on-surface-variant": "#434655",
-                        "secondary": "#006c49",
-                        "on-primary-container": "#eeefff",
-                        "on-primary": "#ffffff",
-                        "primary-fixed": "#dbe1ff",
-                        "on-secondary-fixed": "#002113",
-                        "tertiary-fixed": "#ffddb8",
-                        "on-primary-fixed-variant": "#003ea8",
-                        "surface-tint": "#0053db",
-                        "secondary-fixed-dim": "#4edea3",
-                        "secondary-container": "#6cf8bb",
-                        "background": "#f8f9ff",
-                        "tertiary-container": "#996100",
-                        "on-error": "#ffffff",
-                        "error": "#ba1a1a",
-                        "on-tertiary-container": "#ffeedd",
-                        "surface-container-lowest": "#ffffff",
-                        "surface-dim": "#cbdbf5",
-                        "surface-bright": "#f8f9ff",
-                        "on-secondary": "#ffffff",
-                        "primary-fixed-dim": "#b4c5ff",
-                        "outline-variant": "#c3c6d7",
-                        "error-container": "#ffdad6",
-                        "secondary-fixed": "#6ffbbe",
-                        "on-secondary-container": "#00714d",
-                        "on-primary-fixed": "#00174b",
-                        "on-tertiary-fixed": "#2a1700",
-                        "primary-container": "#2563eb",
-                        "inverse-primary": "#b4c5ff",
-                        "on-tertiary": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "on-surface": "#0b1c30",
-                        "on-tertiary-fixed-variant": "#653e00",
-                        "inverse-on-surface": "#eaf1ff",
-                        "surface-container-high": "#dce9ff",
-                        "outline": "#737686",
-                        "surface-variant": "#d3e4fe",
-                        "surface-container": "#e5eeff",
-                        "on-secondary-fixed-variant": "#005236",
-                        "tertiary-fixed-dim": "#ffb95f",
-                        "inverse-surface": "#213145",
-                        "on-background": "#0b1c30",
-                        "surface-container-highest": "#d3e4fe"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.25rem",
-                        "lg": "0.5rem",
-                        "xl": "0.75rem",
-                        "full": "9999px"
-                    },
-                    "spacing": {
-                        "xs": "4px",
-                        "lg": "40px",
-                        "base": "8px",
-                        "sm": "12px",
-                        "container-max": "1200px",
-                        "gutter": "24px",
-                        "md": "24px",
-                        "xl": "64px"
-                    },
-                    "fontFamily": {
-                        "headline-lg-mobile": ["Manrope"],
-                        "body-lg": ["Inter"],
-                        "body-md": ["Inter"],
-                        "display-lg": ["Manrope"],
-                        "body-sm": ["Inter"],
-                        "button": ["Inter"],
-                        "headline-md": ["Manrope"],
-                        "label-caps": ["JetBrains Mono"],
-                        "headline-lg": ["Manrope"]
-                    },
-                    "fontSize": {
-                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
-                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                        "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
-                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
-                    }
-                }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004ac6",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#eeefff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#996100",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#737686",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
             }
-        }
+          },
+        },
+      }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .progress-ring-circle {
-            transition: stroke-dashoffset 0.35s;
-            transform: rotate(-90deg);
-            transform-origin: 50% 50%;
+        .active-filter {
+            background-color: #004ac6;
+            color: #ffffff;
         }
-        .card-level-1 {
-            background-color: white;
-            border: 1px solid #E2E8F0;
-        }
-        .card-level-1:hover {
+        .card-hover:hover {
+            transform: translateY(-2px);
             box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
         }
     </style>
@@ -122,208 +119,174 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
-<body class="bg-background font-body-md text-on-surface antialiased min-h-screen pb-32">
+</head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
 <!-- TopAppBar -->
-<header class="bg-surface w-full top-0 sticky z-40 transition-colors">
+<header class="w-full top-0 sticky z-50 bg-surface dark:bg-surface border-none shadow-none">
 <div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
-<div class="flex items-center gap-sm">
-<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low transition-colors rounded-full active:scale-95">menu</button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">Academic Mentor ver2</h1>
+<div class="flex items-center gap-base">
+<button class="p-2 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors rounded-full active:scale-95 transition-transform">
+<span class="material-symbols-outlined">menu</span>
+</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">스마트 암기장</h1>
 </div>
 <div class="flex items-center gap-sm">
-<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
-<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant active:scale-95 transition-transform">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a student for a profile avatar. The background is a soft, solid light blue, maintaining the academic mentor aesthetic. The lighting is even and high-key, suitable for a modern corporate application design. The overall feel is trustworthy, focused, and scholarly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsp39tLFy_Y-BwVftvFxA02mWZBsgA9yCqGGSpTEvBSoe8oF7M8T33y51wlo8BjlWgfTyFTiFkfg-1sofIrnm9zUOdNleHtFRI_45i_ivh7giILof1rmjNScccqbjI4G4taE1_CwXRpeTV8C_TkPvzXNcb0AXsPN4yVc7rJPfQMiUIbRRYs8rzLUhcwMJtx3PQT566eCRIDy_uI6lHFFkavG8cmQDvjDqfXra1CPskxZB4vTO98vn1wo1USG2JLfaHhWJSjq9OMFqD"/>
 </div>
 </div>
 </div>
 </header>
-<main class="max-w-container-max mx-auto px-md mt-base">
-<!-- Headline Section -->
-<section class="py-md">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">오늘의 학습 목표</h2>
-<p class="text-on-surface-variant font-body-md">환영합니다, 오늘도 목표를 향해 나아가 볼까요?</p>
+<main class="max-w-container-max mx-auto px-4 sm:px-gutter mt-base">
+<!-- Search Section -->
+<section class="mb-md">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-label-caps text-label-caps transition-all" placeholder="암기 카드 검색 또는 AI 사진 분석..." type="text"/>
+</div>
 </section>
-<!-- Bento Grid Layout -->
-<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
-<!-- Section 1: Daily Goals (Left Column / Major Span) -->
-<div class="md:col-span-8 flex flex-col gap-md">
-<div class="card-level-1 p-md rounded-xl flex flex-col gap-sm">
-<div class="flex items-center justify-between mb-base">
-<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-base">
-<span class="material-symbols-outlined text-primary">checklist</span>
-                            학습 태스크
-                        </h3><button class="flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
-    <span class="material-symbols-outlined text-[20px]">add_circle</span>
-    <span class="text-body-sm font-bold">태스크 추가</span>
-</button>
-<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-base py-1 rounded-full">3 TASKS REMAINING</span>
-</div>
-<!-- Task 1 -->
-<div class="flex items-start gap-md p-sm rounded-lg hover:bg-surface-container-low transition-all border border-transparent hover:border-outline-variant group">
-<label class="relative flex items-center cursor-pointer">
-<input class="w-6 h-6 border-2 border-primary rounded-md text-primary focus:ring-primary transition-all cursor-pointer" type="checkbox">
-</label>
-<div class="flex-1">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-[18px] text-on-surface group-hover:text-primary transition-colors">정보처리기사 이론 공부</h4>
-<span class="font-label-caps text-label-caps text-primary">45m</span><button class="material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm">delete</button>
-</div>
-<p class="text-body-sm text-on-surface-variant mt-xs">교재 Chapter 3: 소프트웨어 설계 섹션 정독 및 요약</p>
-<div class="mt-sm w-full bg-surface-variant h-1 rounded-full overflow-hidden">
-<div class="bg-primary h-full rounded-full" style="width: 0%"></div>
-</div>
-</div>
-</div>
-<!-- Task 2 -->
-<div class="flex items-start gap-md p-sm rounded-lg hover:bg-surface-container-low transition-all border border-transparent hover:border-outline-variant group">
-<label class="relative flex items-center cursor-pointer">
-<input class="w-6 h-6 border-2 border-primary rounded-md text-primary focus:ring-primary transition-all cursor-pointer" type="checkbox">
-</label>
-<div class="flex-1">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-[18px] text-on-surface group-hover:text-primary transition-colors">기출문제 풀기 20문항</h4>
-<span class="font-label-caps text-label-caps text-primary">20 Qs</span><button class="material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm">delete</button>
-</div>
-<p class="text-body-sm text-on-surface-variant mt-xs">2023년 2회 필기 기출문제 - 오답 노트 작성 필수</p>
-<div class="mt-sm w-full bg-surface-variant h-2 rounded-full overflow-hidden flex items-center gap-1">
-<div class="bg-primary h-full rounded-full" style="width: 40%"></div>
-<div class="bg-surface-variant h-full w-full rounded-full"></div>
-</div>
-</div>
-</div>
-<!-- Task 3 -->
-<div class="flex items-start gap-md p-sm rounded-lg hover:bg-surface-container-low transition-all border border-transparent hover:border-outline-variant group">
-<label class="relative flex items-center cursor-pointer">
-<input class="w-6 h-6 border-2 border-primary rounded-md text-primary focus:ring-primary transition-all cursor-pointer" type="checkbox">
-</label>
-<div class="flex-1">
-<div class="flex justify-between items-start">
-<h4 class="font-headline-md text-[18px] text-on-surface group-hover:text-primary transition-colors">영어 회화 핵심 패턴</h4>
-<span class="font-label-caps text-label-caps text-primary">15m</span><button class="material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm">delete</button>
-</div>
-<p class="text-body-sm text-on-surface-variant mt-xs">Unit 12 복습 및 쉐도잉 5회 반복</p>
-<input class="mt-sm w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="0">
-</div>
-</div>
-</div>
-<!-- Quick Action Section -->
-<div class="card-level-1 p-md rounded-xl flex flex-col items-center justify-center text-center gap-sm">
-<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-base">
-<span class="material-symbols-outlined text-[32px]">edit_note</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface">지금 바로 시작하세요</h3><button class="flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
-    <span class="material-symbols-outlined text-[20px]">add_circle</span>
-    <span class="text-body-sm font-bold">태스크 추가</span>
-</button>
-<p class="text-on-surface-variant font-body-md max-w-md mx-auto">학습 시간을 기록하면 상세한 분석 리포트를 받아볼 수 있습니다.</p>
-<button class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base">
-<span class="material-symbols-outlined">play_arrow</span>
-                        학습 기록하기
-                    </button>
-</div>
-</div>
-<!-- Section 2: Achievement Status (Right Column / Side Span) -->
-<div class="md:col-span-4 flex flex-col gap-md">
-<div class="card-level-1 p-md rounded-xl flex flex-col items-center gap-md relative overflow-hidden">
-<div class="absolute top-0 right-0 p-base">
-<span class="material-symbols-outlined text-primary-fixed opacity-50 text-[64px]">trending_up</span>
-</div>
-<h3 class="font-headline-md text-headline-md text-on-surface self-start">오늘의 달성도</h3><button class="flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
-    <span class="material-symbols-outlined text-[20px]">add_circle</span>
-    <span class="text-body-sm font-bold">태스크 추가</span>
-</button>
-<div class="relative flex items-center justify-center my-md">
-<svg class="w-48 h-48">
-<circle class="text-surface-variant" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
-<circle class="text-primary progress-ring-circle" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="351.8" stroke-linecap="round" stroke-width="12" style="stroke-dasharray: 502.655, 502.655; stroke-dashoffset: 351.858;"></circle>
-</svg>
-<div class="absolute flex flex-col items-center">
-<span class="font-display-lg text-display-lg text-primary">30%</span>
-<span class="font-label-caps text-label-caps text-on-surface-variant">COMPLETED</span><button class="material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm">delete</button>
-</div>
-</div>
-<div class="w-full grid grid-cols-2 gap-sm">
-<div class="bg-surface-container-low p-sm rounded-lg text-center">
-<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">학습 시간</p>
-<p class="font-headline-md text-[18px] text-on-surface">1h 20m</p>
-</div>
-<div class="bg-surface-container-low p-sm rounded-lg text-center">
-<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">남은 시간</p>
-<p class="font-headline-md text-[18px] text-on-surface">2h 40m</p>
-</div>
-</div>
-<div class="w-full flex items-center justify-between text-body-sm text-on-surface-variant border-t border-outline-variant pt-base">
-<span class="">현재 레벨: 12</span>
-<div class="flex gap-1">
-<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-outline-variant text-[16px]">star</span>
-</div>
-</div>
-</div>
-<!-- Course Progress Suggestion -->
-<div class="card-level-1 p-md rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary">
-<h4 class="font-headline-md text-[18px] mb-xs">추천 학습 코스</h4>
-<p class="text-body-sm opacity-90 mb-md">잊기 쉬운 '소프트웨어 보안' 파트를 다시 복습해볼까요?</p>
-<button class="w-full py-base bg-on-primary text-primary font-button text-button rounded-lg hover:bg-on-primary-container transition-colors">학습하러 가기</button>
-</div>
-</div>
+<!-- Category Filters -->
+<nav class="flex gap-2 overflow-x-auto pb-4 no-scrollbar">
+<button class="px-5 py-2 rounded-full whitespace-nowrap active-filter font-button text-button transition-all">전체</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">기술자격증(공부분야)</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">일본어</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">전공</button>
+<button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">공무원</button>
+</nav>
+<!-- Flashcard List: Asymmetric Bento-like Layout -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md" id="flashcard-grid">
+<!-- Flashcards will be injected here -->
 </div>
 </main>
 <!-- BottomNavBar -->
-<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container-highest">
-<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="/my-study-app-ver2/dashboard">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-<span class="font-label-caps text-label-caps">Dashboard</span>
+<nav class="fixed bottom-0 w-full z-50 bg-surface-container dark:bg-surface-container-highest flex justify-around items-center px-4 pb-4 pt-2 shadow-none border-none">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="/my-study-app-ver2/calendar">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="calendar.html">
 <span class="material-symbols-outlined">calendar_month</span>
-<span class="font-label-caps text-label-caps">Calendar</span>
+<span class="font-label-caps text-label-caps mt-1">Calendar</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="/my-study-app-ver2/flashcards">
-<span class="material-symbols-outlined">style</span>
-<span class="font-label-caps text-label-caps">Flashcards</span>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="flashcards.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
+<span class="font-label-caps text-label-caps mt-1">Flashcards</span>
 </a>
-<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="/my-study-app-ver2/settings">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary dark:hover:text-primary-fixed transition-colors active:scale-90 transition-all duration-200" href="members.html">
 <span class="material-symbols-outlined">settings</span>
-<span class="font-label-caps text-label-caps">Settings</span>
+<span class="font-label-caps text-label-caps mt-1">Settings</span>
 </a>
 </nav>
+<!-- Floating Action Button for Adding Flashcards (Contextually appropriate for this screen) -->
+<div class="fixed right-6 bottom-24 z-40">
+<button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4" onclick="addRandomCard()"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button>
+</div>
 <script>
-        // Micro-interaction for checkboxes to animate progress ring
-        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
-        const progressCircle = document.querySelector('.progress-ring-circle');
-        const progressText = document.querySelector('.text-display-lg');
-        const circumference = 80 * 2 * Math.PI;
-
-        progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
-
-        function updateProgress() {
-            const total = checkboxes.length;
-            const checked = Array.from(checkboxes).filter(cb => cb.checked).length;
-            const percentage = Math.round((checked / total) * 100);
-            
-            // Just for visual effect in this mock, we start at 30% baseline as if from previous tasks
-            const visualPercent = percentage === 0 ? 30 : Math.min(100, 30 + (percentage * 0.7));
-            const offset = circumference - (visualPercent / 100) * circumference;
-            
-            progressCircle.style.strokeDashoffset = offset;
-            progressText.innerText = `${Math.floor(visualPercent)}%`;
-        }
-
-        checkboxes.forEach(cb => {
-            cb.addEventListener('change', updateProgress);
+        // Simple filter button interaction
+        const filterButtons = document.querySelectorAll('nav button');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => {
+                    b.classList.remove('active-filter');
+                    b.classList.add('bg-surface-container', 'text-on-surface-variant');
+                });
+                btn.classList.add('active-filter');
+                btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+            });
         });
-
-        // Initialize progress
-        updateProgress();
     </script>
+<script>
+  const STORAGE_KEY = 'study-flashcards';
+  const DEFAULT_FLASHCARDS = [
+    { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', categoryColor: 'primary-container', onCategoryColor: 'on-primary-container', date: '2024.05.20', count: '82장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI' },
+    { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', categoryColor: 'secondary-container', onCategoryColor: 'on-secondary-container', date: '2024.05.18', count: '150장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa' },
+    { id: 3, title: '유기화학 반응 메커니즘', category: '전공', categoryColor: 'tertiary-container', onCategoryColor: 'on-tertiary-container', date: '2024.05.15', count: '45장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS' },
+    { id: 4, title: 'AWS Solution Architect', category: 'IT자격증', categoryColor: 'primary-container', onCategoryColor: 'on-primary-container', date: '2024.05.10', count: '120장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp' },
+    { id: 5, title: '미시경제학 그래프 정리', category: '전공', categoryColor: 'tertiary-container', onCategoryColor: 'on-tertiary-container', date: '2024.05.08', count: '38장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02' }
+  ];
 
+  let flashcards = JSON.parse(localStorage.getItem(STORAGE_KEY));
+  if (!flashcards || flashcards.length === 0) {
+      flashcards = [...DEFAULT_FLASHCARDS];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(flashcards));
+  }
 
+  const grid = document.getElementById('flashcard-grid');
+  const searchInput = document.querySelector('input[type="text"]');
 
+  function save() {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(flashcards));
+  }
 
-</body></html>
+  function render(filter = '') {
+    const filtered = flashcards.filter(f => f.title.toLowerCase().includes(filter.toLowerCase()));
+    grid.innerHTML = '';
+    
+    filtered.forEach(card => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300 relative';
+      cardEl.innerHTML = `
+        <div class="relative h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${card.img}">
+          <div class="absolute top-3 left-3">
+            <span class="bg-${card.categoryColor} text-${card.onCategoryColor} text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
+          </div>
+          <button onclick="deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md">
+            <span class="material-symbols-outlined text-[20px] leading-none">close</span>
+          </button>
+        </div>
+        <div class="p-4">
+          <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">${card.title}</h3>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+              <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+              ${card.date}
+            </span>
+            <span class="text-primary font-button text-button">${card.count}</span>
+          </div>
+        </div>`;
+      grid.appendChild(cardEl);
+    });
+    
+    // Add Buttons
+    const addButtonsHTML = `
+      <button onclick="addRandomCard()" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
+          <span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span>
+          <span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span>
+          <span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span>
+      </button>
+      <button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
+          <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
+          <span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
+      </button>
+    `;
+    grid.insertAdjacentHTML('beforeend', addButtonsHTML);
+  }
+
+  window.deleteCard = (id) => {
+    flashcards = flashcards.filter(f => f.id !== id);
+    save();
+    render(searchInput.value);
+  };
+
+  window.addRandomCard = () => {
+      const randomBaseCard = DEFAULT_FLASHCARDS[Math.floor(Math.random() * DEFAULT_FLASHCARDS.length)];
+      const newCard = {
+          ...randomBaseCard,
+          id: Date.now(),
+          title: `[새로운 AI 분석] ${randomBaseCard.title}`,
+          date: new Date().toLocaleDateString('ko-KR', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/\. /g, '.').replace('.', ''),
+          count: `${Math.floor(Math.random() * 50) + 10}장`
+      };
+      flashcards.unshift(newCard); // Add to the beginning
+      save();
+      render(searchInput.value);
+  }
+
+  searchInput.addEventListener('input', (e) => render(e.target.value));
+
+  // Initial render
+  render();
+</script></body></html>
 
 
