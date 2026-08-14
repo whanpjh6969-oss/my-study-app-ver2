@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="light" lang="ko"><head>
+<!DOCTYPE html><html class="light" lang="ko" style=""><head>
 <meta charset="utf-8">
 <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <title>Academic Mentor - Dashboard ver2</title>
@@ -168,7 +168,7 @@
 </div>
 <h3 class="font-headline-md text-headline-md text-on-surface">AI 사진 분석</h3>
 <p class="text-on-surface-variant font-body-md max-w-md mx-auto">학습 자료를 촬영하여 업로드하면 AI가 자동으로 학습 계획과 태스크를 생성해 드립니다.</p>
-<button class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" onclick="document.getElementById('ai-camera-input').click()">
+<input type="file" id="ai-camera-input" accept="image/*" capture="environment" class="hidden" onchange="handleImageCapture(event)"><button class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" onclick="document.getElementById('ai-camera-input').click()">
 <span class="material-symbols-outlined">camera</span>
         첫 사진 촬영하기
     </button>
