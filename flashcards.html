@@ -160,7 +160,9 @@
 <div class="absolute top-3 left-3">
 <span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">IT자격증</span>
 </div>
-</div>
+<button class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+  <span class="material-symbols-outlined text-[18px]">delete</span>
+</button></div>
 <div class="p-4">
 <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">정보처리기사 실기 핵심</h3>
 <div class="flex items-center justify-between mt-4">
@@ -179,7 +181,9 @@
 <div class="absolute top-3 left-3">
 <span class="bg-secondary-container text-on-secondary-container text-[10px] px-2 py-1 rounded-full font-label-caps">영어</span>
 </div>
-</div>
+<button class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+  <span class="material-symbols-outlined text-[18px]">delete</span>
+</button></div>
 <div class="p-4">
 <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">TOEIC 필수 고난도 어휘</h3>
 <div class="flex items-center justify-between mt-4">
@@ -198,7 +202,9 @@
 <div class="absolute top-3 left-3">
 <span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded-full font-label-caps">전공</span>
 </div>
-</div>
+<button class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+  <span class="material-symbols-outlined text-[18px]">delete</span>
+</button></div>
 <div class="p-4">
 <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">유기화학 반응 메커니즘</h3>
 <div class="flex items-center justify-between mt-4">
@@ -217,7 +223,9 @@
 <div class="absolute top-3 left-3">
 <span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">IT자격증</span>
 </div>
-</div>
+<button class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+  <span class="material-symbols-outlined text-[18px]">delete</span>
+</button></div>
 <div class="p-4">
 <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">AWS Solution Architect</h3>
 <div class="flex items-center justify-between mt-4">
@@ -236,7 +244,9 @@
 <div class="absolute top-3 left-3">
 <span class="bg-tertiary-container text-on-tertiary-container text-[10px] px-2 py-1 rounded-full font-label-caps">전공</span>
 </div>
-</div>
+<button class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+  <span class="material-symbols-outlined text-[18px]">delete</span>
+</button></div>
 <div class="p-4">
 <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">미시경제학 그래프 정리</h3>
 <div class="flex items-center justify-between mt-4">
@@ -298,4 +308,67 @@
 
 
 
-</body></html>
+
+
+<script>
+  const DEFAULT_FLASHCARDS = [
+    { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', date: '2024.05.20', count: '82장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI' },
+    { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', date: '2024.05.18', count: '150장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa' },
+    { id: 3, title: '유기화학 반응 메커니즘', category: '전공', date: '2024.05.15', count: '45장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS' },
+    { id: 4, title: 'AWS Solution Architect', category: 'IT자격증', date: '2024.05.10', count: '120장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp' },
+    { id: 5, title: '미시경제학 그래프 정리', category: '전공', date: '2024.05.08', count: '38장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02' }
+  ];
+
+  let flashcards = JSON.parse(localStorage.getItem('flashcards')) || DEFAULT_FLASHCARDS;
+  const grid = document.querySelector('.grid');
+  const searchInput = document.querySelector('input[type="text"]');
+
+  function save() {
+    localStorage.setItem('flashcards', JSON.stringify(flashcards));
+  }
+
+  function render(filter = '') {
+    const filtered = flashcards.filter(f => f.title.toLowerCase().includes(filter.toLowerCase()));
+    const addButtons = Array.from(grid.children).slice(-2);
+    grid.innerHTML = '';
+    
+    filtered.forEach(card => {
+      const cardEl = document.createElement('div');
+      cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300';
+      cardEl.innerHTML = `
+        <div class="relative h-48 overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${card.img}">
+          <div class="absolute top-3 left-3">
+            <span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
+          </div>
+          <button onclick="deleteCard(${card.id})" class="absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </div>
+        <div class="p-4">
+          <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">${card.title}</h3>
+          <div class="flex items-center justify-between mt-4">
+            <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+              <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+              ${card.date}
+            </span>
+            <span class="text-primary font-button text-button">${card.count}</span>
+          </div>
+        </div>`;
+      grid.appendChild(cardEl);
+    });
+    
+    addButtons.forEach(btn => grid.appendChild(btn));
+  }
+
+  window.deleteCard = (id) => {
+    flashcards = flashcards.filter(f => f.id !== id);
+    save();
+    render(searchInput.value);
+  };
+
+  searchInput.addEventListener('input', (e) => render(e.target.value));
+
+  // Initial render
+  render();
+</script></body></html>
