@@ -1,182 +1,104 @@
-<!DOCTYPE html>
-
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "secondary-fixed-dim": "#4edea3",
-                "surface-bright": "#f8f9ff",
-                "tertiary": "#784b00",
-                "on-primary-container": "#eeefff",
-                "surface-container-low": "#eff4ff",
-                "on-background": "#0b1c30",
-                "tertiary-container": "#996100",
-                "on-primary": "#ffffff",
-                "on-secondary-fixed-variant": "#005236",
-                "surface-container": "#e5eeff",
-                "on-surface": "#0b1c30",
-                "on-surface-variant": "#434655",
-                "surface": "#f8f9ff",
-                "tertiary-fixed": "#ffddb8",
-                "on-tertiary-container": "#ffeedd",
-                "surface-container-high": "#dce9ff",
-                "inverse-surface": "#213145",
-                "inverse-on-surface": "#eaf1ff",
-                "on-tertiary-fixed": "#2a1700",
-                "surface-container-highest": "#d3e4fe",
-                "on-primary-fixed-variant": "#003ea8",
-                "on-error": "#ffffff",
-                "background": "#f8f9ff",
-                "error": "#ba1a1a",
-                "on-tertiary-fixed-variant": "#653e00",
-                "on-primary-fixed": "#00174b",
-                "surface-variant": "#d3e4fe",
-                "outline": "#737686",
-                "surface-tint": "#0053db",
-                "primary-fixed-dim": "#b4c5ff",
-                "on-secondary-container": "#00714d",
-                "outline-variant": "#c3c6d7",
-                "secondary-fixed": "#6ffbbe",
-                "on-secondary": "#ffffff",
-                "on-secondary-fixed": "#002113",
-                "secondary": "#006c49",
-                "secondary-container": "#6cf8bb",
-                "error-container": "#ffdad6",
-                "primary-fixed": "#dbe1ff",
-                "on-tertiary": "#ffffff",
-                "tertiary-fixed-dim": "#ffb95f",
-                "inverse-primary": "#b4c5ff",
-                "on-error-container": "#93000a",
-                "surface-dim": "#cbdbf5",
-                "surface-container-lowest": "#ffffff",
-                "primary": "#004ac6",
-                "primary-container": "#2563eb"
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#004ac6",
+                    "surface": "#f8f9ff",
+                    "on-surface-variant": "#434655",
+                    "secondary": "#006c49",
+                    "on-primary-container": "#eeefff",
+                    "on-primary": "#ffffff",
+                    "primary-fixed": "#dbe1ff",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "surface-tint": "#0053db",
+                    "secondary-fixed-dim": "#4edea3",
+                    "secondary-container": "#6cf8bb",
+                    "background": "#f8f9ff",
+                    "tertiary-container": "#996100",
+                    "on-error": "#ffffff",
+                    "error": "#ba1a1a",
+                    "on-tertiary-container": "#ffeedd",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#cbdbf5",
+                    "surface-bright": "#f8f9ff",
+                    "on-secondary": "#ffffff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "outline-variant": "#c3c6d7",
+                    "error-container": "#ffdad6",
+                    "secondary-fixed": "#6ffbbe",
+                    "on-secondary-container": "#00714d",
+                    "on-primary-fixed": "#00174b",
+                    "on-tertiary-fixed": "#2a1700",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "on-tertiary": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "on-surface": "#0b1c30",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-container-high": "#dce9ff",
+                    "outline": "#737686",
+                    "surface-variant": "#d3e4fe",
+                    "surface-container": "#e5eeff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "inverse-surface": "#213145",
+                    "on-background": "#0b1c30",
+                    "surface-container-highest": "#d3e4fe"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "container-max": "1200px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "xl": "64px"
+            },
+            "fontFamily": {
+                    "headline-lg-mobile": ["Manrope"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "display-lg": ["Manrope"],
+                    "body-sm": ["Inter"],
+                    "button": ["Inter"],
+                    "headline-md": ["Manrope"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-lg": ["Manrope"]
+            },
+            "fontSize": {
+                    "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+            }
+          },
         },
-        "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-        },
-        "spacing": {
-                "container-max": "1200px",
-                "xl": "64px",
-                "gutter": "24px",
-                "xs": "4px",
-                "base": "8px",
-                "sm": "12px",
-                "lg": "40px",
-                "md": "24px"
-        },
-        "fontFamily": {
-                "label-caps": [
-                        "JetBrains Mono"
-                ],
-                "button": [
-                        "Inter"
-                ],
-                "body-lg": [
-                        "Inter"
-                ],
-                "body-md": [
-                        "Inter"
-                ],
-                "display-lg": [
-                        "Manrope"
-                ],
-                "headline-md": [
-                        "Manrope"
-                ],
-                "headline-lg": [
-                        "Manrope"
-                ],
-                "headline-lg-mobile": [
-                        "Manrope"
-                ],
-                "body-sm": [
-                        "Inter"
-                ]
-        },
-        "fontSize": {
-                "label-caps": [
-                        "12px",
-                        {
-                                "lineHeight": "1.0",
-                                "letterSpacing": "0.05em",
-                                "fontWeight": "600"
-                        }
-                ],
-                "button": [
-                        "16px",
-                        {
-                                "lineHeight": "1.0",
-                                "fontWeight": "600"
-                        }
-                ],
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "body-md": [
-                        "16px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "display-lg": [
-                        "48px",
-                        {
-                                "lineHeight": "1.2",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "1.4",
-                                "fontWeight": "600"
-                        }
-                ],
-                "headline-lg": [
-                        "32px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "headline-lg-mobile": [
-                        "24px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "body-sm": [
-                        "14px",
-                        {
-                                "lineHeight": "1.5",
-                                "fontWeight": "400"
-                        }
-                ]
-        }
-},
-    },
-  }
-</script>
+      }
+    </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -195,6 +117,7 @@
       min-height: max(884px, 100dvh);
     }
   </style>
+<script src="flashcards-store.js"></script>
 </head>
 <body class="bg-surface text-on-surface min-h-screen pb-32">
 <!-- TopAppBar -->
@@ -204,11 +127,11 @@
 <button class="p-2 text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low transition-colors rounded-full active:scale-95 transition-transform">
 <span class="material-symbols-outlined">menu</span>
 </button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">스마트 암기장 목록 - flashcards.html</h1>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">flashcards.html - 스마트 암기장 목록</h1>
 </div>
 <div class="flex items-center gap-sm">
 <div class="w-10 h-10 rounded-full overflow-hidden border border-outline-variant active:scale-95 transition-transform">
-<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a student for a profile avatar. The background is a soft, solid light blue, maintaining the academic mentor aesthetic. The lighting is even and high-key, suitable for a modern corporate application design. The overall feel is trustworthy, focused, and scholarly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsp39tLFy_Y-BwVftvFxA02mWZBsgA9yCqGGSpTEvBSoe8oF7M8T33y51wlo8BjlWgfTyFTiFkfg-1sofIrnm9zUOdNleHtFRI_45i_ivh7giILof1rmjNScccqbjI4G4taE1_CwXRpeTV8C_TkPvzXNcb0AXsPN4yVc7rJPfQMiUIbRRYs8rzLUhcwMJtx3PQT566eCRIDy_uI6lHFFkavG8cmQDvjDqfXra1CPskxZB4vTO98vn1wo1USG2JLfaHhWJSjq9OMFqD"/>
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="A clean, professional headshot of a student for a profile avatar. The background is a soft, solid light blue, maintaining the academic mentor aesthetic. The lighting is even and high-key, suitable for a modern corporate application design. The overall feel is trustworthy, focused, and scholarly." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsp39tLFy_Y-BwVftvFxA02mWZBsgA9yCqGGSpTEvBSoe8oF7M8T33y51wlo8BjlWgfTyFTiFkfg-1sofIrnm9zUOdNleHtFRI_45i_ivh7giILof1rmjNScccqbjI4G4taE1_CwXRpeTV8C_TkPvzXNcb0AXsPN4yVc7rJPfQMiUIbRRYs8rzLUhcwMJtx3PQT566eCRIDy_uI6lHFFkavG8cmQDvjDqfXra1CPskxZB4vTO98vn1wo1USG2JLfaHhWJSjq9OMFqD">
 </div>
 </div>
 </div>
@@ -218,7 +141,7 @@
 <section class="mb-md">
 <div class="relative w-full">
 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-label-caps text-label-caps transition-all" placeholder="암기 카드 검색 또는 AI 사진 분석..." type="text"/>
+<input class="w-full pl-12 pr-4 py-4 bg-surface-container-lowest border border-outline-variant rounded-xl focus:ring-2 focus:ring-primary focus:border-transparent outline-none font-label-caps text-label-caps transition-all" placeholder="암기 카드 검색 또는 AI 사진 분석..." type="text">
 </div>
 </section>
 <!-- Category Filters -->
@@ -230,8 +153,12 @@
 <button class="px-5 py-2 rounded-full whitespace-nowrap bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-button text-button transition-all">공무원</button>
 </nav>
 <!-- Flashcard List: Asymmetric Bento-like Layout -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md" id="flashcard-grid">
-<!-- Flashcards will be injected here -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-md">
+<!-- Flashcard Item 6 (Empty/Add New) -->
+<button class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95" onclick="window.location.href='ai-register.html'"><span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span><span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span><span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span></button><button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95">
+<span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
+<span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
+</button>
 </div>
 </main>
 <!-- BottomNavBar -->
@@ -255,7 +182,7 @@
 </nav>
 <!-- Floating Action Button for Adding Flashcards (Contextually appropriate for this screen) -->
 <div class="fixed right-6 bottom-24 z-40">
-<button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4" onclick="location.href='ai-register.html'"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button>
+<a class="block" href="ai-register.html"><button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button></a>
 </div>
 <script>
         // Simple filter button interaction
@@ -272,48 +199,45 @@
         });
     </script>
 <script>
-  const STORAGE_KEY = 'academic_mentor_flashcards';
-  const DEFAULT_FLASHCARDS = [
-    { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', color: 'primary-container', count: '82장', date: '2024.05.20', summary: '', keywords: [], tips: '', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI', onCategoryColor: 'on-primary-container' },
-    { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', color: 'secondary-container', count: '150장', date: '2024.05.18', summary: '', keywords: [], tips: '', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa', onCategoryColor: 'on-secondary-container' },
-    { id: 3, title: '유기화학 반응 메커니즘', category: '전공', color: 'tertiary-container', count: '45장', date: '2024.05.15', summary: '', keywords: [], tips: '', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS', onCategoryColor: 'on-tertiary-container' },
-    { id: 4, title: 'AWS Solution Architect', category: 'IT자격증', color: 'primary-container', count: '120장', date: '2024.05.10', summary: '', keywords: [], tips: '', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp', onCategoryColor: 'on-primary-container' },
-    { id: 5, title: '미시경제학 그래프 정리', category: '전공', color: 'tertiary-container', count: '38장', date: '2024.05.08', summary: '', keywords: [], tips: '', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02', onCategoryColor: 'on-tertiary-container' }
-  ];
-
-  let flashcards = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (!flashcards || flashcards.length === 0) {
-      flashcards = [...DEFAULT_FLASHCARDS];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(flashcards));
+  let flashcards = [];
+  if (typeof FlashcardStore !== 'undefined') {
+    flashcards = FlashcardStore.getAll();
+  } else {
+    // Fallback if FlashcardStore is not loaded
+    const DEFAULT_FLASHCARDS = [
+      { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', date: '2024.05.20', count: '82장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI' },
+      { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', date: '2024.05.18', count: '150장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa' },
+      { id: 3, title: '유기화학 반응 메커니즘', category: '전공', date: '2024.05.15', count: '45장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS' },
+      { id: 4, title: 'AWS Solution Architect', category: 'IT자격증', date: '2024.05.10', count: '120장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp' },
+      { id: 5, title: '미시경제학 그래프 정리', category: '전공', date: '2024.05.08', count: '38장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02' }
+    ];
+    flashcards = JSON.parse(localStorage.getItem('flashcards')) || DEFAULT_FLASHCARDS;
   }
-
-  const grid = document.getElementById('flashcard-grid');
+  const grid = document.querySelector('.grid');
   const searchInput = document.querySelector('input[type="text"]');
-
-  function save() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(flashcards));
-  }
 
   function render(filter = '') {
     const filtered = flashcards.filter(f => f.title.toLowerCase().includes(filter.toLowerCase()));
+    const addButtons = Array.from(grid.children).slice(-2);
     grid.innerHTML = '';
     
     filtered.forEach(card => {
       const cardEl = document.createElement('div');
-      cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300 relative cursor-pointer';
+      cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300 cursor-pointer';
       cardEl.onclick = (e) => {
-          if (!e.target.closest('button')) {
-              location.href = 'detail.html?id=' + card.id;
-          }
+        // Prevent navigation if the delete button was clicked
+        if (!e.target.closest('.delete-btn')) {
+            window.location.href = 'detail.html?id=' + card.id;
+        }
       };
       cardEl.innerHTML = `
         <div class="relative h-48 overflow-hidden">
           <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${card.img}">
           <div class="absolute top-3 left-3">
-            <span class="bg-${card.color || card.categoryColor} text-${card.onCategoryColor || 'on-surface'} text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
+            <span class="bg-primary-container text-on-primary-container text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
           </div>
-          <button onclick="deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md">
-            <span class="material-symbols-outlined text-[20px] leading-none">close</span>
+          <button onclick="deleteCard(${card.id})" class="delete-btn absolute top-3 right-3 bg-error/80 text-on-error p-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error active:scale-90">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
           </button>
         </div>
         <div class="p-4">
@@ -321,32 +245,25 @@
           <div class="flex items-center justify-between mt-4">
             <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
               <span class="material-symbols-outlined text-[18px]">calendar_today</span>
-              ${card.date}
+              ${card.date || new Date().toLocaleDateString()}
             </span>
-            <span class="text-primary font-button text-button">${card.count}</span>
+            <span class="text-primary font-button text-button">${card.count || '0장'}</span>
           </div>
         </div>`;
       grid.appendChild(cardEl);
     });
     
-    // Add Buttons
-    const addButtonsHTML = `
-      <button onclick="location.href='ai-register.html'" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
-          <span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span>
-          <span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span>
-          <span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span>
-      </button>
-      <button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
-          <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
-          <span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
-      </button>
-    `;
-    grid.insertAdjacentHTML('beforeend', addButtonsHTML);
+    addButtons.forEach(btn => grid.appendChild(btn));
   }
 
   window.deleteCard = (id) => {
-    flashcards = flashcards.filter(f => f.id !== id);
-    save();
+    if (typeof FlashcardStore !== 'undefined') {
+        FlashcardStore.remove(id);
+        flashcards = FlashcardStore.getAll();
+    } else {
+        flashcards = flashcards.filter(f => f.id !== id);
+        localStorage.setItem('flashcards', JSON.stringify(flashcards));
+    }
     render(searchInput.value);
   };
 
@@ -354,4 +271,6 @@
 
   // Initial render
   render();
-</script></body></html>
+</script>
+
+</body></html>

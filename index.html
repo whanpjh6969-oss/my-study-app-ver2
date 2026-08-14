@@ -1,183 +1,106 @@
-<!DOCTYPE html>
-
-<html class="light" lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academic Mentor - Dashboard ver2</title>
+<!DOCTYPE html><html class="light" lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>index.html - 대시보드 (메인)</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="flashcards-store.js"></script>
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "secondary-fixed-dim": "#4edea3",
-                "surface-bright": "#f8f9ff",
-                "tertiary": "#784b00",
-                "on-primary-container": "#eeefff",
-                "surface-container-low": "#eff4ff",
-                "on-background": "#0b1c30",
-                "tertiary-container": "#996100",
-                "on-primary": "#ffffff",
-                "on-secondary-fixed-variant": "#005236",
-                "surface-container": "#e5eeff",
-                "on-surface": "#0b1c30",
-                "on-surface-variant": "#434655",
-                "surface": "#f8f9ff",
-                "tertiary-fixed": "#ffddb8",
-                "on-tertiary-container": "#ffeedd",
-                "surface-container-high": "#dce9ff",
-                "inverse-surface": "#213145",
-                "inverse-on-surface": "#eaf1ff",
-                "on-tertiary-fixed": "#2a1700",
-                "surface-container-highest": "#d3e4fe",
-                "on-primary-fixed-variant": "#003ea8",
-                "on-error": "#ffffff",
-                "background": "#f8f9ff",
-                "error": "#ba1a1a",
-                "on-tertiary-fixed-variant": "#653e00",
-                "on-primary-fixed": "#00174b",
-                "surface-variant": "#d3e4fe",
-                "outline": "#737686",
-                "surface-tint": "#0053db",
-                "primary-fixed-dim": "#b4c5ff",
-                "on-secondary-container": "#00714d",
-                "outline-variant": "#c3c6d7",
-                "secondary-fixed": "#6ffbbe",
-                "on-secondary": "#ffffff",
-                "on-secondary-fixed": "#002113",
-                "secondary": "#006c49",
-                "secondary-container": "#6cf8bb",
-                "error-container": "#ffdad6",
-                "primary-fixed": "#dbe1ff",
-                "on-tertiary": "#ffffff",
-                "tertiary-fixed-dim": "#ffb95f",
-                "inverse-primary": "#b4c5ff",
-                "on-error-container": "#93000a",
-                "surface-dim": "#cbdbf5",
-                "surface-container-lowest": "#ffffff",
-                "primary": "#004ac6",
-                "primary-container": "#2563eb"
-        },
-        "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
-                "full": "9999px"
-        },
-        "spacing": {
-                "container-max": "1200px",
-                "xl": "64px",
-                "gutter": "24px",
-                "xs": "4px",
-                "base": "8px",
-                "sm": "12px",
-                "lg": "40px",
-                "md": "24px"
-        },
-        "fontFamily": {
-                "label-caps": [
-                        "JetBrains Mono"
-                ],
-                "button": [
-                        "Inter"
-                ],
-                "body-lg": [
-                        "Inter"
-                ],
-                "body-md": [
-                        "Inter"
-                ],
-                "display-lg": [
-                        "Manrope"
-                ],
-                "headline-md": [
-                        "Manrope"
-                ],
-                "headline-lg": [
-                        "Manrope"
-                ],
-                "headline-lg-mobile": [
-                        "Manrope"
-                ],
-                "body-sm": [
-                        "Inter"
-                ]
-        },
-        "fontSize": {
-                "label-caps": [
-                        "12px",
-                        {
-                                "lineHeight": "1.0",
-                                "letterSpacing": "0.05em",
-                                "fontWeight": "600"
-                        }
-                ],
-                "button": [
-                        "16px",
-                        {
-                                "lineHeight": "1.0",
-                                "fontWeight": "600"
-                        }
-                ],
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "body-md": [
-                        "16px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "display-lg": [
-                        "48px",
-                        {
-                                "lineHeight": "1.2",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "1.4",
-                                "fontWeight": "600"
-                        }
-                ],
-                "headline-lg": [
-                        "32px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "headline-lg-mobile": [
-                        "24px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "body-sm": [
-                        "14px",
-                        {
-                                "lineHeight": "1.5",
-                                "fontWeight": "400"
-                        }
-                ]
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#004ac6",
+                        "surface": "#f8f9ff",
+                        "on-surface-variant": "#434655",
+                        "secondary": "#006c49",
+                        "on-primary-container": "#eeefff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-tint": "#0053db",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#996100",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffeedd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#2563eb",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#737686",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "button": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                }
+            }
         }
-},
-    },
-  }
-</script>
+    </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -211,7 +134,7 @@
 </div>
 <div class="flex items-center gap-sm">
 <div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
-<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX"/>
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX">
 </div>
 </div>
 </div>
@@ -219,7 +142,7 @@
 <main class="max-w-container-max mx-auto px-md mt-base">
 <!-- Headline Section -->
 <section class="py-md">
-<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">대시보드 (메인) - index.html</h2>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">오늘의 학습 목표</h2>
 <p class="text-on-surface-variant font-body-md">환영합니다, 오늘도 목표를 향해 나아가 볼까요?</p>
 </section>
 <!-- Bento Grid Layout -->
@@ -231,7 +154,7 @@
 <h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-base">
 <span class="material-symbols-outlined text-primary">checklist</span>
                             학습 태스크
-                        </h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base" onclick="promptAddTask()">
+                        </h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
 <span class="material-symbols-outlined text-[20px]">add_circle</span>
 <span class="text-body-sm font-bold">태스크 추가</span>
 </button>
@@ -246,14 +169,14 @@
 <div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center text-primary mb-base">
 <span class="material-symbols-outlined text-[32px]">edit_note</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface">지금 바로 시작하세요</h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base" onclick="promptAddTask()">
+<h3 class="font-headline-md text-headline-md text-on-surface">지금 바로 시작하세요</h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
 <span class="material-symbols-outlined text-[20px]">add_circle</span>
 <span class="text-body-sm font-bold">태스크 추가</span>
 </button>
 <p class="text-on-surface-variant font-body-md max-w-md mx-auto">학습 시간을 기록하면 상세한 분석 리포트를 받아볼 수 있습니다.</p>
 <button class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" onclick="window.location.href='ai-register.html'">
-<span class="material-symbols-outlined">photo_camera</span>
-                        첫 사진 촬영하기
+<span class="material-symbols-outlined">play_arrow</span>
+                        학습 기록하기
                     </button>
 </div>
 </div>
@@ -263,7 +186,7 @@
 <div class="absolute top-0 right-0 p-base">
 <span class="material-symbols-outlined text-primary-fixed opacity-50 text-[64px]">trending_up</span>
 </div>
-<h3 class="font-headline-md text-headline-md text-on-surface self-start">오늘의 달성도</h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base" onclick="promptAddTask()">
+<h3 class="font-headline-md text-headline-md text-on-surface self-start">오늘의 달성도</h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base">
 <span class="material-symbols-outlined text-[20px]">add_circle</span>
 <span class="text-body-sm font-bold">태스크 추가</span>
 </button>
@@ -328,23 +251,22 @@
 <script>
         // Data and LocalStorage Logic
         const defaultTasks = [
-            { id: 1, title: '정보처리기사 이론 공부', category: '45m', date: new Date().toISOString().split('T')[0], img: '', notes: '교재 Chapter 3: 소프트웨어 설계 섹션 정독 및 요약', aiKeywords: [], aiTips: '', completed: false, progressType: 'bar', progress: 0 },
-            { id: 2, title: '기출문제 풀기 20문항', category: '20 Qs', date: new Date().toISOString().split('T')[0], img: '', notes: '2023년 2회 필기 기출문제 - 오답 노트 작성 필수', aiKeywords: [], aiTips: '', completed: false, progressType: 'bar', progress: 40 },
-            { id: 3, title: '영어 회화 핵심 패턴', category: '15m', date: new Date().toISOString().split('T')[0], img: '', notes: 'Unit 12 복습 및 쉐도잉 5회 반복', aiKeywords: [], aiTips: '', completed: false, progressType: 'slider', progress: 0 }
+            { id: 1, title: '정보처리기사 이론 공부', subtitle: '교재 Chapter 3: 소프트웨어 설계 섹션 정독 및 요약', duration: '45m', completed: false, progressType: 'bar', progress: 0 },
+            { id: 2, title: '기출문제 풀기 20문항', subtitle: '2023년 2회 필기 기출문제 - 오답 노트 작성 필수', duration: '20 Qs', completed: false, progressType: 'bar', progress: 40 },
+            { id: 3, title: '영어 회화 핵심 패턴', subtitle: 'Unit 12 복습 및 쉐도잉 5회 반복', duration: '15m', completed: false, progressType: 'slider', progress: 0 }
         ];
 
         function loadTasks() {
-            const stored = localStorage.getItem('academic_mentor_flashcards');
+            const stored = localStorage.getItem('studyTasks');
             if (stored) {
                 return JSON.parse(stored);
-            } else {
-                localStorage.setItem('academic_mentor_flashcards', JSON.stringify(defaultTasks));
-                return defaultTasks;
             }
+            localStorage.setItem('studyTasks', JSON.stringify(defaultTasks));
+            return defaultTasks;
         }
 
         function saveTasks(tasks) {
-            localStorage.setItem('academic_mentor_flashcards', JSON.stringify(tasks));
+            localStorage.setItem('studyTasks', JSON.stringify(tasks));
             renderTasks();
         }
 
@@ -360,23 +282,14 @@
             saveTasks(tasks);
         }
 
-        function promptAddTask() {
-            const title = prompt('새로운 태스크 이름을 입력하세요:');
-            if (title) addTask(title);
-        }
-
         function addTask(title) {
             if (!title) return;
             const tasks = loadTasks();
-            tasks.unshift({
+            tasks.push({
                 id: Date.now(),
                 title: title,
-                category: '30m',
-                date: new Date().toISOString().split('T')[0],
-                img: '',
-                notes: '새로운 학습 목표',
-                aiKeywords: [],
-                aiTips: '',
+                subtitle: '새로운 학습 목표',
+                duration: '30m',
                 completed: false,
                 progressType: 'bar',
                 progress: 0
@@ -400,10 +313,10 @@
                     <div class="flex-1">
                         <div class="flex justify-between items-start">
                             <h4 class="font-headline-md text-[18px] text-on-surface group-hover:text-primary transition-colors ${task.completed ? 'line-through text-on-surface-variant' : ''}">${task.title}</h4>
-                            <span class="font-label-caps text-label-caps text-primary">${task.category}</span>
-                            <button onclick="deleteTask(${task.id})" class="delete-btn material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm cursor-pointer z-10 relative">delete</button>
+                            <span class="font-label-caps text-label-caps text-primary">${task.duration}</span>
+                            <button class="delete-btn material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm">delete</button>
                         </div>
-                        <p class="text-body-sm text-on-surface-variant mt-xs">${task.notes}</p>
+                        <p class="text-body-sm text-on-surface-variant mt-xs">${task.subtitle}</p>
                         ${task.progressType === 'bar' ? `
                         <div class="mt-sm w-full bg-surface-variant h-2 rounded-full overflow-hidden flex items-center gap-1">
                             <div class="bg-primary h-full rounded-full" style="width: ${task.progress}%"></div>
@@ -424,6 +337,13 @@
                 });
             });
 
+            container.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const id = parseInt(e.target.closest('[data-id]').dataset.id);
+                    deleteTask(id);
+                });
+            });
+
             updateProgressVisuals(tasks);
         }
 
@@ -441,15 +361,25 @@
             const checked = tasks.filter(t => t.completed).length;
             const percentage = total === 0 ? 0 : Math.round((checked / total) * 100);
             
-            const offset = circumference - (percentage / 100) * circumference;
+            // Baseline 30% visual effect as in original mock
+            const visualPercent = percentage === 0 ? 30 : Math.min(100, 30 + (percentage * 0.7));
+            const offset = circumference - (visualPercent / 100) * circumference;
             
             progressCircle.style.strokeDashoffset = offset;
-            progressText.innerText = `${percentage}%`;
+            progressText.innerText = `${Math.floor(visualPercent)}%`;
 
             if (remainingBadge) {
                 remainingBadge.textContent = `${total - checked} TASKS REMAINING`;
             }
         }
+
+        // Add Task Event Listeners
+        document.querySelectorAll('.add-task-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const title = prompt('새로운 태스크 이름을 입력하세요:');
+                if (title) addTask(title);
+            });
+        });
 
         /* 
          * AI Assist API Integration Placeholder
@@ -471,4 +401,6 @@
         // Initial render
         renderTasks();
     </script>
+
+
 </body></html>

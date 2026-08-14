@@ -5,6 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<script src="flashcards-store.js"></script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -28,175 +29,89 @@
         }
     </style>
 <script id="tailwind-config">
-  tailwind.config = {
-    darkMode: "class",
-    theme: {
-      extend: {
-        "colors": {
-                "secondary-fixed-dim": "#4edea3",
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                "outline": "#737686",
+                "on-error": "#ffffff",
+                "tertiary-container": "#996100",
+                "surface-container-lowest": "#ffffff",
+                "surface-container-high": "#dce9ff",
                 "surface-bright": "#f8f9ff",
-                "tertiary": "#784b00",
+                "on-surface": "#0b1c30",
+                "background": "#f8f9ff",
+                "outline-variant": "#c3c6d7",
+                "on-primary-fixed-variant": "#003ea8",
+                "on-secondary-fixed-variant": "#005236",
+                "on-error-container": "#93000a",
+                "on-primary-fixed": "#00174b",
+                "on-tertiary-fixed-variant": "#653e00",
+                "on-secondary-container": "#00714d",
                 "on-primary-container": "#eeefff",
+                "inverse-surface": "#213145",
+                "primary-fixed": "#dbe1ff",
+                "on-secondary": "#ffffff",
+                "primary-container": "#2563eb",
+                "on-tertiary-fixed": "#2a1700",
+                "on-tertiary": "#ffffff",
+                "surface-container-highest": "#d3e4fe",
+                "inverse-on-surface": "#eaf1ff",
+                "primary": "#004ac6",
+                "on-secondary-fixed": "#002113",
+                "on-tertiary-container": "#ffeedd",
+                "on-surface-variant": "#434655",
+                "surface-tint": "#0053db",
+                "error-container": "#ffdad6",
+                "surface": "#f8f9ff",
                 "surface-container-low": "#eff4ff",
                 "on-background": "#0b1c30",
-                "tertiary-container": "#996100",
-                "on-primary": "#ffffff",
-                "on-secondary-fixed-variant": "#005236",
-                "surface-container": "#e5eeff",
-                "on-surface": "#0b1c30",
-                "on-surface-variant": "#434655",
-                "surface": "#f8f9ff",
-                "tertiary-fixed": "#ffddb8",
-                "on-tertiary-container": "#ffeedd",
-                "surface-container-high": "#dce9ff",
-                "inverse-surface": "#213145",
-                "inverse-on-surface": "#eaf1ff",
-                "on-tertiary-fixed": "#2a1700",
-                "surface-container-highest": "#d3e4fe",
-                "on-primary-fixed-variant": "#003ea8",
-                "on-error": "#ffffff",
-                "background": "#f8f9ff",
-                "error": "#ba1a1a",
-                "on-tertiary-fixed-variant": "#653e00",
-                "on-primary-fixed": "#00174b",
                 "surface-variant": "#d3e4fe",
-                "outline": "#737686",
-                "surface-tint": "#0053db",
-                "primary-fixed-dim": "#b4c5ff",
-                "on-secondary-container": "#00714d",
-                "outline-variant": "#c3c6d7",
-                "secondary-fixed": "#6ffbbe",
-                "on-secondary": "#ffffff",
-                "on-secondary-fixed": "#002113",
-                "secondary": "#006c49",
+                "on-primary": "#ffffff",
                 "secondary-container": "#6cf8bb",
-                "error-container": "#ffdad6",
-                "primary-fixed": "#dbe1ff",
-                "on-tertiary": "#ffffff",
+                "error": "#ba1a1a",
+                "secondary": "#006c49",
                 "tertiary-fixed-dim": "#ffb95f",
-                "inverse-primary": "#b4c5ff",
-                "on-error-container": "#93000a",
                 "surface-dim": "#cbdbf5",
-                "surface-container-lowest": "#ffffff",
-                "primary": "#004ac6",
-                "primary-container": "#2563eb"
-        },
-        "borderRadius": {
+                "primary-fixed-dim": "#b4c5ff",
+                "surface-container": "#e5eeff",
+                "tertiary-fixed": "#ffddb8",
+                "tertiary": "#784b00",
+                "secondary-fixed-dim": "#4edea3",
+                "secondary-fixed": "#6ffbbe",
+                "inverse-primary": "#b4c5ff"
+              },
+              "borderRadius": {
                 "DEFAULT": "0.25rem",
-                "lg": "0.5rem",
-                "xl": "0.75rem",
+                "lg": "0.8rem",
+                "xl": "1.2rem",
                 "full": "9999px"
-        },
-        "spacing": {
-                "container-max": "1200px",
+              },
+              "spacing": {
                 "xl": "64px",
-                "gutter": "24px",
-                "xs": "4px",
-                "base": "8px",
                 "sm": "12px",
+                "base": "8px",
+                "xs": "4px",
                 "lg": "40px",
+                "gutter": "24px",
+                "container-max": "1200px",
                 "md": "24px"
-        },
-        "fontFamily": {
-                "label-caps": [
-                        "JetBrains Mono"
-                ],
-                "button": [
-                        "Inter"
-                ],
-                "body-lg": [
-                        "Inter"
-                ],
-                "body-md": [
-                        "Inter"
-                ],
-                "display-lg": [
-                        "Manrope"
-                ],
-                "headline-md": [
-                        "Manrope"
-                ],
-                "headline-lg": [
-                        "Manrope"
-                ],
-                "headline-lg-mobile": [
-                        "Manrope"
-                ],
-                "body-sm": [
-                        "Inter"
-                ]
-        },
-        "fontSize": {
-                "label-caps": [
-                        "12px",
-                        {
-                                "lineHeight": "1.0",
-                                "letterSpacing": "0.05em",
-                                "fontWeight": "600"
-                        }
-                ],
-                "button": [
-                        "16px",
-                        {
-                                "lineHeight": "1.0",
-                                "fontWeight": "600"
-                        }
-                ],
-                "body-lg": [
-                        "18px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "body-md": [
-                        "16px",
-                        {
-                                "lineHeight": "1.6",
-                                "fontWeight": "400"
-                        }
-                ],
-                "display-lg": [
-                        "48px",
-                        {
-                                "lineHeight": "1.2",
-                                "letterSpacing": "-0.02em",
-                                "fontWeight": "800"
-                        }
-                ],
-                "headline-md": [
-                        "24px",
-                        {
-                                "lineHeight": "1.4",
-                                "fontWeight": "600"
-                        }
-                ],
-                "headline-lg": [
-                        "32px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "headline-lg-mobile": [
-                        "24px",
-                        {
-                                "lineHeight": "1.3",
-                                "fontWeight": "700"
-                        }
-                ],
-                "body-sm": [
-                        "14px",
-                        {
-                                "lineHeight": "1.5",
-                                "fontWeight": "400"
-                        }
-                ]
+              },
+              "fontFamily": {
+                "body-md": ["Inter"],
+                "body-lg": ["Inter"],
+                "display-lg": ["Manrope"],
+                "headline-md": ["Manrope"],
+                "button": ["Inter"],
+                "label-caps": ["JetBrains Mono"],
+                "headline-lg": ["Manrope"],
+                "body-sm": ["Inter"]
+              }
+            }
+          }
         }
-},
-    },
-  }
-</script>
+    </script>
 <style>
     body {
       min-height: max(884px, 100dvh);
@@ -215,7 +130,7 @@
 <button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors active:scale-95" onclick="window.location.href='index.html'">
 <span class="material-symbols-outlined text-primary">arrow_back</span>
 </button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">AI 사진 분석 및 등록 - ai-register.html</h1>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">ai-register.html - AI 사진 분석 및 등록</h1>
 </div>
 <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
 <img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UYIHIwhMBg99AYWaUNuw00bCY3ZlCuWkHNFs1H_q0Ox-anvZYNf_hKq4tSQ_36ZoO3VsdwfCw3eKe0O8WWaxn_VkXarbJA9Dn4-uGr0DC0JUjIt8mIfi1kfso9nRA24x1CJupCMJwbDSRIRBEJMZWAjng_7QUifKyg7AGemUbhHeqgDmsx_FP2DwHh15oU7-XBeWXDnL5Or9aiDWhpUyC1U-HI-wCQkINSva_ez_ws-wp3OoqWkgczjY00UjHXSRiy5PzLbLj44r">
@@ -226,12 +141,16 @@
 <section class="relative group">
 <div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-surface-container border border-outline-variant shadow-sm relative">
 <!-- Mock Captured Image -->
-<img class="w-full h-full object-cover" data-alt="A high-resolution, top-down photograph of a handwritten study notebook on a clean white desk. The notebook contains neatly written Japanese kanji and grammar notes in blue and black ink, illuminated by soft, natural morning light coming from a nearby window. The overall aesthetic is professional, minimalist, and focused, aligning with a modern academic corporate style with subtle mint and blue color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUuK3Q5ab59RiN65Cun2_cuTAh4H0xsha-hoZ1KY4smjUvZaAWjZhqEdI8OdLUTJrXHfJjgPAhcLD3rSNf2vdvn_zHT0wUhrQXxVUYlKEc41e9vYINk8eD275g4PlXhB-j835FVZbMqj8SoRI9mbogDtCD5FY7u159jN4rHme2rBLu1nHYHqraWk_EEXyU-v_JmGl9uFqAchLQueYMkRSbIvaiyKa3U3gWcqVCOgL0V68YOBg6Hy8E3PZ-WJd_uIw21b1zOYqLGMTd">
+<img class="w-full h-full object-cover" data-alt="A high-resolution, top-down photograph of a handwritten study notebook on a clean white desk. The notebook contains neatly written Japanese kanji and grammar notes in blue and black ink, illuminated by soft, natural morning light coming from a nearby window. The overall aesthetic is professional, minimalist, and focused, aligning with a modern academic corporate style with subtle mint and blue color accents." id="scanned-image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUuK3Q5ab59RiN65Cun2_cuTAh4H0xsha-hoZ1KY4smjUvZaAWjZhqEdI8OdLUTJrXHfJjgPAhcLD3rSNf2vdvn_zHT0wUhrQXxVUYlKEc41e9vYINk8eD275g4PlXhB-j835FVZbMqj8SoRI9mbogDtCD5FY7u159jN4rHme2rBLu1nHYHqraWk_EEXyU-v_JmGl9uFqAchLQueYMkRSbIvaiyKa3U3gWcqVCOgL0V68YOBg6Hy8E3PZ-WJd_uIw21b1zOYqLGMTd">
 <!-- Scanning Animation Overlay -->
 <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
+<div class="scanning-line absolute w-full z-10"></div>
 <!-- AI Processing Badge -->
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-button text-on-surface font-semibold text-body-sm" style="opacity: 1;">필기 텍스트를 디지털로 변환하고 있습니다...</span></div>
+<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse">
+<span class="material-symbols-outlined text-primary-container animate-spin" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
+<span class="font-button text-primary font-semibold text-body-sm" style="opacity: 1;">Gemini AI가 내용을 분석 중입니다...</span>
+</div>
 </div>
 </div>
 </section>
@@ -253,13 +172,14 @@
 <div class="bg-surface-container-low border border-outline-variant rounded-lg p-md flex items-start gap-sm">
 <span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
 <div class="flex flex-col">
-<p class="font-body-sm text-on-surface font-semibold">텍스트 감지 완료</p>
-<p class="font-body-sm text-on-surface-variant">모든 텍스트 분석 및 카테고리 분류가 완료되었습니다.</p>
+<p class="font-body-sm text-on-surface font-semibold" id="ai-summary">텍스트 감지 완료</p>
+<p class="font-body-sm text-on-surface-variant" id="ai-tips">노트의 12개 키워드가 식별되었습니다. 카테고리를 분류하고 있습니다.</p>
+<div class="hidden" id="ai-keywords">문법, 단어, 예문, 한자</div>
 <div class="w-full h-2 bg-surface-container-highest rounded-full mt-base overflow-hidden">
-<div class="h-full bg-secondary-container w-full rounded-full transition-all duration-700"></div>
+<div class="h-full bg-secondary-container w-[75%] rounded-full transition-all duration-700"></div>
 </div>
 </div>
-</div><section class="flex flex-col gap-md bg-surface border border-outline-variant rounded-xl p-md shadow-sm"><div class="flex items-center gap-sm border-b border-outline-variant pb-base"><span class="material-symbols-outlined text-primary">analytics</span><h2 class="font-headline-md text-body-lg font-bold">AI 분석 리포트</h2></div><div class="flex flex-col gap-sm"><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">요약</p><p class="font-body-md text-on-surface" id="ai-summary">일본어 기초 문법과 한자 읽기 연습이 포함된 학습 노트입니다. 주로 'N3' 수준의 어휘가 감지되었습니다.</p></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">주요 키워드</p><div class="flex flex-wrap gap-xs mt-1" id="ai-keywords"><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#동사활용</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#한자읽기</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#조사사용</span></div></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">학습 팁</p><ul class="list-disc list-inside font-body-sm text-on-surface-variant mt-1" id="ai-tips"><li class="">오답률이 높은 '사역형' 문법을 집중 복습하세요.</li><li class="">추출된 12개의 단어를 플래시카드로 변환했습니다.</li></ul></div></div></section>
+</div>
 <!-- Action Buttons -->
 <div class="grid grid-cols-2 gap-sm pt-base">
 <button class="flex items-center justify-center gap-xs border border-primary text-primary font-button rounded-lg py-4 hover:bg-surface-container-low active:scale-95 transition-all">
@@ -323,113 +243,46 @@
 
         // Analysis Registration Logic
         document.getElementById('confirm-analysis-btn').addEventListener('click', function() {
-            // 1. Get real data from the DOM
             const selectedCategory = document.getElementById('category-select').value;
-            const summaryText = document.getElementById('ai-summary').innerText;
-            const keywordsElements = document.querySelectorAll('#ai-keywords span');
-            const keywordsList = Array.from(keywordsElements).map(el => el.innerText.replace('#', '').trim());
-            const tipsElements = document.querySelectorAll('#ai-tips li');
-            const tipsList = Array.from(tipsElements).map(el => el.innerText.trim());
-
-            const newFlashcardSet = {
-                id: Date.now(),
-                category: selectedCategory,
-                title: "새로운 암기장",
-                summary: summaryText,
-                keywords: keywordsList,
-                tips: tipsList,
-                cardCount: 12,
-                createdAt: new Date().toISOString()
-            };
+            const categoryText = document.getElementById('category-select').options[document.getElementById('category-select').selectedIndex].text;
             
-            let storedSets = JSON.parse(localStorage.getItem('academic_mentor_flashcards')) || [];
-            storedSets.push(newFlashcardSet);
-            localStorage.setItem('academic_mentor_flashcards', JSON.stringify(storedSets));
+            const aiSummary = document.getElementById('ai-summary').textContent;
+            const aiTips = document.getElementById('ai-tips').textContent;
+            const aiKeywordsText = document.getElementById('ai-keywords').textContent;
+            const aiKeywords = aiKeywordsText.split(',').map(k => k.trim());
+            const imgSrc = document.getElementById('scanned-image').src;
 
-            // 2. Show Success Toast
+            const newCard = {
+                title: "새로운 암기장",
+                category: categoryText,
+                date: new Date().toISOString().split('T')[0],
+                img: imgSrc,
+                field: selectedCategory,
+                difficulty: "Normal",
+                notes: aiSummary,
+                aiKeywords: aiKeywords,
+                aiTips: aiTips
+            };
+
+            let newId = null;
+            if (typeof FlashcardStore !== 'undefined') {
+                newId = FlashcardStore.add(newCard);
+            } else {
+                console.error("FlashcardStore is not defined. Make sure flashcards-store.js is loaded.");
+                // Fallback for demonstration if store is not available
+                newId = Date.now();
+            }
+
+            // Show Success Toast
             const toast = document.getElementById('toast');
             toast.classList.remove('opacity-0');
             
-            // 3. Redirect after a short delay
+            // Redirect after a short delay
             setTimeout(() => {
-                window.location.href = 'flashcards.html';
-            }, 1500);
+                window.location.href = `detail.html?id=${newId}`;
+            }, 1000);
         });
     </script>
-<script>
-        // Logic to handle image transfer and analysis simulation
-        (function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const isFromDashboard = urlParams.get('source') === 'dashboard' || sessionStorage.getItem('pending_analysis') === 'true';
 
-            if (isFromDashboard) {
-                // 1. Initial State: Hide the report and show processing state
-                const analysisReport = document.querySelector('section.flex.flex-col.gap-md.bg-surface');
-                const processingBadge = document.querySelector('.animate-pulse');
-                const processingText = processingBadge.querySelector('span:last-child');
-                const processingIcon = processingBadge.querySelector('.material-symbols-outlined');
-                const progressBar = document.querySelector('.bg-secondary-container');
-                const progressHint = document.querySelector('.bg-surface-container-low');
-
-                // Reset UI to 'Processing' state if it was hardcoded as 'Complete'
-                analysisReport.style.display = 'none';
-                processingIcon.textContent = 'sync';
-                processingIcon.style.fontVariationSettings = "'FILL' 0";
-                processingText.textContent = '필기 텍스트를 디지털로 변환하고 있습니다...';
-                progressBar.style.width = '30%';
-                
-                // 2. Simulate Analysis Timeline
-                setTimeout(() => {
-                    processingText.textContent = '핵심 키워드를 추출하는 중입니다...';
-                    progressBar.style.width = '65%';
-                }, 2000);
-
-                setTimeout(() => {
-                    processingText.textContent = '추출된 내용을 암기 카드로 생성 중입니다...';
-                    progressBar.style.width = '90%';
-                }, 4000);
-
-                setTimeout(() => {
-                    // Simulate Dynamic Data Generation
-                    const categories = ["일본어", "영어", "IT/프로그래밍", "수학"];
-                    const randomCategory = categories[Math.floor(Math.random() * categories.length)];
-                    document.getElementById('ai-summary').innerText = `최신 스캔된 ${randomCategory} 관련 주요 개념 및 핵심 문법이 포함된 학습 노트입니다. 분석된 데이터를 기반으로 플래시카드가 준비되었습니다.`;
-                    
-                    const keywordsDiv = document.getElementById('ai-keywords');
-                    keywordsDiv.innerHTML = `
-                        <span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#${randomCategory}기초</span>
-                        <span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#핵심개념</span>
-                        <span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#실전연습</span>
-                    `;
-                    
-                    const tipsUl = document.getElementById('ai-tips');
-                    tipsUl.innerHTML = `
-                        <li class="">가장 많이 틀리는 개념을 위주로 복습하세요.</li>
-                        <li class="">추출된 핵심 단어 및 문장을 플래시카드로 변환했습니다.</li>
-                    `;
-
-                    // 3. Completion State
-                    processingIcon.textContent = 'check_circle';
-                    processingIcon.style.fontVariationSettings = "'FILL' 1";
-                    processingText.textContent = '분석이 완료되었습니다!';
-                    progressBar.style.width = '100%';
-                    
-                    // Show the report with a fade-in effect
-                    analysisReport.style.display = 'flex';
-                    analysisReport.classList.add('animate-in', 'fade-in', 'duration-700');
-                    
-                    // Clear session storage flag
-                    sessionStorage.removeItem('pending_analysis');
-                    
-                    // Show success toast briefly
-                    const toast = document.getElementById('toast');
-                    const toastText = toast.querySelector('.font-body-sm');
-                    toastText.textContent = 'AI 분석이 완료되었습니다.';
-                    toast.classList.remove('opacity-0');
-                    setTimeout(() => toast.classList.add('opacity-0'), 3000);
-                }, 6000);
-            }
-        })();
-    </script>
 
 </body></html>
