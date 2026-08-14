@@ -1,271 +1,379 @@
-<!DOCTYPE html>
-
-<html lang="ko"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<!DOCTYPE html><html lang="ko"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .scanning-line {
-            height: 2px;
-            background: linear-gradient(90deg, transparent, #2563eb, transparent);
-            box-shadow: 0 0 15px #2563eb;
-            animation: scan 2.5s ease-in-out infinite;
-        }
-        @keyframes scan {
-            0% { top: 0%; opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { top: 100%; opacity: 0; }
         }
         .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
             border: 1px solid rgba(226, 232, 240, 0.8);
         }
+        .focus-ring:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #004ac6;
+        }
     </style>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                "outline": "#737686",
-                "on-error": "#ffffff",
-                "tertiary-container": "#996100",
-                "surface-container-lowest": "#ffffff",
-                "surface-container-high": "#dce9ff",
-                "surface-bright": "#f8f9ff",
-                "on-surface": "#0b1c30",
-                "background": "#f8f9ff",
-                "outline-variant": "#c3c6d7",
-                "on-primary-fixed-variant": "#003ea8",
-                "on-secondary-fixed-variant": "#005236",
-                "on-error-container": "#93000a",
-                "on-primary-fixed": "#00174b",
-                "on-tertiary-fixed-variant": "#653e00",
-                "on-secondary-container": "#00714d",
-                "on-primary-container": "#eeefff",
-                "inverse-surface": "#213145",
-                "primary-fixed": "#dbe1ff",
-                "on-secondary": "#ffffff",
-                "primary-container": "#2563eb",
-                "on-tertiary-fixed": "#2a1700",
-                "on-tertiary": "#ffffff",
-                "surface-container-highest": "#d3e4fe",
-                "inverse-on-surface": "#eaf1ff",
-                "primary": "#004ac6",
-                "on-secondary-fixed": "#002113",
-                "on-tertiary-container": "#ffeedd",
-                "on-surface-variant": "#434655",
-                "surface-tint": "#0053db",
-                "error-container": "#ffdad6",
-                "surface": "#f8f9ff",
-                "surface-container-low": "#eff4ff",
-                "on-background": "#0b1c30",
-                "surface-variant": "#d3e4fe",
-                "on-primary": "#ffffff",
-                "secondary-container": "#6cf8bb",
-                "error": "#ba1a1a",
-                "secondary": "#006c49",
-                "tertiary-fixed-dim": "#ffb95f",
-                "surface-dim": "#cbdbf5",
-                "primary-fixed-dim": "#b4c5ff",
-                "surface-container": "#e5eeff",
-                "tertiary-fixed": "#ffddb8",
-                "tertiary": "#784b00",
-                "secondary-fixed-dim": "#4edea3",
-                "secondary-fixed": "#6ffbbe",
-                "inverse-primary": "#b4c5ff"
-              },
-              "borderRadius": {
-                "DEFAULT": "0.25rem",
-                "lg": "0.8rem",
-                "xl": "1.2rem",
-                "full": "9999px"
-              },
-              "spacing": {
-                "xl": "64px",
-                "sm": "12px",
-                "base": "8px",
-                "xs": "4px",
-                "lg": "40px",
-                "gutter": "24px",
-                "container-max": "1200px",
-                "md": "24px"
-              },
-              "fontFamily": {
-                "body-md": ["Inter"],
-                "body-lg": ["Inter"],
-                "display-lg": ["Manrope"],
-                "headline-md": ["Manrope"],
-                "button": ["Inter"],
-                "label-caps": ["JetBrains Mono"],
-                "headline-lg": ["Manrope"],
-                "body-sm": ["Inter"]
-              }
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#dbe1ff",
+                    "primary-container": "#2563eb",
+                    "inverse-primary": "#b4c5ff",
+                    "surface-tint": "#0053db",
+                    "on-primary-container": "#eeefff",
+                    "surface-bright": "#f8f9ff",
+                    "on-tertiary-container": "#ffeedd",
+                    "on-surface": "#0b1c30",
+                    "on-error-container": "#93000a",
+                    "background": "#f8f9ff",
+                    "on-background": "#0b1c30",
+                    "surface-dim": "#cbdbf5",
+                    "primary": "#004ac6",
+                    "outline-variant": "#c3c6d7",
+                    "on-tertiary-fixed-variant": "#653e00",
+                    "error": "#ba1a1a",
+                    "on-secondary-fixed": "#002113",
+                    "tertiary-fixed": "#ffddb8",
+                    "on-secondary": "#ffffff",
+                    "secondary-fixed-dim": "#4edea3",
+                    "on-primary-fixed-variant": "#003ea8",
+                    "on-tertiary-fixed": "#2a1700",
+                    "outline": "#737686",
+                    "secondary": "#006c49",
+                    "tertiary-fixed-dim": "#ffb95f",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-container-high": "#dce9ff",
+                    "inverse-on-surface": "#eaf1ff",
+                    "primary-fixed-dim": "#b4c5ff",
+                    "tertiary": "#784b00",
+                    "surface-container-low": "#eff4ff",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-surface-variant": "#434655",
+                    "surface-container": "#e5eeff",
+                    "tertiary-container": "#996100",
+                    "on-primary-fixed": "#00174b",
+                    "surface": "#f8f9ff",
+                    "secondary-fixed": "#6ffbbe",
+                    "secondary-container": "#6cf8bb",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed-variant": "#005236",
+                    "on-secondary-container": "#00714d",
+                    "on-primary": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#213145"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "xs": "4px",
+                    "lg": "40px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "xl": "64px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Manrope"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["Manrope"],
+                    "button": ["Inter"],
+                    "label-caps": ["JetBrains Mono"],
+                    "headline-md": ["Manrope"],
+                    "body-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                    "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}]
             }
-          }
-        }
+          },
+        },
+      }
     </script>
 <style>
     body {
       min-height: max(884px, 100dvh);
     }
   </style>
-</head>
-<body class="bg-background text-on-surface font-body-md min-h-screen flex flex-col items-center">
-<!-- Toast Notification -->
-<div class="fixed top-20 left-1/2 transform -translate-x-1/2 bg-on-surface text-surface px-6 py-3 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50 flex items-center gap-2" id="toast">
-<span class="material-symbols-outlined text-secondary-container">check_circle</span>
-<span class="font-body-sm font-semibold">성공적으로 등록되었습니다!</span>
+  </head>
+<body class="bg-background text-on-background min-h-screen font-body-md">
+<!-- Top Navigation Anchor -->
+<header class="bg-surface sticky top-0 z-50 w-full">
+<div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-base">
+<span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Academic Mentor</h1>
 </div>
-<!-- Top AppBar -->
-<header class="w-full top-0 sticky z-40 bg-surface flex items-center justify-between px-md py-base max-w-container-max mx-auto">
 <div class="flex items-center gap-sm">
-<button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors active:scale-95" onclick="window.location.href='index.html'">
-<span class="material-symbols-outlined text-primary">arrow_back</span>
-</button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">새 암기장 등록</h1>
+<div class="hidden md:flex gap-base mr-4">
+<a href="index.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">DASHBOARD</a><a href="calendar.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">CALENDAR</a><a href="flashcards.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">FLASHCARDS</a>
+<a href="members.html" class="text-primary font-label-caps text-label-caps transition-colors underline underline-offset-4">MEMBERS</a>
 </div>
-<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
-<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UYIHIwhMBg99AYWaUNuw00bCY3ZlCuWkHNFs1H_q0Ox-anvZYNf_hKq4tSQ_36ZoO3VsdwfCw3eKe0O8WWaxn_VkXarbJA9Dn4-uGr0DC0JUjIt8mIfi1kfso9nRA24x1CJupCMJwbDSRIRBEJMZWAjng_7QUifKyg7AGemUbhHeqgDmsx_FP2DwHh15oU7-XBeWXDnL5Or9aiDWhpUyC1U-HI-wCQkINSva_ez_ws-wp3OoqWkgczjY00UjHXSRiy5PzLbLj44r"/>
+<div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
+<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxGj6B56XZMGO1DjRKlqXHXs0TQUFu0miSw4FFTs3ngz7-MfyLy69XQpe3hazDmfv-ELgVOHh21upLGuUCGc57qfIk0cAgoXLQ3nrVFVwoKiR8RN9K_OfG7sMmh5dn1FMdFqmlgMZDhIuObH9dT-VqF5P9ZP78VHptmQJKTx4UnikDhi1aMseByykcIEcqzdSq2-WK6TeoOe9lquDWW9soDivdsrwrWM24IcsDnEfM2Q5e5d_ESem0qwLRTIAwe_p7r4lUmm75tWJ0">
+</div>
+</div>
 </div>
 </header>
-<main class="w-full max-w-2xl px-md py-lg flex flex-col gap-md mb-32">
-<!-- Photo Preview Area -->
-<section class="relative group">
-<div class="w-full aspect-[3/4] rounded-xl overflow-hidden bg-surface-container border border-outline-variant shadow-sm relative">
-<!-- Mock Captured Image -->
-<img class="w-full h-full object-cover" data-alt="A high-resolution, top-down photograph of a handwritten study notebook on a clean white desk. The notebook contains neatly written Japanese kanji and grammar notes in blue and black ink, illuminated by soft, natural morning light coming from a nearby window. The overall aesthetic is professional, minimalist, and focused, aligning with a modern academic corporate style with subtle mint and blue color accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUuK3Q5ab59RiN65Cun2_cuTAh4H0xsha-hoZ1KY4smjUvZaAWjZhqEdI8OdLUTJrXHfJjgPAhcLD3rSNf2vdvn_zHT0wUhrQXxVUYlKEc41e9vYINk8eD275g4PlXhB-j835FVZbMqj8SoRI9mbogDtCD5FY7u159jN4rHme2rBLu1nHYHqraWk_EEXyU-v_JmGl9uFqAchLQueYMkRSbIvaiyKa3U3gWcqVCOgL0V68YOBg6Hy8E3PZ-WJd_uIw21b1zOYqLGMTd"/>
-<!-- Scanning Animation Overlay -->
-<div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
-<div class="scanning-line absolute w-full z-10"></div>
-<!-- AI Processing Badge -->
-<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse">
-<span class="material-symbols-outlined text-primary-container animate-spin" style="font-variation-settings: 'FILL' 1;">auto_fix_high</span>
-<span class="font-button text-primary font-semibold text-body-sm" style="opacity: 0;">추출된 내용을 암기 카드로 생성 중입니다...</span>
+<main class="max-w-container-max mx-auto px-md py-xl space-y-md">
+<!-- Dashboard Header & Security Badge -->
+<section class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<span class="inline-flex items-center px-sm py-xs rounded-full bg-primary-container text-on-primary-container font-label-caps text-[10px] mb-base">
+<span class="material-symbols-outlined text-[14px] mr-1" data-icon="verified_user">verified_user</span>
+                    ADMINISTRATOR SECURE ACCESS
+                </span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Member Management</h2>
+<p class="text-on-surface-variant mt-xs">Manage workspace invitations, approvals, and member permissions.</p>
 </div>
-</div>
+<div class="flex gap-base">
+<button class="flex items-center justify-center gap-xs px-md py-base bg-primary text-on-primary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+                    Invite Member
+                </button>
 </div>
 </section>
-<!-- Configuration Section -->
-<section class="flex flex-col gap-sm">
-<label class="font-label-caps text-label-caps text-on-surface-variant uppercase ml-1">분야 선택</label>
+<!-- Bento Grid Layout for Controls -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<!-- Invite Code Management -->
+<div class="md:col-span-2 glass-panel p-md rounded-xl space-y-md">
+<div class="flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md flex items-center gap-xs">
+<span class="material-symbols-outlined text-primary" data-icon="link">link</span>
+                        Invitation Controls
+                    </h3>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">GLOBAL INVITE LINK</label>
+<div class="flex gap-xs">
+<input class="flex-1 bg-surface border-outline-variant rounded-lg text-body-sm font-mono focus:ring-primary focus:border-primary" readonly="" type="text" value="https://mentor.ac/invite/x7y2-z90">
+<button class="p-base bg-surface-container-highest text-primary rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-base">Expires in: 23 hours, 12 minutes</p>
+</div>
+<div class="bg-surface-container-low p-md rounded-lg border border-outline-variant">
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">ACTIVE INVITE CODE</label>
+<div class="flex gap-xs">
+<div class="flex-1 bg-primary-fixed text-primary text-center py-base rounded-lg font-display-lg text-[24px] tracking-[0.2em]">
+                                AC-9284
+                            </div>
+<button class="p-base bg-surface-container-highest text-primary rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors">
+<span class="material-symbols-outlined" data-icon="refresh">refresh</span>
+</button>
+</div>
+<p class="text-[11px] text-on-surface-variant mt-base">12/50 Remaining Uses</p>
+</div>
+</div>
+</div>
+<!-- Stats Card -->
+<div class="bg-inverse-surface text-inverse-on-surface p-md rounded-xl space-y-md flex flex-col justify-between">
+<div>
+<h3 class="font-label-caps text-label-caps opacity-70">QUICK STATS</h3>
+<div class="mt-md space-y-base">
+<div class="flex justify-between items-center">
+<span class="text-body-sm">Active Members</span>
+<span class="font-bold text-headline-md">124</span>
+</div>
+<div class="flex justify-between items-center">
+<span class="text-body-sm">Pending Approvals</span>
+<span class="font-bold text-headline-md text-secondary-fixed">8</span>
+</div>
+</div>
+</div>
+<div class="pt-md border-t border-white/10">
+<div class="flex items-center gap-xs text-secondary-fixed">
+<span class="material-symbols-outlined text-[18px]" data-icon="security">security</span>
+<span class="text-[12px] font-medium">Workspace is Private</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Tabs for Switching Lists -->
+<div class="flex gap-md border-b border-outline-variant">
+<button class="pb-base px-xs border-b-2 border-primary text-primary font-button text-button">Pending Approval (8)</button>
+<button class="pb-base px-xs border-b-2 border-transparent text-on-surface-variant hover:text-primary font-button text-button transition-colors">Active Members (124)</button>
+<button class="pb-base px-xs border-b-2 border-transparent text-on-surface-variant hover:text-primary font-button text-button transition-colors">Banned/Inactive</button>
+</div>
+<!-- Pending Approval List -->
+<section class="space-y-sm">
+<!-- Pending Card 1 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow">
+<div class="flex items-center gap-md w-full">
 <div class="relative">
-<select class="w-full appearance-none bg-surface border border-outline-variant rounded-lg px-md py-base font-body-md text-on-surface focus:border-primary-container focus:ring-1 focus:ring-primary-container outline-none transition-all cursor-pointer" id="category-select">
-<option value="it">IT / 프로그래밍</option>
-<option selected="" value="japanese">일본어 (Japanese)</option>
-<option value="english">영어 (English)</option>
-<option value="exam">자격증 시험</option>
-<option value="custom">기타 (직접 입력)</option>
-</select>
-<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">JS</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Ji-won Song</h4>
+<p class="text-body-sm text-on-surface-variant">jw.song@university.edu • Requested 2h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
+                        Decline
+                    </button>
+<button class="flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Pending Card 2 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow">
+<div class="flex items-center gap-md w-full">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">MK</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">Min-ho Kim</h4>
+<p class="text-body-sm text-on-surface-variant">m.kim99@gmail.com • Requested 5h ago</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
+                        Decline
+                    </button>
+<button class="flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                        Approve
+                    </button>
+</div>
+</div>
+<!-- Pending Card 3 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md opacity-60">
+<div class="flex items-center gap-md w-full">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-bold text-outline">SH</div>
+<div>
+<h4 class="font-bold text-on-surface">Seo-yeon Han</h4>
+<p class="text-body-sm text-on-surface-variant">han_sy@corporate.com • Blocked by System Filter</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-md py-base text-on-surface-variant font-button text-button rounded-lg bg-surface-container">
+                        Review Flag
+                    </button>
+</div>
 </div>
 </section>
-<!-- Analysis Progress Hint -->
-<div class="bg-surface-container-low border border-outline-variant rounded-lg p-md flex items-start gap-sm">
-<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">info</span>
-<div class="flex flex-col">
-<p class="font-body-sm text-on-surface font-semibold">텍스트 감지 완료</p>
-<p class="font-body-sm text-on-surface-variant">노트의 12개 키워드가 식별되었습니다. 카테고리를 분류하고 있습니다.</p>
-<div class="w-full h-2 bg-surface-container-highest rounded-full mt-base overflow-hidden">
-<div class="h-full bg-secondary-container w-[75%] rounded-full transition-all duration-700"></div>
+<!-- Member Management Table Header -->
+<div class="pt-lg flex items-center justify-between">
+<h3 class="font-headline-md text-headline-md">Active Members</h3>
+<div class="flex items-center gap-xs border border-outline-variant rounded-lg px-sm py-xs bg-surface">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+<input class="border-none bg-transparent text-body-sm focus:ring-0 w-40 sm:w-64" placeholder="Search members..." type="text">
 </div>
 </div>
+<!-- Members Table -->
+<div class="overflow-x-auto glass-panel rounded-xl">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">MEMBER</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">ROLE / PERMISSION</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">LAST ACTIVE</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">ACTIONS</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img alt="Sarah Lee" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdYXs0U_zmONkrQDUr07uddnqfbRaLlmj716AMMvgexm5mz6f6SWYkxSCdrncXEZUYHyZqGtYcgDx73-v7PVIlo0q42HnPc373atTefGBTRpEzpUX0q5QhnwNvugQfDO5QP4GVJsnLtOnyGHHid-PI8pgNwhp4IAQLlTyQcseUbfUuQqkFpPggKzVSFdoBJdGnymHYKU3QAoL8cmNrpdk5vs4mQDkA0SZxF5qzq5W7qu_Z7YUzHbb126nfow0K1Fph4yUWHrfAz6r">
+<div>
+<p class="font-bold text-on-surface">Sarah Lee</p>
+<p class="text-[12px] text-on-surface-variant">sarah.lee@edu.com</p>
 </div>
-<!-- Action Buttons -->
-<div class="grid grid-cols-2 gap-sm pt-base">
-<button class="flex items-center justify-center gap-xs border border-primary text-primary font-button rounded-lg py-4 hover:bg-surface-container-low active:scale-95 transition-all">
-<span class="material-symbols-outlined">restart_alt</span>
-                다시 찍기
-            </button>
-<button class="flex items-center justify-center gap-xs bg-primary-container text-on-primary-container font-button rounded-lg py-4 shadow-sm hover:opacity-90 active:scale-95 transition-all" id="confirm-analysis-btn" onclick="window.location.href='index.html'">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">done_all</span>
-                분석 결과 확인
-            </button>
+</div>
+</td>
+<td class="px-md py-md">
+<select class="bg-surface-container-lowest border-outline-variant rounded-lg text-body-sm focus:ring-primary focus:border-primary px-sm py-xs">
+<option>Study Facilitator</option>
+<option selected="">Member</option>
+<option>Read Only</option>
+</select>
+</td>
+<td class="px-md py-md text-body-sm text-on-surface-variant">12 mins ago</td>
+<td class="px-md py-md">
+<button class="p-xs text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<tr>
+<td class="px-md py-md">
+<div class="flex items-center gap-sm">
+<img alt="Park Tae-su" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmL03FZ-FZdaWWe058y3z5kYy0bSDUSBblMl9DgMau2AFqIb9AosJkLFb1fxQ4Y0oaceheACTqgVePnKenxNzdiuFDVPhxUpDA94vWQTmi0vo4UUx5Bnh8ztDNSblZdIj2TTp9nwuF7QSKRLEA8VT9zisoob3xD8380Y6TjBaftXa_ZSg5ZJW0H43wrvBTaAH_YNUdwJqaKNY1qB4exD6eszvEY62zMfrMSI3KLkMAyRYGw4jPrw4YKnBXjCo6XYdahHdDMyynmheS">
+<div>
+<p class="font-bold text-on-surface">Park Tae-su</p>
+<p class="text-[12px] text-on-surface-variant">p.tsu@edu.com</p>
+</div>
+</div>
+</td>
+<td class="px-md py-md">
+<select class="bg-surface-container-lowest border-outline-variant rounded-lg text-body-sm focus:ring-primary focus:border-primary px-sm py-xs">
+<option selected="">Study Facilitator</option>
+<option>Member</option>
+<option>Read Only</option>
+</select>
+</td>
+<td class="px-md py-md text-body-sm text-on-surface-variant">Yesterday</td>
+<td class="px-md py-md">
+<button class="p-xs text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </main>
-<!-- Bottom Nav (Shared Component) -->
-<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container-highest">
-<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='index.html'">
-<span class="material-symbols-outlined">dashboard</span>
-<span class="font-label-caps text-label-caps mt-1">Dashboard</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='calendar.html'">
-<span class="material-symbols-outlined">calendar_month</span>
-<span class="font-label-caps text-label-caps mt-1">Calendar</span>
-</button>
-<button class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" onclick="window.location.href='flashcards.html'">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">style</span>
-<span class="font-label-caps text-label-caps mt-1">Flashcards</span>
-</button>
-<button class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90" onclick="window.location.href='members.html'"><span class="material-symbols-outlined">person</span><span class="font-label-caps text-label-caps mt-1">Members</span></button>
+<!-- Bottom Navigation for Mobile -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container">
+<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant p-2"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span><span class="font-label-caps text-[10px] mt-1">DASHBOARD</span></a>
+<a href="members.html" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1"><span class="material-symbols-outlined" data-icon="group">group</span><span class="font-label-caps text-[10px] mt-1">MEMBERS</span></a>
+<a href="members.html" class="flex flex-col items-center justify-center text-on-surface-variant p-2"><span class="material-symbols-outlined" data-icon="settings">settings</span><span class="font-label-caps text-[10px] mt-1">SETTINGS</span></a>
 </nav>
+<!-- Visual Polish: Soft Background Accents -->
+<div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
+<div class="fixed bottom-0 left-0 -z-10 w-[400px] h-[400px] bg-secondary-container/10 blur-[100px] rounded-full pointer-events-none"></div>
 <script>
-        // Micro-interactions for buttons
+        // Simple micro-interactions for demo purposes
         document.querySelectorAll('button').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                // Ignore if it's a navigation button to avoid ripple interrupting
-                if(this.getAttribute('onclick')) return;
-                
-                const ripple = document.createElement('span');
-                ripple.classList.add('ripple');
-                this.appendChild(ripple);
-                setTimeout(() => ripple.remove(), 600);
+            btn.addEventListener('click', () => {
+                const icon = btn.querySelector('.material-symbols-outlined');
+                if (icon && icon.textContent === 'content_copy') {
+                    const originalText = icon.textContent;
+                    icon.textContent = 'check';
+                    setTimeout(() => icon.textContent = originalText, 2000);
+                }
             });
         });
-
-        // Simulating AI progress text change
-        const progressMessages = [
-            "Gemini AI가 내용을 분석 중입니다...",
-            "필기 텍스트를 디지털로 변환하고 있습니다...",
-            "핵심 키워드를 추출하는 중입니다...",
-            "추출된 내용을 암기 카드로 생성 중입니다..."
-        ];
-        let msgIndex = 0;
-        const statusText = document.querySelector('.animate-pulse span:last-child');
-        
-        setInterval(() => {
-            msgIndex = (msgIndex + 1) % progressMessages.length;
-            statusText.style.opacity = 0;
-            setTimeout(() => {
-                statusText.textContent = progressMessages[msgIndex];
-                statusText.style.opacity = 1;
-            }, 300);
-        }, 3000);
-
-        // Analysis Registration Logic
-        document.getElementById('confirm-analysis-btn').addEventListener('click', function() {
-            // 1. Save mock data to localStorage
-            const selectedCategory = document.getElementById('category-select').value;
-            const newFlashcardSet = {
-                id: Date.now(),
-                category: selectedCategory,
-                title: "새로운 암기장",
-                keywords: ["문법", "단어", "예문", "한자"],
-                cardCount: 12,
-                createdAt: new Date().toISOString()
-            };
-            
-            let storedSets = JSON.parse(localStorage.getItem('flashcardSets')) || [];
-            storedSets.push(newFlashcardSet);
-            localStorage.setItem('flashcardSets', JSON.stringify(storedSets));
-
-            // 2. Show Success Toast
-            const toast = document.getElementById('toast');
-            toast.classList.remove('opacity-0');
-            
-            // 3. Redirect after a short delay
-            setTimeout(() => {
-                window.location.href = 'flashcards.html';
-            }, 1500);
-        });
     </script>
+
+
 </body></html>
