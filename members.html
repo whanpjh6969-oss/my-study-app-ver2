@@ -1,10 +1,12 @@
-<!DOCTYPE html><html lang="ko"><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
@@ -118,22 +120,22 @@
       min-height: max(884px, 100dvh);
     }
   </style>
-  </head>
+</head>
 <body class="bg-background text-on-background min-h-screen font-body-md">
 <!-- Top Navigation Anchor -->
 <header class="bg-surface sticky top-0 z-50 w-full">
 <div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
 <div class="flex items-center gap-base">
 <span class="material-symbols-outlined text-primary" data-icon="shield">shield</span>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">Academic Mentor</h1>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">학습 멘토</h1>
 </div>
 <div class="flex items-center gap-sm">
 <div class="hidden md:flex gap-base mr-4">
-<a href="index.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">DASHBOARD</a><a href="calendar.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">CALENDAR</a><a href="flashcards.html" class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors">FLASHCARDS</a>
-<a href="members.html" class="text-primary font-label-caps text-label-caps transition-colors underline underline-offset-4">MEMBERS</a>
+<a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="index.html">대시보드</a><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="calendar.html">캘린더</a><a class="text-on-surface-variant font-label-caps text-label-caps hover:text-primary transition-colors" href="flashcards.html">플래시카드</a>
+<a class="text-primary font-label-caps text-label-caps transition-colors underline underline-offset-4" href="members.html">회원 관리</a>
 </div>
 <div class="w-10 h-10 rounded-full bg-surface-container overflow-hidden">
-<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxGj6B56XZMGO1DjRKlqXHXs0TQUFu0miSw4FFTs3ngz7-MfyLy69XQpe3hazDmfv-ELgVOHh21upLGuUCGc57qfIk0cAgoXLQ3nrVFVwoKiR8RN9K_OfG7sMmh5dn1FMdFqmlgMZDhIuObH9dT-VqF5P9ZP78VHptmQJKTx4UnikDhi1aMseByykcIEcqzdSq2-WK6TeoOe9lquDWW9soDivdsrwrWM24IcsDnEfM2Q5e5d_ESem0qwLRTIAwe_p7r4lUmm75tWJ0">
+<img alt="Admin Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxGj6B56XZMGO1DjRKlqXHXs0TQUFu0miSw4FFTs3ngz7-MfyLy69XQpe3hazDmfv-ELgVOHh21upLGuUCGc57qfIk0cAgoXLQ3nrVFVwoKiR8RN9K_OfG7sMmh5dn1FMdFqmlgMZDhIuObH9dT-VqF5P9ZP78VHptmQJKTx4UnikDhi1aMseByykcIEcqzdSq2-WK6TeoOe9lquDWW9soDivdsrwrWM24IcsDnEfM2Q5e5d_ESem0qwLRTIAwe_p7r4lUmm75tWJ0"/>
 </div>
 </div>
 </div>
@@ -144,16 +146,89 @@
 <div>
 <span class="inline-flex items-center px-sm py-xs rounded-full bg-primary-container text-on-primary-container font-label-caps text-[10px] mb-base">
 <span class="material-symbols-outlined text-[14px] mr-1" data-icon="verified_user">verified_user</span>
-                    ADMINISTRATOR SECURE ACCESS
+                    관리자 보안 접근
                 </span>
-<h2 class="font-headline-lg text-headline-lg text-on-surface">Member Management</h2>
-<p class="text-on-surface-variant mt-xs">Manage workspace invitations, approvals, and member permissions.</p>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">회원 관리</h2>
+<p class="text-on-surface-variant mt-xs">워크스페이스 초대, 승인 및 회원 권한을 관리합니다.</p>
 </div>
 <div class="flex gap-base">
 <button class="flex items-center justify-center gap-xs px-md py-base bg-primary text-on-primary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
 <span class="material-symbols-outlined" data-icon="person_add">person_add</span>
-                    Invite Member
+                    회원 초대
                 </button>
+</div>
+</section>
+<!-- Highlighted Pending Approval List at the Top -->
+<section class="space-y-sm bg-surface-container-low p-md rounded-xl border-2 border-primary-container/20">
+<div class="flex justify-between items-center mb-md">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">pending_actions</span>
+        대기 중인 회원
+    </h3>
+<span class="bg-error-container text-on-error-container text-[12px] px-2 py-1 rounded-full font-bold">8명 대기 중</span>
+</div>
+<div class="bg-surface-container text-on-surface-variant text-[12px] p-sm rounded-lg mb-md flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px]">info</span>
+    승인되지 않은 사용자는 시스템 접근이 불가능합니다.
+</div>
+<div class="space-y-sm" id="pending-list">
+<!-- Pending Card 1 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow" data-id="js-song">
+<div class="flex items-center gap-md w-full">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">JS</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">송지원</h4>
+<p class="text-body-sm text-on-surface-variant">jw.song@university.edu • 2시간 전 요청</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="action-btn decline-btn flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
+                            거절
+                        </button>
+<button class="action-btn approve-btn flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                            승인
+                        </button>
+</div>
+</div>
+<!-- Pending Card 2 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow" data-id="mk-kim">
+<div class="flex items-center gap-md w-full">
+<div class="relative">
+<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">MK</div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
+</div>
+<div>
+<h4 class="font-bold text-on-surface">김민호</h4>
+<p class="text-body-sm text-on-surface-variant">m.kim99@gmail.com • 5시간 전 요청</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="action-btn decline-btn flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
+                            거절
+                        </button>
+<button class="action-btn approve-btn flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
+                            승인
+                        </button>
+</div>
+</div>
+<!-- Pending Card 3 -->
+<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md opacity-60" data-id="sy-han">
+<div class="flex items-center gap-md w-full">
+<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-bold text-outline">SH</div>
+<div>
+<h4 class="font-bold text-on-surface">한서연</h4>
+<p class="text-body-sm text-on-surface-variant">han_sy@corporate.com • 시스템 필터에 의해 차단됨</p>
+</div>
+</div>
+<div class="flex items-center gap-sm w-full sm:w-auto">
+<button class="flex-1 sm:flex-none px-md py-base text-on-surface-variant font-button text-button rounded-lg bg-surface-container">
+                            플래그 검토
+                        </button>
+</div>
+</div>
 </div>
 </section>
 <!-- Bento Grid Layout for Controls -->
@@ -163,22 +238,22 @@
 <div class="flex items-center justify-between">
 <h3 class="font-headline-md text-headline-md flex items-center gap-xs">
 <span class="material-symbols-outlined text-primary" data-icon="link">link</span>
-                        Invitation Controls
+                        초대 제어
                     </h3>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
 <div class="bg-surface-container-low p-md rounded-lg border border-outline-variant">
-<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">GLOBAL INVITE LINK</label>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">전역 초대 링크</label>
 <div class="flex gap-xs">
-<input class="flex-1 bg-surface border-outline-variant rounded-lg text-body-sm font-mono focus:ring-primary focus:border-primary" readonly="" type="text" value="https://mentor.ac/invite/x7y2-z90">
+<input class="flex-1 bg-surface border-outline-variant rounded-lg text-body-sm font-mono focus:ring-primary focus:border-primary" readonly="" type="text" value="https://mentor.ac/invite/x7y2-z90"/>
 <button class="p-base bg-surface-container-highest text-primary rounded-lg hover:bg-primary-container hover:text-on-primary-container transition-colors">
 <span class="material-symbols-outlined" data-icon="content_copy">content_copy</span>
 </button>
 </div>
-<p class="text-[11px] text-on-surface-variant mt-base">Expires in: 23 hours, 12 minutes</p>
+<p class="text-[11px] text-on-surface-variant mt-base">만료까지: 23시간 12분</p>
 </div>
 <div class="bg-surface-container-low p-md rounded-lg border border-outline-variant">
-<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">ACTIVE INVITE CODE</label>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-sm">활성 초대 코드</label>
 <div class="flex gap-xs">
 <div class="flex-1 bg-primary-fixed text-primary text-center py-base rounded-lg font-display-lg text-[24px] tracking-[0.2em]">
                                 AC-9284
@@ -187,21 +262,21 @@
 <span class="material-symbols-outlined" data-icon="refresh">refresh</span>
 </button>
 </div>
-<p class="text-[11px] text-on-surface-variant mt-base">12/50 Remaining Uses</p>
+<p class="text-[11px] text-on-surface-variant mt-base">12/50 사용 가능</p>
 </div>
 </div>
 </div>
 <!-- Stats Card -->
 <div class="bg-inverse-surface text-inverse-on-surface p-md rounded-xl space-y-md flex flex-col justify-between">
 <div>
-<h3 class="font-label-caps text-label-caps opacity-70">QUICK STATS</h3>
+<h3 class="font-label-caps text-label-caps opacity-70">빠른 통계</h3>
 <div class="mt-md space-y-base">
 <div class="flex justify-between items-center">
-<span class="text-body-sm">Active Members</span>
-<span class="font-bold text-headline-md">124</span>
+<span class="text-body-sm">활동 중인 회원</span>
+<span class="font-bold text-headline-md">1</span>
 </div>
 <div class="flex justify-between items-center">
-<span class="text-body-sm">Pending Approvals</span>
+<span class="text-body-sm">승인 대기 중</span>
 <span class="font-bold text-headline-md text-secondary-fixed">8</span>
 </div>
 </div>
@@ -209,83 +284,17 @@
 <div class="pt-md border-t border-white/10">
 <div class="flex items-center gap-xs text-secondary-fixed">
 <span class="material-symbols-outlined text-[18px]" data-icon="security">security</span>
-<span class="text-[12px] font-medium">Workspace is Private</span>
+<span class="text-[12px] font-medium">프라이빗 워크스페이스</span>
 </div>
 </div>
 </div>
 </div>
-<!-- Tabs for Switching Lists -->
-<div class="flex gap-md border-b border-outline-variant">
-<button class="pb-base px-xs border-b-2 border-primary text-primary font-button text-button">Pending Approval (8)</button>
-<button class="pb-base px-xs border-b-2 border-transparent text-on-surface-variant hover:text-primary font-button text-button transition-colors">Active Members (124)</button>
-<button class="pb-base px-xs border-b-2 border-transparent text-on-surface-variant hover:text-primary font-button text-button transition-colors">Banned/Inactive</button>
-</div>
-<!-- Pending Approval List -->
-<section class="space-y-sm">
-<!-- Pending Card 1 -->
-<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow">
-<div class="flex items-center gap-md w-full">
-<div class="relative">
-<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">JS</div>
-<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
-</div>
-<div>
-<h4 class="font-bold text-on-surface">Ji-won Song</h4>
-<p class="text-body-sm text-on-surface-variant">jw.song@university.edu • Requested 2h ago</p>
-</div>
-</div>
-<div class="flex items-center gap-sm w-full sm:w-auto">
-<button class="flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
-                        Decline
-                    </button>
-<button class="flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
-                        Approve
-                    </button>
-</div>
-</div>
-<!-- Pending Card 2 -->
-<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md hover:shadow-sm transition-shadow">
-<div class="flex items-center gap-md w-full">
-<div class="relative">
-<div class="w-12 h-12 rounded-full bg-surface-container-highest flex items-center justify-center font-bold text-primary">MK</div>
-<div class="absolute -bottom-1 -right-1 w-4 h-4 bg-tertiary-container border-2 border-surface rounded-full"></div>
-</div>
-<div>
-<h4 class="font-bold text-on-surface">Min-ho Kim</h4>
-<p class="text-body-sm text-on-surface-variant">m.kim99@gmail.com • Requested 5h ago</p>
-</div>
-</div>
-<div class="flex items-center gap-sm w-full sm:w-auto">
-<button class="flex-1 sm:flex-none px-md py-base border border-error text-error font-button text-button rounded-lg hover:bg-error-container/20 transition-colors">
-                        Decline
-                    </button>
-<button class="flex-1 sm:flex-none px-md py-base bg-secondary text-on-secondary font-button text-button rounded-lg hover:opacity-90 active:scale-95 transition-all">
-                        Approve
-                    </button>
-</div>
-</div>
-<!-- Pending Card 3 -->
-<div class="glass-panel p-md rounded-xl flex flex-col sm:flex-row items-center justify-between gap-md opacity-60">
-<div class="flex items-center gap-md w-full">
-<div class="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center font-bold text-outline">SH</div>
-<div>
-<h4 class="font-bold text-on-surface">Seo-yeon Han</h4>
-<p class="text-body-sm text-on-surface-variant">han_sy@corporate.com • Blocked by System Filter</p>
-</div>
-</div>
-<div class="flex items-center gap-sm w-full sm:w-auto">
-<button class="flex-1 sm:flex-none px-md py-base text-on-surface-variant font-button text-button rounded-lg bg-surface-container">
-                        Review Flag
-                    </button>
-</div>
-</div>
-</section>
 <!-- Member Management Table Header -->
 <div class="pt-lg flex items-center justify-between">
-<h3 class="font-headline-md text-headline-md">Active Members</h3>
+<h3 class="font-headline-md text-headline-md">활동 중인 회원</h3>
 <div class="flex items-center gap-xs border border-outline-variant rounded-lg px-sm py-xs bg-surface">
 <span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
-<input class="border-none bg-transparent text-body-sm focus:ring-0 w-40 sm:w-64" placeholder="Search members..." type="text">
+<input class="border-none bg-transparent text-body-sm focus:ring-0 w-40 sm:w-64" placeholder="회원 검색..." type="text"/>
 </div>
 </div>
 <!-- Members Table -->
@@ -293,60 +302,26 @@
 <table class="w-full text-left border-collapse">
 <thead>
 <tr class="bg-surface-container-low border-b border-outline-variant">
-<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">MEMBER</th>
-<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">ROLE / PERMISSION</th>
-<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">LAST ACTIVE</th>
-<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">ACTIONS</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">회원</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">역할 / 권한</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">마지막 활동</th>
+<th class="px-md py-base font-label-caps text-label-caps text-on-surface-variant">작업</th>
 </tr>
 </thead>
-<tbody class="divide-y divide-outline-variant">
+<tbody class="divide-y divide-outline-variant" id="active-members-list">
 <tr>
 <td class="px-md py-md">
 <div class="flex items-center gap-sm">
-<img alt="Sarah Lee" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdYXs0U_zmONkrQDUr07uddnqfbRaLlmj716AMMvgexm5mz6f6SWYkxSCdrncXEZUYHyZqGtYcgDx73-v7PVIlo0q42HnPc373atTefGBTRpEzpUX0q5QhnwNvugQfDO5QP4GVJsnLtOnyGHHid-PI8pgNwhp4IAQLlTyQcseUbfUuQqkFpPggKzVSFdoBJdGnymHYKU3QAoL8cmNrpdk5vs4mQDkA0SZxF5qzq5W7qu_Z7YUzHbb126nfow0K1Fph4yUWHrfAz6r">
+<img alt="Sarah Lee" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXdYXs0U_zmONkrQDUr07uddnqfbRaLlmj716AMMvgexm5mz6f6SWYkxSCdrncXEZUYHyZqGtYcgDx73-v7PVIlo0q42HnPc373atTefGBTRpEzpUX0q5QhnwNvugQfDO5QP4GVJsnLtOnyGHHid-PI8pgNwhp4IAQLlTyQcseUbfUuQqkFpPggKzVSFdoBJdGnymHYKU3QAoL8cmNrpdk5vs4mQDkA0SZxF5qzq5W7qu_Z7YUzHbb126nfow0K1Fph4yUWHrfAz6r"/>
 <div>
 <p class="font-bold text-on-surface">Sarah Lee</p>
 <p class="text-[12px] text-on-surface-variant">sarah.lee@edu.com</p>
 </div>
 </div>
 </td>
-<td class="px-md py-md">
-<select class="bg-surface-container-lowest border-outline-variant rounded-lg text-body-sm focus:ring-primary focus:border-primary px-sm py-xs">
-<option>Study Facilitator</option>
-<option selected="">Member</option>
-<option>Read Only</option>
-</select>
-</td>
-<td class="px-md py-md text-body-sm text-on-surface-variant">12 mins ago</td>
-<td class="px-md py-md">
-<button class="p-xs text-on-surface-variant hover:text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
-</button>
-</td>
-</tr>
-<tr>
-<td class="px-md py-md">
-<div class="flex items-center gap-sm">
-<img alt="Park Tae-su" class="w-8 h-8 rounded-full border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmL03FZ-FZdaWWe058y3z5kYy0bSDUSBblMl9DgMau2AFqIb9AosJkLFb1fxQ4Y0oaceheACTqgVePnKenxNzdiuFDVPhxUpDA94vWQTmi0vo4UUx5Bnh8ztDNSblZdIj2TTp9nwuF7QSKRLEA8VT9zisoob3xD8380Y6TjBaftXa_ZSg5ZJW0H43wrvBTaAH_YNUdwJqaKNY1qB4exD6eszvEY62zMfrMSI3KLkMAyRYGw4jPrw4YKnBXjCo6XYdahHdDMyynmheS">
-<div>
-<p class="font-bold text-on-surface">Park Tae-su</p>
-<p class="text-[12px] text-on-surface-variant">p.tsu@edu.com</p>
-</div>
-</div>
-</td>
-<td class="px-md py-md">
-<select class="bg-surface-container-lowest border-outline-variant rounded-lg text-body-sm focus:ring-primary focus:border-primary px-sm py-xs">
-<option selected="">Study Facilitator</option>
-<option>Member</option>
-<option>Read Only</option>
-</select>
-</td>
-<td class="px-md py-md text-body-sm text-on-surface-variant">Yesterday</td>
-<td class="px-md py-md">
-<button class="p-xs text-on-surface-variant hover:text-error transition-colors">
-<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
-</button>
-</td>
+<td class="px-md py-md"><span class="inline-flex items-center px-sm py-xs rounded-lg bg-primary-container text-on-primary-container font-bold text-body-sm">관리자</span></td>
+<td class="px-md py-md text-body-sm text-on-surface-variant">12분 전</td>
+<td class="px-md py-md"><div class="flex items-center gap-xs"><button class="p-xs text-on-surface-variant hover:text-error transition-colors" title="삭제"><span class="material-symbols-outlined" data-icon="delete">delete</span></button><button class="p-xs text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="more_vert">more_vert</span></button></div></td>
 </tr>
 </tbody>
 </table>
@@ -354,9 +329,9 @@
 </main>
 <!-- Bottom Navigation for Mobile -->
 <nav class="md:hidden fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container">
-<a href="index.html" class="flex flex-col items-center justify-center text-on-surface-variant p-2"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span><span class="font-label-caps text-[10px] mt-1">DASHBOARD</span></a>
-<a href="members.html" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1"><span class="material-symbols-outlined" data-icon="group">group</span><span class="font-label-caps text-[10px] mt-1">MEMBERS</span></a>
-<a href="members.html" class="flex flex-col items-center justify-center text-on-surface-variant p-2"><span class="material-symbols-outlined" data-icon="settings">settings</span><span class="font-label-caps text-[10px] mt-1">SETTINGS</span></a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="index.html"><span class="material-symbols-outlined" data-icon="dashboard">dashboard</span><span class="font-label-caps text-[10px] mt-1">대시보드</span></a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1" href="members.html"><span class="material-symbols-outlined" data-icon="group">group</span><span class="font-label-caps text-[10px] mt-1">회원 관리</span></a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2" href="settings.html"><span class="material-symbols-outlined" data-icon="settings">settings</span><span class="font-label-caps text-[10px] mt-1">설정</span></a>
 </nav>
 <!-- Visual Polish: Soft Background Accents -->
 <div class="fixed top-0 right-0 -z-10 w-[500px] h-[500px] bg-primary-container/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -373,7 +348,52 @@
                 }
             });
         });
+
+        // Virtual LocalStorage logic for Member Approval
+        document.addEventListener('DOMContentLoaded', () => {
+            const pendingList = document.getElementById('pending-list');
+            const activeList = document.getElementById('active-members-list');
+            
+            // Check LocalStorage for processed members
+            const processedMembers = JSON.parse(localStorage.getItem('processedMembers')) || [];
+            
+            // Hide already processed pending cards
+            document.querySelectorAll('#pending-list > div[data-id]').forEach(card => {
+                const id = card.getAttribute('data-id');
+                if(processedMembers.includes(id)) {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Handle Approve/Decline actions
+            document.querySelectorAll('.action-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const card = e.target.closest('div[data-id]');
+                    const id = card.getAttribute('data-id');
+                    const isApprove = e.target.classList.contains('approve-btn');
+
+                    // Save state
+                    const currentProcessed = JSON.parse(localStorage.getItem('processedMembers')) || [];
+                    if (!currentProcessed.includes(id)) {
+                        currentProcessed.push(id);
+                        localStorage.setItem('processedMembers', JSON.stringify(currentProcessed));
+                    }
+
+                    // UI Feedback
+                    card.style.opacity = '0.5';
+                    card.style.pointerEvents = 'none';
+                    e.target.textContent = isApprove ? '승인됨' : '거절됨';
+                    
+                    // Simulate moving/removing after a delay
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                        if(isApprove) {
+                            // In a real app, this would dynamically add to the active list
+                            console.log('Member approved and would be moved to active list.');
+                        }
+                    }, 1000);
+                });
+            });
+        });
     </script>
-
-
 </body></html>
