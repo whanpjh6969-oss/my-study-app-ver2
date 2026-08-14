@@ -179,7 +179,7 @@
 </nav>
 <!-- Floating Action Button for Adding Flashcards (Contextually appropriate for this screen) -->
 <div class="fixed right-6 bottom-24 z-40">
-<a class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4" href="ai-register.html"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></a>
+<button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4" onclick="addRandomCard()"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button>
 </div>
 <script>
         // Simple filter button interaction
@@ -196,7 +196,7 @@
         });
     </script>
 <script>
-  const STORAGE_KEY = 'study-flashcards';
+  const STORAGE_KEY = 'study_flashcards';
   const DEFAULT_FLASHCARDS = [
     { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', categoryColor: 'primary-container', onCategoryColor: 'on-primary-container', date: '2024.05.20', count: '82장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI' },
     { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', categoryColor: 'secondary-container', onCategoryColor: 'on-secondary-container', date: '2024.05.18', count: '150장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa' },
@@ -232,6 +232,9 @@
             <div class="absolute top-3 left-3">
               <span class="bg-${card.categoryColor} text-${card.onCategoryColor} text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
             </div>
+            <button onclick="event.preventDefault(); event.stopPropagation(); deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md z-10">
+              <span class="material-symbols-outlined text-[20px] leading-none">close</span>
+            </button>
           </div>
           <div class="p-4">
             <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">${card.title}</h3>
@@ -243,24 +246,21 @@
               <span class="text-primary font-button text-button">${card.count}</span>
             </div>
           </div>
-        </a>
-        <button onclick="event.preventDefault(); event.stopPropagation(); deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md z-10">
-          <span class="material-symbols-outlined text-[20px] leading-none">close</span>
-        </button>`;
+        </a>`;
       grid.appendChild(cardEl);
     });
     
     // Add Buttons
     const addButtonsHTML = `
-      <a href="ai-register.html" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
+      <button onclick="addRandomCard()" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
           <span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span>
           <span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span>
           <span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span>
-      </a>
-      <a href="ai-register.html" class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
+      </button>
+      <button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
           <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
           <span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
-      </a>
+      </button>
     `;
     grid.insertAdjacentHTML('beforeend', addButtonsHTML);
   }
@@ -270,6 +270,20 @@
     save();
     render(searchInput.value);
   };
+
+  window.addRandomCard = () => {
+      const randomBaseCard = DEFAULT_FLASHCARDS[Math.floor(Math.random() * DEFAULT_FLASHCARDS.length)];
+      const newCard = {
+          ...randomBaseCard,
+          id: Date.now(),
+          title: `[새로운 AI 분석] ${randomBaseCard.title}`,
+          date: new Date().toLocaleDateString('ko-KR', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/\. /g, '.').replace('.', ''),
+          count: `${Math.floor(Math.random() * 50) + 10}장`
+      };
+      flashcards.unshift(newCard); // Add to the beginning
+      save();
+      render(searchInput.value);
+  }
 
   searchInput.addEventListener('input', (e) => render(e.target.value));
 

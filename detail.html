@@ -136,8 +136,10 @@
 <h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Academic Mentor</h1>
 </div>
 <div class="flex items-center gap-sm">
-<button class="flex items-center gap-xs px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-button text-button hover:opacity-90 active:scale-95 transition-transform" id="editToggle"><span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="">Edit</span></button>
+<button class="flex items-center gap-xs px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-button text-button hover:opacity-90 active:scale-95 transition-transform" id="editToggle">
+<span class="material-symbols-outlined text-[20px]">edit</span>
+<span class="">Edit</span>
+</button>
 <div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
 <img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvisM9Vswcx5wFJz58-DocLpYHB98uiNuxFlJ799dJLfXPge0s8_a2sDkpd0yvonkBkR60q-Xw53kNgvD1H3S3X9wq17xlB4xjbU2gkSHxeRjN-oNYRsS-TxcfOhv6kR1IK7_2XegXDfGlQnnUqng588acz9VBRuh6sRPwyGyu3lNuMY7e7G-nvmonbP5COKMQU2O-0CvdTabqQ5qfjeIWague0g-NEPEjARld8KblnKxHkuMsg7Y9g3-SUbduQbze-TIk85AXUTt9"/>
 </div>
@@ -225,12 +227,14 @@
 <!-- Bottom Actions Container (Sticky) -->
 <div class="fixed bottom-0 left-0 right-0 p-4 bg-surface/80 backdrop-blur-lg border-t border-outline-variant/30 z-50">
 <div class="max-w-3xl mx-auto flex gap-md">
-<button class="flex-1 flex items-center justify-center gap-xs py-4 px-6 bg-surface-container-highest text-error font-button text-button rounded-xl hover:bg-error-container hover:text-on-error-container transition-colors active:scale-95" id="deleteBtn" onclick="if(confirm('정말로 이 플래시카드를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) { const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}'); delete flashcards[currentFlashcardId]; localStorage.setItem('flashcards', JSON.stringify(flashcards)); window.location.href='flashcards.html'; }">
+<button class="flex-1 flex items-center justify-center gap-xs py-4 px-6 bg-surface-container-highest text-error font-button text-button rounded-xl hover:bg-error-container hover:text-on-error-container transition-colors active:scale-95" id="deleteBtn">
 <span class="material-symbols-outlined">delete</span>
 <span class="">삭제하기</span>
 </button>
-<button class="flex-[2] flex items-center justify-center gap-xs py-4 px-6 bg-primary text-on-primary font-button text-button rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all" id="primaryActionBtn"><span class="material-symbols-outlined">save</span>
-<span class="" id="primaryActionText">수정하기</span></button>
+<button class="flex-[2] flex items-center justify-center gap-xs py-4 px-6 bg-primary text-on-primary font-button text-button rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all" id="primaryActionBtn">
+<span class="material-symbols-outlined">save</span>
+<span class="" id="primaryActionText">수정하기</span>
+</button>
 </div>
 </div>
 <!-- Navigation Drawer (Hidden by default) -->
@@ -279,7 +283,7 @@
         
         // Initialize mock data if not present
         function initMockData() {
-            if (!localStorage.getItem('flashcards')) {
+            if (!localStorage.getItem('study_flashcards')) {
                 const mockFlashcards = {
                     '7742': {
                         id: '7742',
@@ -293,7 +297,7 @@
                         aiTips: "시각적 앵커(이미지)와 텍스트 연상법을 결합하여 기억의 인출 효율을 높이세요. '헵의 법칙'은 함께 활성화되는 뉴런이 서로 연결된다는 점을 기억하세요."
                     }
                 };
-                localStorage.setItem('flashcards', JSON.stringify(mockFlashcards));
+                localStorage.setItem('study_flashcards', JSON.stringify(mockFlashcards));
             }
         }
 
@@ -303,22 +307,32 @@
             const urlParams = new URLSearchParams(window.location.search);
             currentFlashcardId = urlParams.get('id') || '7742'; // Default to 7742 for mock
             
-            const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-            const card = flashcards[currentFlashcardId];
+            const flashcardsData = JSON.parse(localStorage.getItem('study_flashcards') || '{}');
+            let card = null;
+            
+            if (Array.isArray(flashcardsData)) {
+                card = flashcardsData.find(c => String(c.id) === String(currentFlashcardId));
+            } else {
+                card = flashcardsData[currentFlashcardId];
+            }
             
             if (card) {
-                viewTitle.textContent = card.title;
+                viewTitle.textContent = card.title || 'Untitled Flashcard';
                 flashcardIdDisplay.textContent = `Flashcard ID: #${card.id}`;
-                categoryBadge.textContent = card.category;
-                fieldInput.value = card.field;
-                notesArea.value = card.notes;
-                document.getElementById('difficultyLabel').textContent = card.difficulty;
-                document.getElementById('capturedDate').textContent = card.date;
+                categoryBadge.textContent = card.category || 'Uncategorized';
+                fieldInput.value = card.field || '';
+                notesArea.value = card.notes || '';
+                document.getElementById('difficultyLabel').textContent = card.difficulty || 'Normal';
+                document.getElementById('capturedDate').textContent = card.date || 'Unknown Date';
                 
                 // Dynamic AI section
-                const aiKeywordsContainer = document.getElementById('aiKeywords');
-                aiKeywordsContainer.innerHTML = card.aiKeywords.map(kw => `<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">${kw}</span>`).join('');
-                document.getElementById('aiTips').textContent = card.aiTips;
+                if (card.aiKeywords && Array.isArray(card.aiKeywords)) {
+                    const aiKeywordsContainer = document.getElementById('aiKeywords');
+                    aiKeywordsContainer.innerHTML = card.aiKeywords.map(kw => `<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">${kw}</span>`).join('');
+                }
+                if (card.aiTips) {
+                    document.getElementById('aiTips').textContent = card.aiTips;
+                }
             } else {
                 alert('Flashcard not found');
                 window.location.href = 'flashcards.html';
@@ -376,12 +390,20 @@
             primaryActionBtn.classList.add('opacity-70', 'pointer-events-none');
             
             // Save to localStorage
-            const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-            if (flashcards[currentFlashcardId]) {
-                flashcards[currentFlashcardId].field = fieldInput.value;
-                flashcards[currentFlashcardId].notes = notesArea.value;
-                localStorage.setItem('flashcards', JSON.stringify(flashcards));
+            let flashcardsData = JSON.parse(localStorage.getItem('study_flashcards') || '{}');
+            
+            if (Array.isArray(flashcardsData)) {
+                const index = flashcardsData.findIndex(c => String(c.id) === String(currentFlashcardId));
+                if (index !== -1) {
+                    flashcardsData[index].field = fieldInput.value;
+                    flashcardsData[index].notes = notesArea.value;
+                }
+            } else if (flashcardsData[currentFlashcardId]) {
+                flashcardsData[currentFlashcardId].field = fieldInput.value;
+                flashcardsData[currentFlashcardId].notes = notesArea.value;
             }
+            
+            localStorage.setItem('study_flashcards', JSON.stringify(flashcardsData));
             
             setTimeout(() => {
                 primaryActionBtn.classList.remove('opacity-70', 'pointer-events-none');
@@ -398,11 +420,15 @@
         // Basic Delete Confirmation
         document.getElementById('deleteBtn').addEventListener('click', () => {
             if (confirm('정말로 이 플래시카드를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) {
-                const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-                if (flashcards[currentFlashcardId]) {
-                    delete flashcards[currentFlashcardId];
-                    localStorage.setItem('flashcards', JSON.stringify(flashcards));
+                let flashcardsData = JSON.parse(localStorage.getItem('study_flashcards') || '{}');
+                
+                if (Array.isArray(flashcardsData)) {
+                    flashcardsData = flashcardsData.filter(c => String(c.id) !== String(currentFlashcardId));
+                } else if (flashcardsData[currentFlashcardId]) {
+                    delete flashcardsData[currentFlashcardId];
                 }
+                
+                localStorage.setItem('study_flashcards', JSON.stringify(flashcardsData));
                 alert('플래시카드가 삭제되었습니다.');
                 window.location.href = 'flashcards.html';
             }
