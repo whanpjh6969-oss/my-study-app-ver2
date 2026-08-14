@@ -1,123 +1,122 @@
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
+<html class="light" lang="ko"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Flashcard Detail - Academic Mentor</title>
+<title>Academic Mentor - Dashboard ver2</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;family=JetBrains+Mono:wght@600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=JetBrains+Mono:wght@100..900&amp;family=Manrope:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "primary": "#004ac6",
-                      "surface": "#f8f9ff",
-                      "on-surface-variant": "#434655",
-                      "secondary": "#006c49",
-                      "on-primary-container": "#eeefff",
-                      "on-primary": "#ffffff",
-                      "primary-fixed": "#dbe1ff",
-                      "on-secondary-fixed": "#002113",
-                      "tertiary-fixed": "#ffddb8",
-                      "on-primary-fixed-variant": "#003ea8",
-                      "surface-tint": "#0053db",
-                      "secondary-fixed-dim": "#4edea3",
-                      "secondary-container": "#6cf8bb",
-                      "background": "#f8f9ff",
-                      "tertiary-container": "#996100",
-                      "on-error": "#ffffff",
-                      "error": "#ba1a1a",
-                      "on-tertiary-container": "#ffeedd",
-                      "surface-container-lowest": "#ffffff",
-                      "surface-dim": "#cbdbf5",
-                      "surface-bright": "#f8f9ff",
-                      "on-secondary": "#ffffff",
-                      "primary-fixed-dim": "#b4c5ff",
-                      "outline-variant": "#c3c6d7",
-                      "error-container": "#ffdad6",
-                      "secondary-fixed": "#6ffbbe",
-                      "on-secondary-container": "#00714d",
-                      "on-primary-fixed": "#00174b",
-                      "on-tertiary-fixed": "#2a1700",
-                      "primary-container": "#2563eb",
-                      "inverse-primary": "#b4c5ff",
-                      "on-tertiary": "#ffffff",
-                      "on-error-container": "#93000a",
-                      "on-surface": "#0b1c30",
-                      "on-tertiary-fixed-variant": "#653e00",
-                      "inverse-on-surface": "#eaf1ff",
-                      "surface-container-high": "#dce9ff",
-                      "outline": "#737686",
-                      "surface-container-low": "#eff4ff",
-                      "tertiary": "#784b00",
-                      "surface-variant": "#d3e4fe",
-                      "surface-container": "#e5eeff",
-                      "on-secondary-fixed-variant": "#005236",
-                      "tertiary-fixed-dim": "#ffb95f",
-                      "inverse-surface": "#213145",
-                      "on-background": "#0b1c30",
-                      "surface-container-highest": "#d3e4fe"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "xs": "4px",
-                      "lg": "40px",
-                      "base": "8px",
-                      "sm": "12px",
-                      "container-max": "1200px",
-                      "gutter": "24px",
-                      "md": "24px",
-                      "xl": "64px"
-              },
-              "fontFamily": {
-                      "headline-lg-mobile": ["Manrope"],
-                      "body-lg": ["Inter"],
-                      "body-md": ["Inter"],
-                      "display-lg": ["Manrope"],
-                      "body-sm": ["Inter"],
-                      "button": ["Inter"],
-                      "headline-md": ["Manrope"],
-                      "label-caps": ["JetBrains Mono"],
-                      "headline-lg": ["Manrope"]
-              },
-              "fontSize": {
-                      "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
-                      "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                      "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
-                      "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
-                      "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
-                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
-              }
-            },
-          },
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#004ac6",
+                        "surface": "#f8f9ff",
+                        "on-surface-variant": "#434655",
+                        "secondary": "#006c49",
+                        "on-primary-container": "#eeefff",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#dbe1ff",
+                        "on-secondary-fixed": "#002113",
+                        "tertiary-fixed": "#ffddb8",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "surface-tint": "#0053db",
+                        "secondary-fixed-dim": "#4edea3",
+                        "secondary-container": "#6cf8bb",
+                        "background": "#f8f9ff",
+                        "tertiary-container": "#996100",
+                        "on-error": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-tertiary-container": "#ffeedd",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#cbdbf5",
+                        "surface-bright": "#f8f9ff",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "outline-variant": "#c3c6d7",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#6ffbbe",
+                        "on-secondary-container": "#00714d",
+                        "on-primary-fixed": "#00174b",
+                        "on-tertiary-fixed": "#2a1700",
+                        "primary-container": "#2563eb",
+                        "inverse-primary": "#b4c5ff",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#0b1c30",
+                        "on-tertiary-fixed-variant": "#653e00",
+                        "inverse-on-surface": "#eaf1ff",
+                        "surface-container-high": "#dce9ff",
+                        "outline": "#737686",
+                        "surface-variant": "#d3e4fe",
+                        "surface-container": "#e5eeff",
+                        "on-secondary-fixed-variant": "#005236",
+                        "tertiary-fixed-dim": "#ffb95f",
+                        "inverse-surface": "#213145",
+                        "on-background": "#0b1c30",
+                        "surface-container-highest": "#d3e4fe"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "4px",
+                        "lg": "40px",
+                        "base": "8px",
+                        "sm": "12px",
+                        "container-max": "1200px",
+                        "gutter": "24px",
+                        "md": "24px",
+                        "xl": "64px"
+                    },
+                    "fontFamily": {
+                        "headline-lg-mobile": ["Manrope"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "display-lg": ["Manrope"],
+                        "body-sm": ["Inter"],
+                        "button": ["Inter"],
+                        "headline-md": ["Manrope"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-lg": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "headline-lg-mobile": ["24px", {"lineHeight": "1.3", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-lg": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "body-sm": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                        "button": ["16px", {"lineHeight": "1.0", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.3", "fontWeight": "700"}]
+                    }
+                }
+            }
         }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            user-select: none;
         }
-        .focus-ring:focus-within {
-            box-shadow: 0 0 0 2px theme('colors.primary-container');
+        .progress-ring-circle {
+            transition: stroke-dashoffset 0.35s;
+            transform: rotate(-90deg);
+            transform-origin: 50% 50%;
         }
-        .smooth-transition {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .card-level-1 {
+            background-color: white;
+            border: 1px solid #E2E8F0;
         }
-        body {
-            background-color: #f8f9ff;
-            color: #0b1c30;
+        .card-level-1:hover {
+            box-shadow: 0px 4px 20px rgba(0,0,0,0.04);
         }
     </style>
 <style>
@@ -126,289 +125,252 @@
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col font-body-md text-body-md">
+<body class="bg-background font-body-md text-on-surface antialiased min-h-screen pb-32">
 <!-- TopAppBar -->
-<header class="w-full top-0 sticky z-40 bg-surface dark:bg-surface flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
-<div class="flex items-center gap-base">
-<button class="material-symbols-outlined text-primary dark:text-primary-fixed-dim hover:bg-surface-container-low p-2 rounded-full transition-colors active:scale-95" onclick="window.location.href='flashcards.html'">
-                arrow_back
-            </button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Academic Mentor</h1>
+<header class="bg-surface w-full top-0 sticky z-40 transition-colors">
+<div class="flex items-center justify-between px-md py-base w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-sm">
+<button class="material-symbols-outlined text-primary p-2 hover:bg-surface-container-low transition-colors rounded-full active:scale-95">menu</button>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Academic Mentor</h1>
 </div>
 <div class="flex items-center gap-sm">
-<button class="flex items-center gap-xs px-4 py-2 rounded-full bg-primary-container text-on-primary-container font-button text-button hover:opacity-90 active:scale-95 transition-transform" id="editToggle"><span class="material-symbols-outlined text-[20px]">edit</span>
-<span class="">Edit</span></button>
-<div class="w-10 h-10 rounded-full bg-surface-variant overflow-hidden border border-outline-variant">
-<img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvisM9Vswcx5wFJz58-DocLpYHB98uiNuxFlJ799dJLfXPge0s8_a2sDkpd0yvonkBkR60q-Xw53kNgvD1H3S3X9wq17xlB4xjbU2gkSHxeRjN-oNYRsS-TxcfOhv6kR1IK7_2XegXDfGlQnnUqng588acz9VBRuh6sRPwyGyu3lNuMY7e7G-nvmonbP5COKMQU2O-0CvdTabqQ5qfjeIWague0g-NEPEjARld8KblnKxHkuMsg7Y9g3-SUbduQbze-TIk85AXUTt9"/>
+<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden">
+<img alt="Student Profile" class="w-full h-full object-cover" data-alt="A professional and clean portrait of a focused young adult student wearing modern glasses, looking at the camera with a slight, confident smile. The background is a soft-focus library with warm, diffused sunlight filtering through. The overall style is high-key, minimalist, and academic, using a palette of soft blues and crisp whites." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjvbBnqASySVhWoSPc8m0bdQGrC43P-iudFB8O3bXKdp5OyQJj6tcw_U1SPIutaaupANm0FDcyaGPt3Dt-W5T2X6nCDgEII_dxuAudrFFPkUUEklrdqA3uataiHKS0S0FQXvRVl8nSS7MyTCOWgAFjwMRPCZX2pJThmtsFe5iJbNhVW4paL3TmVrFTQhhharZ_BCA8Sw306KmwhIKQQvzm8tMm8utrpL4-LfD9tiifz8YXSDrDiuYV2WiOBeOQcz4NdfqVVlbD9NxX"/>
+</div>
 </div>
 </div>
 </header>
-<main class="flex-1 w-full max-w-3xl mx-auto px-4 py-8 mb-24">
-<!-- Breadcrumb / Context -->
-<div class="mb-8">
-<div class="flex items-center gap-xs mb-2">
-<span class="px-3 py-1 bg-secondary-container text-on-secondary-container rounded-full font-label-caps text-label-caps" id="categoryBadge">Advanced Pathology</span>
-<span class="material-symbols-outlined text-outline text-[16px]">chevron_right</span>
-<span class="text-on-surface-variant font-body-sm text-body-sm" id="flashcardIdDisplay">Flashcard ID: #7742</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface" id="viewTitle">Neural Pathway Connectivity</h2>
-</div>
-<div class="space-y-gutter">
-<!-- Camera/Image Section -->
-<div class="relative group">
-<div class="w-full aspect-video rounded-xl overflow-hidden bg-surface-container-highest border border-outline-variant shadow-sm relative">
-<img class="w-full h-full object-cover" data-alt="A high-resolution scientific medical illustration of neural connections in the human brain. The image features glowing synaptic pathways in a deep blue and teal color palette, set against a clean, minimalist white background to maintain a professional academic aesthetic. The lighting is soft and global, highlighting the complex structural web of neurons with sharp clarity and modern digital precision." id="flashcardImg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBLz1YsJR8dC6tG3WXIUCy-6zNWN9SLdJrZYoemf834lMta1luj99jb_KWBhc8tqmpHN9ZAlVigwfWnlQXbETLAw1f1qB37xQmWf35JmaPlbAf_gDUZ35TFT6b5iNXwK4klxbmmTNqOf-NAvx05jfA5seEruK8brfoSlZM0ivXHRmUtbG7nKzLVODpac_0Zu5yvIA4HVaseaaZFt1DzJZeZ62Tsdv7esXLvFvEKnd8EB5mJyAsYdEjugEdFkjRiaUFwcsMJ6mnvb4I"/>
-<!-- Edit Overlay (Hidden in View Mode) -->
-<div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-md hidden" id="editImageOverlay">
-<button class="bg-surface/90 p-4 rounded-full text-primary hover:bg-surface active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[32px]">photo_camera</span>
+<main class="max-w-container-max mx-auto px-md mt-base">
+<!-- Headline Section -->
+<section class="py-md">
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-xs">오늘의 학습 목표</h2>
+<p class="text-on-surface-variant font-body-md">환영합니다, 오늘도 목표를 향해 나아가 볼까요?</p>
+</section>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-md">
+<!-- Section 1: Daily Goals (Left Column / Major Span) -->
+<div class="md:col-span-8 flex flex-col gap-md">
+<div class="card-level-1 p-md rounded-xl flex flex-col gap-sm">
+<div class="flex items-center justify-between mb-base">
+<h3 class="font-headline-md text-headline-md text-on-surface flex items-center gap-base">
+<span class="material-symbols-outlined text-primary">checklist</span>
+                            학습 태스크
+                        </h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base" onclick="promptAddTask()">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="text-body-sm font-bold">태스크 추가</span>
 </button>
-<button class="bg-surface/90 p-4 rounded-full text-primary hover:bg-surface active:scale-95 transition-all">
-<span class="material-symbols-outlined text-[32px]">upload_file</span>
+<span class="font-label-caps text-label-caps bg-secondary-container text-on-secondary-container px-base py-1 rounded-full" id="remaining-tasks-badge">0 TASKS REMAINING</span>
+</div>
+<div class="flex flex-col gap-sm" id="task-list-container"></div>
+</div>
+<!-- Quick Action Section -->
+<div class="card-level-1 p-md rounded-xl flex flex-col items-center justify-center text-center gap-sm bg-surface-container-low border-dashed border-2 border-primary/30">
+<div class="w-16 h-16 rounded-full bg-primary-container flex items-center justify-center text-primary mb-base">
+<span class="material-symbols-outlined text-[32px]">add_a_photo</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">AI 사진 분석</h3>
+<p class="text-on-surface-variant font-body-md max-w-md mx-auto">학습 자료를 촬영하여 업로드하면 AI가 자동으로 학습 계획과 태스크를 생성해 드립니다.</p>
+<a class="mt-base bg-primary text-on-primary font-button text-button px-xl py-md rounded-xl active:scale-95 transition-all shadow-md hover:bg-primary-container hover:text-on-primary-container flex items-center gap-base" href="ai-register.html">
+<span class="material-symbols-outlined">camera</span>
+        첫 사진 촬영하기
+    </a>
+</div>
+</div>
+<!-- Section 2: Achievement Status (Right Column / Side Span) -->
+<div class="md:col-span-4 flex flex-col gap-md">
+<div class="card-level-1 p-md rounded-xl flex flex-col items-center gap-md relative overflow-hidden">
+<div class="absolute top-0 right-0 p-base">
+<span class="material-symbols-outlined text-primary-fixed opacity-50 text-[64px]">trending_up</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface self-start">오늘의 달성도</h3><button class="add-task-btn flex items-center gap-xs text-primary hover:bg-primary-container/10 px-2 py-1 rounded-md transition-colors ml-auto mr-base" onclick="promptAddTask()">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span class="text-body-sm font-bold">태스크 추가</span>
 </button>
+<div class="relative flex items-center justify-center my-md">
+<svg class="w-48 h-48">
+<circle class="text-surface-variant" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-width="12"></circle>
+<circle class="text-primary progress-ring-circle" cx="96" cy="96" fill="transparent" r="80" stroke="currentColor" stroke-dasharray="502.6" stroke-dashoffset="502.6" stroke-linecap="round" stroke-width="12" style="stroke-dasharray: 502.655, 502.655; stroke-dashoffset: 502.655;"></circle>
+</svg>
+<div class="absolute flex flex-col items-center">
+<span class="font-display-lg text-display-lg text-primary">0%</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">COMPLETED</span>
 </div>
 </div>
-<p class="mt-2 text-on-surface-variant font-body-sm text-body-sm italic flex items-center gap-xs">
-<span class="material-symbols-outlined text-[14px]">info</span> Captured on <span class="" id="capturedDate">Oct 12, 2023</span>
-</p>
+<div class="w-full grid grid-cols-2 gap-sm">
+<div class="bg-surface-container-low p-sm rounded-lg text-center">
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">학습 시간</p>
+<p class="font-headline-md text-[18px] text-on-surface">0h 0m</p>
 </div>
-<!-- Notes/Content Section -->
-<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
-<!-- Field/Category -->
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-label-caps text-outline uppercase tracking-wider">분석 및 노트 (제공된 사진에서 AI가 생성함)</label><button class="text-primary font-button text-button cursor-pointer hover:underline flex items-center gap-xs mt-1" onclick="document.getElementById('fieldInput').focus()"><span class="material-symbols-outlined text-[18px]">edit_note</span> 텍스트 수정</button>
-<div class="relative">
-<input class="w-full px-4 py-3 bg-surface-container-low border border-outline-variant rounded-lg font-body-md text-body-md focus:ring-2 focus:ring-primary-container outline-none transition-all" id="fieldInput" readonly="" type="text" value="Medical Science / Neurology"/>
-<span class="material-symbols-outlined absolute right-3 top-3 text-outline hidden" id="fieldIcon">expand_more</span>
+<div class="bg-surface-container-low p-sm rounded-lg text-center">
+<p class="text-on-surface-variant font-label-caps text-label-caps mb-xs">남은 시간</p>
+<p class="font-headline-md text-[18px] text-on-surface">0h 0m</p>
 </div>
 </div>
-<!-- Difficulty/Tag -->
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-label-caps text-outline uppercase tracking-wider">분석 및 노트 (제공된 사진에서 AI가 생성함)</label><button class="text-primary font-button text-button cursor-pointer hover:underline flex items-center gap-xs mt-1" onclick="document.getElementById('difficultyLabel').focus()"><span class="material-symbols-outlined text-[18px]">edit_note</span> 텍스트 수정</button>
-<div class="flex items-center gap-sm mt-1">
-<span class="px-4 py-2 bg-error-container text-on-error-container rounded-lg font-semibold flex items-center gap-xs" id="difficultyContainer">
-<span class="material-symbols-outlined text-[18px]">signal_cellular_alt</span> <span class="" id="difficultyLabel">Advanced</span>
-</span>
-<span class="hidden text-primary font-button text-button cursor-pointer hover:underline" id="editDifficulty">Change</span>
+<div class="w-full flex items-center justify-between text-body-sm text-on-surface-variant border-t border-outline-variant pt-base">
+<span class="">현재 레벨: 12</span>
+<div class="flex gap-1">
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-[16px]">star</span>
 </div>
 </div>
 </div>
-<!-- Main Notes Textarea -->
-<div class="flex flex-col gap-xs">
-<label class="font-label-caps text-label-caps text-outline uppercase tracking-wider">분석 및 노트 (제공된 사진에서 AI가 생성함)</label><button class="text-primary font-button text-button cursor-pointer hover:underline flex items-center gap-xs mt-1" onclick="document.getElementById('notesArea').focus()"><span class="material-symbols-outlined text-[18px]">edit_note</span> 텍스트 수정</button>
-<textarea class="w-full min-h-[200px] px-4 py-4 bg-white border border-outline-variant rounded-xl font-body-md text-body-md leading-relaxed resize-none focus:ring-2 focus:ring-primary-container outline-none transition-all" id="notesArea" readonly="">The neural pathways shown represent the connectivity between the prefrontal cortex and the hippocampus. Key observation: The density of synaptic vesicles increases significantly in the distal axons under stimulus. Review the 'Hebbian Theory' for next session. Memory retrieval is optimized when visual anchors are combined with text-based mnemonics.</textarea>
-</div><div class="flex flex-col gap-sm p-4 bg-primary-container/10 border border-primary-container/20 rounded-xl" id="aiAnalysisSection">
-<div class="flex items-center gap-xs">
-<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-<label class="font-label-caps text-label-caps text-primary uppercase tracking-wider">Gemini AI 분석 결과</label>
-</div>
-<div class="space-y-base">
-<div class="bg-white/60 p-3 rounded-lg">
-<p class="text-body-sm font-semibold text-primary mb-1">핵심 키워드</p>
-<div class="flex flex-wrap gap-xs" id="aiKeywords">
-<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">전두엽 피질</span>
-<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">해마</span>
-<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">시냅스 소포</span>
-<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">헵의 법칙</span>
-</div>
-</div>
-<div class="bg-white/60 p-3 rounded-lg">
-<p class="text-body-sm font-semibold text-primary mb-1">암기 팁</p>
-<p class="text-body-sm text-on-surface-variant leading-relaxed" id="aiTips">
-                시각적 앵커(이미지)와 텍스트 연상법을 결합하여 기억의 인출 효율을 높이세요. '헵의 법칙'은 함께 활성화되는 뉴런이 서로 연결된다는 점을 기억하세요.
-            </p>
-</div>
+<!-- Course Progress Suggestion -->
+<div class="card-level-1 p-md rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary">
+<h4 class="font-headline-md text-[18px] mb-xs">추천 학습 코스</h4>
+<p class="text-body-sm opacity-90 mb-md">잊기 쉬운 '소프트웨어 보안' 파트를 다시 복습해볼까요?</p>
+<button class="w-full py-base bg-on-primary text-primary font-button text-button rounded-lg hover:bg-on-primary-container transition-colors">학습하러 가기</button>
 </div>
 </div>
 </div>
 </main>
-<!-- Bottom Actions Container (Sticky) -->
-<div class="fixed bottom-0 left-0 right-0 p-4 bg-surface/80 backdrop-blur-lg border-t border-outline-variant/30 z-50">
-<div class="max-w-3xl mx-auto flex gap-md">
-<button class="flex-1 flex items-center justify-center gap-xs py-4 px-6 bg-surface-container-highest text-error font-button text-button rounded-xl hover:bg-error-container hover:text-on-error-container transition-colors active:scale-95" id="deleteBtn" onclick="if(confirm('정말로 이 플래시카드를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) { const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}'); delete flashcards[currentFlashcardId]; localStorage.setItem('flashcards', JSON.stringify(flashcards)); window.location.href='flashcards.html'; }">
-<span class="material-symbols-outlined">delete</span>
-<span class="">삭제하기</span>
-</button>
-<button class="flex-[2] flex items-center justify-center gap-xs py-4 px-6 bg-primary text-on-primary font-button text-button rounded-xl shadow-lg shadow-primary/20 hover:opacity-90 active:scale-95 transition-all" id="primaryActionBtn"><span class="material-symbols-outlined">save</span>
-<span class="" id="primaryActionText">수정하기</span></button>
-</div>
-</div>
-<!-- Navigation Drawer (Hidden by default) -->
-<aside class="fixed inset-0 z-[60] transform -translate-x-full transition-transform duration-300 ease-in-out" id="drawer">
-<div class="absolute inset-0 bg-on-surface/20 backdrop-blur-sm" onclick="toggleDrawer()"></div>
-<nav class="relative h-full w-80 bg-surface dark:bg-surface rounded-r-xl shadow-sm flex flex-col py-md">
-<div class="px-md pb-md flex items-center gap-base">
-<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
-<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">school</span>
-</div>
-<div>
-<h3 class="font-headline-md text-headline-md text-primary">Academic Mentor</h3>
-<p class="text-on-surface-variant font-body-sm text-body-sm">Level 12 • 4h 20m</p>
-</div>
-</div>
-<div class="flex-1 space-y-1">
-<a class="flex items-center gap-base px-md py-3 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg transition-colors" href="index.html">
-<span class="material-symbols-outlined">target</span> Daily Goals
-                </a>
-<a class="flex items-center gap-base px-md py-3 bg-secondary-container text-on-secondary-container font-semibold rounded-lg mx-2" href="flashcards.html">
-<span class="material-symbols-outlined">library_books</span> Course Library
-                </a>
-<a class="flex items-center gap-base px-md py-3 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg transition-colors" href="calendar.html">
-<span class="material-symbols-outlined">analytics</span> Statistics
-                </a>
-<a class="flex items-center gap-base px-md py-3 text-on-surface-variant hover:bg-surface-container-low mx-2 rounded-lg transition-colors" href="members.html">
-<span class="material-symbols-outlined">help</span> Help Center
-                </a>
-</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 flex justify-around items-center px-4 pb-4 pt-2 bg-surface-container dark:bg-surface-container-highest">
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-90 transition-all duration-200" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-caps text-label-caps">Dashboard</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="calendar.html">
+<span class="material-symbols-outlined">calendar_month</span>
+<span class="font-label-caps text-label-caps">Calendar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="flashcards.html">
+<span class="material-symbols-outlined">style</span>
+<span class="font-label-caps text-label-caps">Flashcards</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="settings.html">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-caps text-label-caps">Settings</span>
+</a>
 </nav>
-</aside>
 <script>
-        let isEditing = false;
-        let currentFlashcardId = null;
-        const editToggle = document.getElementById('editToggle');
-        const viewTitle = document.getElementById('viewTitle');
-        const fieldInput = document.getElementById('fieldInput');
-        const notesArea = document.getElementById('notesArea');
-        const primaryActionBtn = document.getElementById('primaryActionBtn');
-        const primaryActionText = document.getElementById('primaryActionText');
-        const editImageOverlay = document.getElementById('editImageOverlay');
-        const fieldIcon = document.getElementById('fieldIcon');
-        const editDifficulty = document.getElementById('editDifficulty');
-        const flashcardIdDisplay = document.getElementById('flashcardIdDisplay');
-        const categoryBadge = document.getElementById('categoryBadge');
-        
-        // Initialize mock data if not present
-        function initMockData() {
-            if (!localStorage.getItem('flashcards')) {
-                const mockFlashcards = {
-                    '7742': {
-                        id: '7742',
-                        title: 'Neural Pathway Connectivity',
-                        category: 'Advanced Pathology',
-                        field: 'Medical Science / Neurology',
-                        difficulty: 'Advanced',
-                        notes: "The neural pathways shown represent the connectivity between the prefrontal cortex and the hippocampus. Key observation: The density of synaptic vesicles increases significantly in the distal axons under stimulus. Review the 'Hebbian Theory' for next session. Memory retrieval is optimized when visual anchors are combined with text-based mnemonics.",
-                        date: 'Oct 12, 2023',
-                        aiKeywords: ['전두엽 피질', '해마', '시냅스 소포', '헵의 법칙'],
-                        aiTips: "시각적 앵커(이미지)와 텍스트 연상법을 결합하여 기억의 인출 효율을 높이세요. '헵의 법칙'은 함께 활성화되는 뉴런이 서로 연결된다는 점을 기억하세요."
-                    }
-                };
-                localStorage.setItem('flashcards', JSON.stringify(mockFlashcards));
-            }
-        }
+        // Data and LocalStorage Logic
 
-        // Load flashcard data
-        function loadFlashcard() {
-            initMockData();
-            const urlParams = new URLSearchParams(window.location.search);
-            currentFlashcardId = urlParams.get('id') || '7742'; // Default to 7742 for mock
-            
-            const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-            const card = flashcards[currentFlashcardId];
-            
-            if (card) {
-                viewTitle.textContent = card.title;
-                flashcardIdDisplay.textContent = `Flashcard ID: #${card.id}`;
-                categoryBadge.textContent = card.category;
-                fieldInput.value = card.field;
-                notesArea.value = card.notes;
-                document.getElementById('difficultyLabel').textContent = card.difficulty;
-                document.getElementById('capturedDate').textContent = card.date;
-                
-                // Dynamic AI section
-                const aiKeywordsContainer = document.getElementById('aiKeywords');
-                aiKeywordsContainer.innerHTML = card.aiKeywords.map(kw => `<span class="px-2 py-0.5 bg-primary-container text-on-primary-container rounded text-[12px]">${kw}</span>`).join('');
-                document.getElementById('aiTips').textContent = card.aiTips;
+        function loadTasks() {
+            const stored = localStorage.getItem('study-tasks');
+            if (stored) {
+                return JSON.parse(stored);
             } else {
-                alert('Flashcard not found');
-                window.location.href = 'flashcards.html';
+                return [];
             }
         }
 
-        editToggle.addEventListener('click', toggleEditMode);
-        primaryActionBtn.addEventListener('click', () => {
-            if (!isEditing) {
-                toggleEditMode();
+        function saveTasks(tasks) {
+            localStorage.setItem('study-tasks', JSON.stringify(tasks));
+            renderTasks();
+        }
+
+        function toggleTask(id, isCompleted) {
+            let tasks = loadTasks();
+            tasks = tasks.map(t => t.id === id ? { ...t, completed: isCompleted } : t);
+            saveTasks(tasks);
+        }
+
+        function deleteTask(id) {
+            let tasks = loadTasks();
+            tasks = tasks.filter(t => t.id !== id);
+            saveTasks(tasks);
+        }
+
+        function promptAddTask() {
+            const title = prompt('새로운 태스크 이름을 입력하세요:');
+            if (title) addTask(title);
+        }
+
+        function addTask(title) {
+            if (!title) return;
+            const tasks = loadTasks();
+            tasks.unshift({
+                id: Date.now(),
+                title: title,
+                subtitle: '새로운 학습 목표',
+                duration: '30m',
+                completed: false,
+                progressType: 'bar',
+                progress: 0
+            });
+            saveTasks(tasks);
+        }
+
+        function renderTasks() {
+            const tasks = loadTasks();
+            const container = document.getElementById('task-list-container');
+            if (!container) return;
+            
+            container.innerHTML = '';
+            
+            if (tasks.length === 0) {
+                container.innerHTML = `
+                    <div class="flex flex-col items-center justify-center p-md text-center bg-surface-container-lowest rounded-lg border border-dashed border-outline-variant">
+                        <span class="material-symbols-outlined text-outline text-[48px] mb-sm">task</span>
+                        <p class="font-headline-md text-on-surface mb-xs">아직 추가된 태스크가 없습니다.</p>
+                        <p class="text-body-sm text-on-surface-variant mb-md">AI 사진 분석을 통해 학습 계획을 자동으로 생성하거나, 직접 태스크를 추가해보세요.</p>
+                    </div>
+                `;
             } else {
-                saveChanges();
-            }
-        });
+                tasks.forEach(task => {
+                    const taskHTML = `
+                    <div class="flex items-start gap-md p-sm rounded-lg hover:bg-surface-container-low transition-all border border-transparent hover:border-outline-variant group" data-id="${task.id}">
+                        <label class="relative flex items-center cursor-pointer">
+                            <input type="checkbox" class="task-checkbox w-6 h-6 border-2 border-primary rounded-md text-primary focus:ring-primary transition-all cursor-pointer" ${task.completed ? 'checked' : ''}>
+                        </label>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-headline-md text-[18px] text-on-surface group-hover:text-primary transition-colors ${task.completed ? 'line-through text-on-surface-variant' : ''}">${task.title}</h4>
+                                <span class="font-label-caps text-label-caps text-primary">${task.duration}</span>
+                                <button onclick="deleteTask(${task.id})" class="delete-btn material-symbols-outlined text-on-surface-variant hover:text-error p-1 rounded-full transition-colors ml-sm cursor-pointer z-10 relative">delete</button>
+                            </div>
+                            <p class="text-body-sm text-on-surface-variant mt-xs">${task.subtitle}</p>
+                            ${task.progressType === 'bar' ? `
+                            <div class="mt-sm w-full bg-surface-variant h-2 rounded-full overflow-hidden flex items-center gap-1">
+                                <div class="bg-primary h-full rounded-full" style="width: ${task.progress}%"></div>
+                                ${task.progress > 0 && task.progress < 100 ? `<div class="bg-surface-variant h-full w-full rounded-full"></div>` : ''}
+                            </div>` : `
+                            <input type="range" class="mt-sm w-full h-1 bg-surface-variant rounded-lg appearance-none cursor-pointer accent-primary" value="${task.progress}">
+                            `}
+                        </div>
+                    </div>`;
+                    container.insertAdjacentHTML('beforeend', taskHTML);
+                });
 
-        function toggleEditMode() {
-            isEditing = !isEditing;
+                // Re-attach event listeners
+                container.querySelectorAll('.task-checkbox').forEach(cb => {
+                    cb.addEventListener('change', (e) => {
+                        const id = parseInt(e.target.closest('[data-id]').dataset.id);
+                        toggleTask(id, e.target.checked);
+                    });
+                });
+            }
+
+            updateProgressVisuals(tasks);
+        }
+
+        function updateProgressVisuals(tasks) {
+            const progressCircle = document.querySelector('.progress-ring-circle');
+            const progressText = document.querySelector('.text-display-lg');
+            const remainingBadge = document.getElementById('remaining-tasks-badge');
             
-            if (isEditing) {
-                // UI Changes to Edit Mode
-                fieldInput.removeAttribute('readonly');
-                notesArea.removeAttribute('readonly');
-                fieldInput.classList.remove('bg-surface-container-low');
-                fieldInput.classList.add('bg-white');
-                fieldIcon.classList.remove('hidden');
-                editImageOverlay.classList.remove('hidden');
-                editDifficulty.classList.remove('hidden');
-                
-                primaryActionText.textContent = "저장하기";
-                editToggle.querySelector('span:last-child').textContent = "Cancel";
-                editToggle.classList.replace('bg-primary-container', 'bg-surface-container-highest');
-                editToggle.classList.replace('text-on-primary-container', 'text-on-surface-variant');
-                
-                notesArea.focus();
-            } else {
-                // UI Changes back to View Mode
-                fieldInput.setAttribute('readonly', true);
-                notesArea.setAttribute('readonly', true);
-                fieldInput.classList.add('bg-surface-container-low');
-                fieldInput.classList.remove('bg-white');
-                fieldIcon.classList.add('hidden');
-                editImageOverlay.classList.add('hidden');
-                editDifficulty.classList.add('hidden');
-                
-                primaryActionText.textContent = "수정하기";
-                editToggle.querySelector('span:last-child').textContent = "Edit";
-                editToggle.classList.replace('bg-surface-container-highest', 'bg-primary-container');
-                editToggle.classList.replace('text-on-surface-variant', 'text-on-primary-container');
+            if (!progressCircle || !progressText) return;
+
+            const circumference = 80 * 2 * Math.PI;
+            progressCircle.style.strokeDasharray = `${circumference} ${circumference}`;
+
+            const total = tasks.length;
+            const checked = tasks.filter(t => t.completed).length;
+            const percentage = total === 0 ? 0 : Math.round((checked / total) * 100);
+            
+            const offset = circumference - (percentage / 100) * circumference;
+            
+            progressCircle.style.strokeDashoffset = offset;
+            progressText.innerText = `${percentage}%`;
+
+            if (remainingBadge) {
+                remainingBadge.textContent = `${total - checked} TASKS REMAINING`;
             }
         }
 
-        function saveChanges() {
-            const originalBtnText = primaryActionText.textContent;
-            primaryActionText.textContent = "저장 중...";
-            primaryActionBtn.classList.add('opacity-70', 'pointer-events-none');
-            
-            // Save to localStorage
-            const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-            if (flashcards[currentFlashcardId]) {
-                flashcards[currentFlashcardId].field = fieldInput.value;
-                flashcards[currentFlashcardId].notes = notesArea.value;
-                localStorage.setItem('flashcards', JSON.stringify(flashcards));
-            }
-            
-            setTimeout(() => {
-                primaryActionBtn.classList.remove('opacity-70', 'pointer-events-none');
-                toggleEditMode();
-                alert('변경사항이 성공적으로 저장되었습니다.');
-            }, 800);
-        }
-
-        function toggleDrawer() {
-            const drawer = document.getElementById('drawer');
-            drawer.classList.toggle('-translate-x-full');
-        }
-
-        // Basic Delete Confirmation
-        document.getElementById('deleteBtn').addEventListener('click', () => {
-            if (confirm('정말로 이 플래시카드를 삭제하시겠습니까? 이 작업은 되돌릴 수 없습니다.')) {
-                const flashcards = JSON.parse(localStorage.getItem('flashcards') || '{}');
-                if (flashcards[currentFlashcardId]) {
-                    delete flashcards[currentFlashcardId];
-                    localStorage.setItem('flashcards', JSON.stringify(flashcards));
-                }
-                alert('플래시카드가 삭제되었습니다.');
-                window.location.href = 'flashcards.html';
-            }
-        });
-        
-        // Load data on page load
-        window.addEventListener('DOMContentLoaded', loadFlashcard);
+        // Initial render
+        renderTasks();
     </script>
 </body></html>

@@ -179,7 +179,7 @@
 </nav>
 <!-- Floating Action Button for Adding Flashcards (Contextually appropriate for this screen) -->
 <div class="fixed right-6 bottom-24 z-40">
-<button class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4" onclick="addRandomCard()"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></button>
+<a class="h-14 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center active:scale-90 transition-transform px-4 inline-flex" href="ai-register.html"><div class="flex items-center gap-2 px-2"><span class="material-symbols-outlined text-[28px]">photo_camera</span><span class="font-button text-button">AI 사진으로 추가</span></div></a>
 </div>
 <script>
         // Simple filter button interaction
@@ -197,18 +197,10 @@
     </script>
 <script>
   const STORAGE_KEY = 'study_flashcards';
-  const DEFAULT_FLASHCARDS = [
-    { id: 1, title: '정보처리기사 실기 핵심', category: 'IT자격증', categoryColor: 'primary-container', onCategoryColor: 'on-primary-container', date: '2024.05.20', count: '82장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD_wAUEx9ap750P-ifky1ah6iOLGCPhWD7jexpzIlFCrPffSSiH3Bgo_4OagWGfR6Ho32wEyoM-YeFdOkekX9dQmeG96F0ml2L1gHDn6f5DhqSbBekgzTViBIAdZEKOyOy3rbKRe_xgyUwk8vd_RC1HZkeVLFabMumZdsnvoIcvdTN7SJGhaN4eAk30ol82Qw0T_8cGdzEkpCmPnSzATHfu72A4POeu-Pm1xF5cvfsJqbExe44E5bTfl8vacZpZfj7hKim4eeTw4VHI' },
-    { id: 2, title: 'TOEIC 필수 고난도 어휘', category: '영어', categoryColor: 'secondary-container', onCategoryColor: 'on-secondary-container', date: '2024.05.18', count: '150장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBYlB18f-WF1AHgfS279VZo6tImrGpTcMsFa51gDWYceDv-ADzb1VJnoV8W5zlxSsc8N9Uy1Jr7xX8oWD6L4XLz-sPtRNSgpjP3_aFwrFFfYYZit9skoEjD8-GvT1R_gtRh-FO6K5lFmaRMIfg_U69wdyCrClGlHj3ifKGLqquOSWpHg9ZbqB-oLz2SrA8XG-vzMIshaNvpNaDrnGf-IdXXFcNtu26obnUTjEGcEeNXgpLv0w9EnnVOG_xZukt2SqcOktIGqPbfLwTa' },
-    { id: 3, title: '유기화학 반응 메커니즘', category: '전공', categoryColor: 'tertiary-container', onCategoryColor: 'on-tertiary-container', date: '2024.05.15', count: '45장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAcjwfqdVsBM6wq_L98_Q1HeuMgqQSMqDdeL2qowjva17CchOCU5YPZdcqd5dEjt90UwcjNCzR7NcyKwiPFBnhsJ_IFfiihhTfZpfA9m6XzLQ-n5MK7IoPf-Lej1-hWSM9TuimPT9Ymh-nBqSvS70aCUpYI_FON51ucwrwzLgP6adnyjPpt96hJvjtz8-xEicUXoQDYMJcScU-O9e6MQuz-xt2mCXnDWBwqZr44Tamn_vAHz2bGX5bRKK7y-r-2Fj0q-dKnk7o2EgpS' },
-    { id: 4, title: 'AWS Solution Architect', category: 'IT자격증', categoryColor: 'primary-container', onCategoryColor: 'on-primary-container', date: '2024.05.10', count: '120장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuA6vw8vZhebsNO-dy67DBCQeUy7-XGJA0V49PNNGSXm_FsahguT32ci1RByIwgyBeA9FRtbzip_sQlycitPp75DwkG0GM1G_yB-obupIF53Bj4cpcxA7oqPR8K0cvRKahlfJaz-5SuqoUP2Z-vHh14fq2NoZWvWgzqT28ODcqb8Ry9KNGpnIMDvb7T3kdm6__Mxf1HF9zga1Kl-STZj7v5z5o-oozk06ac2UzcFeQqzfFDkGTKgKzV9ygWKSaEtJjoOFGw2TOaGuapp' },
-    { id: 5, title: '미시경제학 그래프 정리', category: '전공', categoryColor: 'tertiary-container', onCategoryColor: 'on-tertiary-container', date: '2024.05.08', count: '38장', img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDUUhsXbDRLZKQv5Wp7YRaVNskQ_Mz6h4WMB2VTS_duC6zlAcKKjLMJJrcDPnnlN1HcRR__l9YU4sOiFn8vW_otTaw1XZ5u9UA_8AQKB51OWfdF0UZ7z2Q2VSYBCp5he4alzzzWi1pHpRHDW871LYpcN9M_rj_r3DSKURwTP4D6_dGD1onLorm4SjnpBdkRicTphB3-h12Y-1miWEGCVGlBGsR5zZJfyyXRUdIRwYyK7VfHlKzy_oHcvjkG_gFcUPvoPiZAuzScXH02' }
-  ];
 
   let flashcards = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  if (!flashcards || flashcards.length === 0) {
-      flashcards = [...DEFAULT_FLASHCARDS];
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(flashcards));
+  if (!flashcards) {
+      flashcards = [];
   }
 
   const grid = document.getElementById('flashcard-grid');
@@ -222,47 +214,60 @@
     const filtered = flashcards.filter(f => f.title.toLowerCase().includes(filter.toLowerCase()));
     grid.innerHTML = '';
     
-    filtered.forEach(card => {
-      const cardEl = document.createElement('div');
-      cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300 relative';
-      cardEl.innerHTML = `
-        <a href="detail.html?id=${card.id}" class="block h-full">
-          <div class="relative h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${card.img}">
-            <div class="absolute top-3 left-3">
-              <span class="bg-${card.categoryColor} text-${card.onCategoryColor} text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
-            </div>
-            <button onclick="event.preventDefault(); event.stopPropagation(); deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md z-10">
-              <span class="material-symbols-outlined text-[20px] leading-none">close</span>
-            </button>
-          </div>
-          <div class="p-4">
-            <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">${card.title}</h3>
-            <div class="flex items-center justify-between mt-4">
-              <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
-                <span class="material-symbols-outlined text-[18px]">calendar_today</span>
-                ${card.date}
-              </span>
-              <span class="text-primary font-button text-button">${card.count}</span>
-            </div>
-          </div>
-        </a>`;
-      grid.appendChild(cardEl);
-    });
-    
-    // Add Buttons
-    const addButtonsHTML = `
-      <button onclick="addRandomCard()" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
-          <span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span>
-          <span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span>
-          <span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span>
-      </button>
-      <button class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
-          <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
-          <span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
-      </button>
-    `;
-    grid.insertAdjacentHTML('beforeend', addButtonsHTML);
+    if (filtered.length === 0 && filter === '') {
+        grid.innerHTML = `
+        <div class="col-span-full py-16 flex flex-col items-center justify-center text-center bg-surface-container-lowest rounded-xl border border-dashed border-outline-variant">
+            <span class="material-symbols-outlined text-[64px] text-outline mb-4">photo_camera</span>
+            <p class="font-body-lg text-body-lg text-on-surface-variant mb-6">등록된 암기장이 없습니다.<br>AI 사진 분석으로 첫 암기장을 만들어보세요!</p>
+            <a href="ai-register.html" class="px-6 py-3 bg-primary text-on-primary font-button text-button rounded-full active:scale-95 transition-transform flex items-center gap-2">
+                <span class="material-symbols-outlined">add</span>
+                암기장 만들기
+            </a>
+        </div>
+        `;
+    } else {
+        filtered.forEach(card => {
+          const cardEl = document.createElement('div');
+          cardEl.className = 'group card-hover bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden transition-all duration-300 relative';
+          cardEl.innerHTML = `
+            <a href="detail.html?id=${card.id}" class="block h-full">
+              <div class="relative h-48 overflow-hidden">
+                <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src="${card.img}">
+                <div class="absolute top-3 left-3">
+                  <span class="bg-${card.categoryColor} text-${card.onCategoryColor} text-[10px] px-2 py-1 rounded-full font-label-caps">${card.category}</span>
+                </div>
+                <button onclick="event.preventDefault(); event.stopPropagation(); deleteCard(${card.id})" class="absolute top-3 right-3 bg-error text-on-error p-1.5 rounded-full opacity-0 group-hover:opacity-100 transition-opacity hover:bg-error/90 active:scale-90 shadow-md z-10">
+                  <span class="material-symbols-outlined text-[20px] leading-none">close</span>
+                </button>
+              </div>
+              <div class="p-4">
+                <h3 class="font-headline-md text-[20px] text-on-surface mb-2 line-clamp-1">${card.title}</h3>
+                <div class="flex items-center justify-between mt-4">
+                  <span class="text-on-surface-variant font-body-sm text-body-sm flex items-center gap-1">
+                    <span class="material-symbols-outlined text-[18px]">calendar_today</span>
+                    ${card.date}
+                  </span>
+                  <span class="text-primary font-button text-button">${card.count}</span>
+                </div>
+              </div>
+            </a>`;
+          grid.appendChild(cardEl);
+        });
+        
+        // Add Buttons
+        const addButtonsHTML = `
+          <a href="ai-register.html" class="group bg-surface-container-low border-2 border-dashed border-primary rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-high transition-all active:scale-95 min-h-[280px]">
+              <span class="material-symbols-outlined text-[48px] text-primary">photo_camera</span>
+              <span class="mt-4 font-button text-button text-primary">AI 사진 분석 등록</span>
+              <span class="mt-1 text-[10px] font-label-caps text-on-surface-variant">사진을 찍으면 AI가 카드를 생성합니다</span>
+          </a>
+          <a href="ai-register.html" class="group bg-surface border-2 border-dashed border-outline-variant rounded-xl h-full flex flex-col items-center justify-center p-8 hover:bg-surface-container-low hover:border-primary transition-all active:scale-95 min-h-[280px]">
+              <span class="material-symbols-outlined text-[48px] text-outline group-hover:text-primary transition-colors">add_circle</span>
+              <span class="mt-4 font-button text-button text-on-surface-variant group-hover:text-primary">새 암기장 만들기</span>
+          </a>
+        `;
+        grid.insertAdjacentHTML('beforeend', addButtonsHTML);
+    }
   }
 
   window.deleteCard = (id) => {
@@ -270,20 +275,6 @@
     save();
     render(searchInput.value);
   };
-
-  window.addRandomCard = () => {
-      const randomBaseCard = DEFAULT_FLASHCARDS[Math.floor(Math.random() * DEFAULT_FLASHCARDS.length)];
-      const newCard = {
-          ...randomBaseCard,
-          id: Date.now(),
-          title: `[새로운 AI 분석] ${randomBaseCard.title}`,
-          date: new Date().toLocaleDateString('ko-KR', {year: 'numeric', month: '2-digit', day: '2-digit'}).replace(/\. /g, '.').replace('.', ''),
-          count: `${Math.floor(Math.random() * 50) + 10}장`
-      };
-      flashcards.unshift(newCard); // Add to the beginning
-      save();
-      render(searchInput.value);
-  }
 
   searchInput.addEventListener('input', (e) => render(e.target.value));
 
