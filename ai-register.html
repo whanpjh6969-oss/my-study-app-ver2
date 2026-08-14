@@ -131,7 +131,7 @@
 <button class="p-2 hover:bg-surface-container-low rounded-lg transition-colors active:scale-95" onclick="window.location.href='index.html'">
 <span class="material-symbols-outlined text-primary">arrow_back</span>
 </button>
-<h1 class="font-headline-md text-headline-md font-bold text-primary">새 암기장 등록</h1>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">AI 사진 분석 및 등록 - ai-register.html</h1>
 </div>
 <div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
 <img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2UYIHIwhMBg99AYWaUNuw00bCY3ZlCuWkHNFs1H_q0Ox-anvZYNf_hKq4tSQ_36ZoO3VsdwfCw3eKe0O8WWaxn_VkXarbJA9Dn4-uGr0DC0JUjIt8mIfi1kfso9nRA24x1CJupCMJwbDSRIRBEJMZWAjng_7QUifKyg7AGemUbhHeqgDmsx_FP2DwHh15oU7-XBeWXDnL5Or9aiDWhpUyC1U-HI-wCQkINSva_ez_ws-wp3OoqWkgczjY00UjHXSRiy5PzLbLj44r"/>
@@ -147,7 +147,7 @@
 <div class="absolute inset-0 bg-black/10 pointer-events-none"></div>
 <!-- AI Processing Badge -->
 <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
-<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-button text-on-surface font-semibold text-body-sm">분석이 완료되었습니다!</span></div>
+<div class="glass-panel px-md py-sm rounded-full flex items-center gap-base animate-pulse"><span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">check_circle</span><span class="font-button text-on-surface font-semibold text-body-sm" style="opacity: 1;">핵심 키워드를 추출하는 중입니다...</span></div>
 </div>
 </div>
 </section>
@@ -175,7 +175,7 @@
 <div class="h-full bg-secondary-container w-full rounded-full transition-all duration-700"></div>
 </div>
 </div>
-</div><section class="flex flex-col gap-md bg-surface border border-outline-variant rounded-xl p-md shadow-sm"><div class="flex items-center gap-sm border-b border-outline-variant pb-base"><span class="material-symbols-outlined text-primary">analytics</span><h2 class="font-headline-md text-body-lg font-bold">AI 분석 리포트</h2></div><div class="flex flex-col gap-sm"><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">요약</p><p class="font-body-md text-on-surface">일본어 기초 문법과 한자 읽기 연습이 포함된 학습 노트입니다. 주로 'N3' 수준의 어휘가 감지되었습니다.</p></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">주요 키워드</p><div class="flex flex-wrap gap-xs mt-1"><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#동사활용</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#한자읽기</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#조사사용</span></div></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">학습 팁</p><ul class="list-disc list-inside font-body-sm text-on-surface-variant mt-1"><li>오답률이 높은 '사역형' 문법을 집중 복습하세요.</li><li>추출된 12개의 단어를 플래시카드로 변환했습니다.</li></ul></div></div></section>
+</div><section class="flex flex-col gap-md bg-surface border border-outline-variant rounded-xl p-md shadow-sm"><div class="flex items-center gap-sm border-b border-outline-variant pb-base"><span class="material-symbols-outlined text-primary">analytics</span><h2 class="font-headline-md text-body-lg font-bold">AI 분석 리포트</h2></div><div class="flex flex-col gap-sm"><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">요약</p><p class="font-body-md text-on-surface">일본어 기초 문법과 한자 읽기 연습이 포함된 학습 노트입니다. 주로 'N3' 수준의 어휘가 감지되었습니다.</p></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">주요 키워드</p><div class="flex flex-wrap gap-xs mt-1"><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#동사활용</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#한자읽기</span><span class="bg-surface-container-high text-primary px-2 py-1 rounded text-body-sm font-semibold">#조사사용</span></div></div><div><p class="font-label-caps text-on-surface-variant text-[10px] uppercase">학습 팁</p><ul class="list-disc list-inside font-body-sm text-on-surface-variant mt-1"><li class="">오답률이 높은 '사역형' 문법을 집중 복습하세요.</li><li class="">추출된 12개의 단어를 플래시카드로 변환했습니다.</li></ul></div></div></section>
 <!-- Action Buttons -->
 <div class="grid grid-cols-2 gap-sm pt-base">
 <button class="flex items-center justify-center gap-xs border border-primary text-primary font-button rounded-lg py-4 hover:bg-surface-container-low active:scale-95 transition-all">
@@ -264,4 +264,60 @@
             }, 1500);
         });
     </script>
-</body></html>
+<script>
+        // Logic to handle image transfer and analysis simulation
+        (function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isFromDashboard = urlParams.get('source') === 'dashboard' || sessionStorage.getItem('pending_analysis') === 'true';
+
+            if (isFromDashboard) {
+                // 1. Initial State: Hide the report and show processing state
+                const analysisReport = document.querySelector('section.flex.flex-col.gap-md.bg-surface');
+                const processingBadge = document.querySelector('.animate-pulse');
+                const processingText = processingBadge.querySelector('span:last-child');
+                const processingIcon = processingBadge.querySelector('.material-symbols-outlined');
+                const progressBar = document.querySelector('.bg-secondary-container');
+                const progressHint = document.querySelector('.bg-surface-container-low');
+
+                // Reset UI to 'Processing' state if it was hardcoded as 'Complete'
+                analysisReport.style.display = 'none';
+                processingIcon.textContent = 'sync';
+                processingIcon.style.fontVariationSettings = "'FILL' 0";
+                processingText.textContent = '필기 텍스트를 디지털로 변환하고 있습니다...';
+                progressBar.style.width = '30%';
+                
+                // 2. Simulate Analysis Timeline
+                setTimeout(() => {
+                    processingText.textContent = '핵심 키워드를 추출하는 중입니다...';
+                    progressBar.style.width = '65%';
+                }, 2000);
+
+                setTimeout(() => {
+                    processingText.textContent = '추출된 내용을 암기 카드로 생성 중입니다...';
+                    progressBar.style.width = '90%';
+                }, 4000);
+
+                setTimeout(() => {
+                    // 3. Completion State
+                    processingIcon.textContent = 'check_circle';
+                    processingIcon.style.fontVariationSettings = "'FILL' 1";
+                    processingText.textContent = '분석이 완료되었습니다!';
+                    progressBar.style.width = '100%';
+                    
+                    // Show the report with a fade-in effect
+                    analysisReport.style.display = 'flex';
+                    analysisReport.classList.add('animate-in', 'fade-in', 'duration-700');
+                    
+                    // Clear session storage flag
+                    sessionStorage.removeItem('pending_analysis');
+                    
+                    // Show success toast briefly
+                    const toast = document.getElementById('toast');
+                    const toastText = toast.querySelector('.font-body-sm');
+                    toastText.textContent = 'AI 분석이 완료되었습니다.';
+                    toast.classList.remove('opacity-0');
+                    setTimeout(() => toast.classList.add('opacity-0'), 3000);
+                }, 6000);
+            }
+        })();
+    </script></body></html>
